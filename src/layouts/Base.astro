@@ -3,18 +3,30 @@
 // Chaque page fournit ses balises meta (slot "head"), ses styles
 // (slot "styles"), son contenu (slot par défaut) et ses scripts
 // (slot "scripts", inséré après le footer comme à l'origine).
+//
+// Multilingue : tout vit sur chaparral-finance.com — anglais à la racine,
+// français sous /fr, italien sous /it. Le domaine .fr est une simple
+// redirection 308 vers .com/fr/… (vercel.json). `path` est le chemin
+// canonique de la page hors préfixe de langue (ex. "/transactions").
 import Header from '../components/Header.astro';
 import MobileMenu from '../components/MobileMenu.astro';
 import Footer from '../components/Footer.astro';
 
-const { current, bodyClass } = Astro.props;
+const { current, bodyClass, locale = 'fr', path = '/' } = Astro.props;
+
+const EN_HOST = 'https://www.chaparral-finance.com';
+const prefix = (p) => (path === '/' ? `/${p}` : `/${p}${path}`);
 ---
-<html lang="fr">
+<html lang={locale}>
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta property="og:locale" content="fr_FR">
+  <meta property="og:locale" content={{ fr: 'fr_FR', en: 'en_US', it: 'it_IT' }[locale]}>
   <meta property="og:site_name" content="Chaparral Finance">
+  <link rel="alternate" hreflang="fr" href={EN_HOST + prefix('fr')}>
+  <link rel="alternate" hreflang="en" href={EN_HOST + path}>
+  <link rel="alternate" hreflang="it" href={EN_HOST + prefix('it')}>
+  <link rel="alternate" hreflang="x-default" href={EN_HOST + path}>
   <slot name="head" />
 
   <!-- Favicons -->
@@ -23,6 +35,21 @@ const { current, bodyClass } = Astro.props;
   <link rel="icon" type="image/png" sizes="96x96" href="https://res.cloudinary.com/drncmlu30/image/upload/w_96,h_96,c_fill,f_png/v1766651131/Favicon_ttv2uq.png">
   <link rel="icon" type="image/png" sizes="32x32" href="https://res.cloudinary.com/drncmlu30/image/upload/w_32,h_32,c_fill,f_png/v1766651131/Favicon_ttv2uq.png">
   <link rel="apple-touch-icon" sizes="180x180" href="https://res.cloudinary.com/drncmlu30/image/upload/w_180,h_180,c_fill,f_png/v1766651131/Favicon_ttv2uq.png">
+
+  <!-- Choix de langue explicite : ?lang=en pose un cookie qui neutralise la
+       géo-redirection France → /fr (règle "missing" dans vercel.json),
+       puis nettoie l'URL. -->
+  <script is:inline>
+    (function () {
+      var m = location.search.match(/[?&]lang=en\b/);
+      if (m) {
+        document.cookie = 'lang_pref=en;path=/;max-age=31536000;samesite=lax';
+        var u = new URL(location.href);
+        u.searchParams.delete('lang');
+        history.replaceState(null, '', u);
+      }
+    })();
+  </script>
 
   <link rel="stylesheet" href="/assets/styles.css">
   <script is:inline src="https://unpkg.com/lucide@1.17.0/dist/umd/lucide.min.js"></script>
@@ -38,14 +65,14 @@ const { current, bodyClass } = Astro.props;
   <div id="page-transition-overlay"></div>
 
   <!-- Navigation Bar -->
-  <Header current={current} />
+  <Header current={current} locale={locale} path={path} />
 
   <!-- Mobile Menu Overlay -->
-  <MobileMenu current={current} />
+  <MobileMenu current={current} locale={locale} path={path} />
 
   <slot />
 
-  <Footer current={current} />
+  <Footer current={current} locale={locale} />
   <slot name="scripts" />
 </body>
 </html>

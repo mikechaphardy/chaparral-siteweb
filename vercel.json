@@ -3,5 +3,32 @@
   "buildCommand": "npm run build",
   "outputDirectory": "dist",
   "cleanUrls": true,
-  "trailingSlash": false
+  "trailingSlash": false,
+  "redirects": [
+    {
+      "source": "/:path(fr|it|fr/.*|it/.*)",
+      "has": [{ "type": "host", "value": "(www\\.)?chaparral-finance\\.fr" }],
+      "destination": "https://www.chaparral-finance.com/:path",
+      "permanent": true
+    },
+    {
+      "source": "/:path(.*)",
+      "has": [{ "type": "host", "value": "(www\\.)?chaparral-finance\\.fr" }],
+      "destination": "https://www.chaparral-finance.com/fr/:path",
+      "permanent": true
+    },
+    {
+      "source": "/:path((?!fr/|fr$|it/|it$|assets/|favicon\\.ico|sitemap|robots).*)",
+      "has": [
+        { "type": "host", "value": "(www\\.)?chaparral-finance\\.com" },
+        { "type": "header", "key": "x-vercel-ip-country", "value": "FR" }
+      ],
+      "missing": [
+        { "type": "cookie", "key": "lang_pref" },
+        { "type": "query", "key": "lang" }
+      ],
+      "destination": "/fr/:path",
+      "permanent": false
+    }
+  ]
 }

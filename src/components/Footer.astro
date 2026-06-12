@@ -1,42 +1,81 @@
 ---
 // Pied de page commun. Sur la page des mentions légales, le lien vers
 // celles-ci est affiché en blanc (état actif).
-const { current } = Astro.props;
+const { current, locale = 'fr' } = Astro.props;
 const legalsLink = current === 'legals' ? 'text-white transition-colors' : 'hover:text-white transition-colors';
+
+const t = {
+  fr: {
+    description: 'Chaparral Finance est une banque d’affaires dédiée aux PME de croissance : capital développement - transmission, levée de fonds, LBO, MBO et opérations de cessions - acquisitions',
+    home: 'Chaparral',
+    transactions: 'Transactions',
+    contact: 'Contact',
+    navigation: 'Navigation',
+    contactTitle: 'Notre adresse en France',
+    linkedin: 'Suivez-nous sur LinkedIn',
+    rights: '© 2026 Chaparral Finance. Tous droits réservés.',
+    legals: 'Mentions légales et politique de protection des données',
+  },
+  en: {
+    description: 'Chaparral Finance is an investment bank dedicated to growth SMEs: growth capital, ownership transition, fundraising, LBO, MBO and sell-side / buy-side M&A transactions',
+    home: 'Chaparral',
+    transactions: 'Transactions',
+    contact: 'Contact',
+    navigation: 'Navigation',
+    contactTitle: 'Our address in France',
+    linkedin: 'Follow us on LinkedIn',
+    rights: '© 2026 Chaparral Finance. All rights reserved.',
+    legals: 'Legal notice and data protection policy',
+  },
+  it: {
+    description: "Chaparral Finance è una banca d'affari dedicata alle PMI in crescita: capitale per lo sviluppo, passaggi di proprietà, raccolta di capitali, LBO, MBO e operazioni di M&A sell-side / buy-side",
+    home: 'Chaparral',
+    transactions: 'Transazioni',
+    contact: 'Contatti',
+    navigation: 'Navigazione',
+    contactTitle: 'Il nostro indirizzo in Francia',
+    linkedin: 'Seguici su LinkedIn',
+    rights: '© 2026 Chaparral Finance. Tutti i diritti riservati.',
+    legals: 'Note legali e politica di protezione dei dati',
+  },
+}[locale];
+
+// Liens internes préfixés par la langue pour ne pas la perdre en naviguant
+const base = { fr: '/fr', en: '', it: '/it' }[locale];
 ---
 <footer class="z-10 text-[#D3D3B9] bg-[#0A1A2A] border-[#192241]/50 border-t pt-16 pb-8 relative">
   <div class="md:px-12 max-w-7xl mr-auto ml-auto pr-6 pl-6">
     <div class="grid grid-cols-1 md:grid-cols-12 gap-12 mb-16">
       <div class="md:col-span-5">
-        <a href="/" class="block mb-6">
+        <a href={base || '/'} class="block mb-6">
           <div class="inline-flex bg-center w-[180px] h-[82px] bg-[url(https://res.cloudinary.com/dddfggfp3/image/upload/v1767430682/footer_logo_yz4ibv.png)] bg-contain bg-no-repeat"></div>
         </a>
-        <p class="leading-relaxed text-sm opacity-80 max-w-sm">Chaparral Finance est une banque d’affaires dédiée aux PME de croissance : capital développement - transmission, levée de fonds, LBO, MBO et opérations de cessions - acquisitions</p>
+        <p class="leading-relaxed text-sm opacity-80 max-w-sm">{t.description}</p>
       </div>
 
       <div class="md:col-span-2 md:col-start-8">
-        <h4 class="font-serif text-white text-lg mb-6">Navigation</h4>
+        <h4 class="font-serif text-white text-lg mb-6">{t.navigation}</h4>
         <ul class="space-y-4 text-sm">
           <li class="">
-            <a href="/" class="hover:text-white transition-colors uppercase tracking-widest">
-              Chaparral
+            <a href={base || '/'} class="hover:text-white transition-colors uppercase tracking-widest">
+              {t.home}
             </a>
           </li>
           <li class="">
-            <a href="/transactions" class="hover:text-white transition-colors uppercase tracking-widest">
-              Transactions
+            <a href={base + '/transactions'} class="hover:text-white transition-colors uppercase tracking-widest">
+              {t.transactions}
             </a>
           </li>
           <li class="">
-            <a href="/contacts" class="hover:text-white transition-colors uppercase tracking-widest">
-              Contact
+            <a href={base + '/contacts'} class="hover:text-white transition-colors uppercase tracking-widest">
+              {t.contact}
             </a>
           </li>
         </ul>
       </div>
 
       <div class="md:col-span-3">
-        <h4 class="font-serif text-white text-lg mb-6">Contact</h4>
+        <h4 class="font-serif text-white text-lg mb-6">{t.contactTitle}</h4>
         <ul class="space-y-4 text-sm">
           <li class="">16, avenue de Messine, 75008 Paris</li>
           <li class="">
@@ -47,7 +86,7 @@ const legalsLink = current === 'legals' ? 'text-white transition-colors' : 'hove
           <li class="pt-2">
             <a href="https://linkedin.com/company/chaparral-finance/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 hover:text-white transition-colors group">
               <img src="https://ik.imagekit.io/iokktghdw/icons8-linkedin.svg" alt="LinkedIn" loading="lazy" decoding="async" class="w-5 h-5 invert brightness-0 opacity-80 group-hover:opacity-100 transition-opacity">
-              <span>Suivez-nous sur LinkedIn</span>
+              <span>{t.linkedin}</span>
             </a>
           </li>
         </ul>
@@ -55,10 +94,10 @@ const legalsLink = current === 'legals' ? 'text-white transition-colors' : 'hove
     </div>
 
     <div class="pt-8 border-t border-[#D3D3B9]/10 flex flex-col md:flex-row justify-between items-center gap-4 text-xs opacity-60">
-      <p class="">© 2026 Chaparral Finance. Tous droits réservés.</p>
+      <p class="">{t.rights}</p>
       <div class="flex gap-6">
-        <a href="/legals" class={legalsLink}>
-          Mentions légales et politique de protection des données
+        <a href={base + '/legals'} class={legalsLink}>
+          {t.legals}
         </a>
       </div>
     </div>

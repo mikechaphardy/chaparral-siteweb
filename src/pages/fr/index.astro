@@ -1,33 +1,32 @@
 ---
-import Base from '../layouts/Base.astro';
-import transactions from '../data/transactions.json';
+import Base from '../../layouts/Base.astro';
+import transactions from '../../data/transactions.json';
 
-// Champs anglais des données, puis les 5 transactions les plus récentes
-const enTransactions = transactions.map((t) => ({ ...t, sector: t.sector_en, deal_type: t.deal_type_en, description: t.description_en }));
-const latestTransactions = enTransactions.slice(0, 5);
+// La page d'accueil présente les 5 transactions les plus récentes
+const latestTransactions = transactions.slice(0, 5);
 ---
-<Base current="home" locale="en" path="/" bodyClass="antialiased flex flex-col min-h-screen overflow-x-hidden bg-[#0A1A2A]">
+<Base current="home" locale="fr" path="/" bodyClass="antialiased flex flex-col min-h-screen overflow-x-hidden bg-[#0A1A2A]">
 
 <Fragment slot="head">
-<title>Chaparral Finance - Investment Banking</title>
-  <meta name="description" content="The investment bank for SMEs, dedicated to owner-managers. Chaparral Finance advises on M&A, fundraising, LBOs and business sales.">
-  <link rel="canonical" href="https://www.chaparral-finance.com/">
+<title>Chaparral Finance - Banque d'Affaires</title>
+  <meta name="description" content="La banque d'affaires des PME, dédiée aux entrepreneurs dirigeants. Chaparral Finance accompagne vos opérations : M&A, levée de fonds, LBO, cession.">
+  <link rel="canonical" href="https://www.chaparral-finance.com/fr">
   
 
   <!-- Open Graph / Social Media -->
-  <meta property="og:title" content="Chaparral Finance - The Investment Bank for SMEs">
-  <meta property="og:description" content="The investment bank for SMEs, dedicated to owner-managers. Chaparral Finance advises on M&A, fundraising, LBOs and business sales.">
-  <meta property="og:url" content="https://www.chaparral-finance.com/">
+  <meta property="og:title" content="Chaparral Finance - Banque d'Affaires des PME">
+  <meta property="og:description" content="La banque d'affaires des PME, dédiée aux entrepreneurs dirigeants. Chaparral Finance accompagne vos opérations : M&A, levée de fonds, LBO, cession.">
+  <meta property="og:url" content="https://www.chaparral-finance.com/fr">
   <meta property="og:type" content="website">
   <meta property="og:image" content="https://res.cloudinary.com/drncmlu30/image/upload/v1766653300/Airbrush-OBJECT-REMOVER-1766652971579_qx1gwx.png">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
-  <meta property="og:image:alt" content="Chaparral Finance - The investment bank dedicated to growth SMEs">
+  <meta property="og:image:alt" content="Chaparral Finance - Banque d'Affaires dédiée aux PME de croissance">
 
   <!-- Twitter Cards -->
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Chaparral Finance - The Investment Bank for SMEs">
-  <meta name="twitter:description" content="The investment bank for SMEs, dedicated to owner-managers. Chaparral Finance advises on M&A, fundraising, LBOs and business sales.">
+  <meta name="twitter:title" content="Chaparral Finance - Banque d'Affaires des PME">
+  <meta name="twitter:description" content="La banque d'affaires des PME, dédiée aux entrepreneurs dirigeants. Chaparral Finance accompagne vos opérations : M&A, levée de fonds, LBO, cession.">
   <meta name="twitter:image" content="https://res.cloudinary.com/drncmlu30/image/upload/v1766653300/Airbrush-OBJECT-REMOVER-1766652971579_qx1gwx.png">
 
   <!-- Schema.org (JSON-LD) -->
@@ -36,8 +35,8 @@ const latestTransactions = enTransactions.slice(0, 5);
       "@context": "https://schema.org",
       "@type": "FinancialService",
       "name": "Chaparral Finance",
-      "description": "The investment bank for SMEs, dedicated to owner-managers: M&A, fundraising, LBOs, business sales.",
-      "url": "https://www.chaparral-finance.com/",
+      "description": "La banque d'affaires des PME, dédiée aux entrepreneurs dirigeants : M&A, levée de fonds, LBO, cession.",
+      "url": "https://www.chaparral-finance.com/fr",
       "sameAs": ["https://linkedin.com/company/chaparral-finance/"],
       "logo": "https://res.cloudinary.com/dddfggfp3/image/upload/v1767430682/footer_logo_yz4ibv.png",
       "email": "contact@chaparral-finance.fr",
@@ -187,8 +186,8 @@ const latestTransactions = enTransactions.slice(0, 5);
     <div class="relative z-10 w-full h-full flex flex-col justify-center px-6 md:px-12 pointer-events-none">
       <div class="max-w-4xl pointer-events-auto mt-8">
         <h1 class="serif leading-[1.05] md:text-7xl lg:text-7xl animate-hero text-5xl font-medium text-white tracking-tight mb-8 drop-shadow-2xl">
-          The investment bank <span class="text-white">for SMEs</span>, dedicated to owner-managers</h1>
-        <p class="md:text-xl leading-relaxed animate-hero delay-100 text-lg font-light text-[#D3D3B9]/90 max-w-2xl border-[#D3D3B9]/50 border-l mb-12 pl-6 drop-shadow-md">Chaparral Finance is an independent M&A boutique advising entrepreneurs, executives and investment funds on small-cap corporate finance transactions across Europe: fundraising, LBO, management buy-out, business sale, strategic combination, build-ups</p>
+          La banque d'affaires <span class="text-white">des PME</span>, dédiée aux entrepreneurs dirigeants</h1>
+        <p class="md:text-xl leading-relaxed animate-hero delay-100 text-lg font-light text-[#D3D3B9]/90 max-w-2xl border-[#D3D3B9]/50 border-l mb-12 pl-6 drop-shadow-md">Chaparral Finance est une boutique de M&A indépendante qui accompagne les entrepreneurs, les dirigeants et les fonds d’investissement dans leurs opérations de haut de bilan Small Caps en Europe : Levée de fonds, LBO, Management Buy Out, Cession, Adossement, Croissances Externes</p>
       </div>
     </div>
 
@@ -207,7 +206,7 @@ const latestTransactions = enTransactions.slice(0, 5);
         <div class="flex flex-col justify-center">
           
           <h2 class="serif md:text-4xl text-3xl font-medium text-[#0A1A2A] tracking-tight leading-[1.25]">
-            Our clients are owner-managers, entrepreneurs and family shareholders engaged in phases of growth, structuring and capital evolution of their company.
+            Nos clients sont dirigeants, entrepreneurs et actionnaires familiaux, engagés dans des phases de croissance, de structuration et d’évolution capitalistique de leur entreprise.
           </h2>
         </div>
         <div class="relative w-full">
@@ -234,7 +233,8 @@ const latestTransactions = enTransactions.slice(0, 5);
             </div>
             <h3 class="text-xl font-medium text-white tracking-tight mb-3">PRIVATE EQUITY</h3>
             <p class="leading-relaxed text-base font-light text-white/70">
-              Equity strengthening, LBOs and management buy-outs alongside European private equity funds and family offices.
+              Renforcement des fonds propres, LBO, Management Buy Out auprès
+              de fonds de capital investissement européens et family office.
             </p>
           </div>
           <!-- Pillar 2 -->
@@ -248,9 +248,10 @@ const latestTransactions = enTransactions.slice(0, 5);
                 <path d="M3 4h8"></path>
               </svg>
             </div>
-            <h3 class="text-xl font-medium text-white tracking-tight mb-3">M&A (SELL-SIDE AND BUY-SIDE)</h3>
+            <h3 class="text-xl font-medium text-white tracking-tight mb-3">M&A (SELL-SIDE ET BUY-SIDE)</h3>
             <p class="leading-relaxed text-base font-light text-white/70">
-              Strategic combinations and sales, build-ups, carve-outs.
+              Adossement/Cession industrielle, croissances externes, carve
+              out.
             </p>
           </div>
           <!-- Pillar 3 -->
@@ -267,7 +268,8 @@ const latestTransactions = enTransactions.slice(0, 5);
             </div>
             <h3 class="text-xl font-medium text-white tracking-tight mb-3">DEBT ADVISORY</h3>
             <p class="leading-relaxed text-base font-light text-white/70">
-              Structured, bank or private debt raising; mezzanine financing.
+              Levée de dettes structurées, bancaires ou privées ; financement
+              mezzanine.
             </p>
           </div>
         </div>
@@ -283,7 +285,8 @@ const latestTransactions = enTransactions.slice(0, 5);
         <div class="lg:col-span-5 mb-16 lg:mb-0">
           <div class="sticky top-32">
             <h2 class="serif text-4xl md:text-5xl lg:text-5xl font-medium text-[#0A1A2A] tracking-tight leading-[1.1] mb-6">
-              A boutique approach: execution rigour, financial expertise, senior commitment.
+              Une approche de boutique : rigueur d’exécution, expertise
+              financière, engagement senior.
             </h2>
           </div>
         </div>
@@ -294,13 +297,13 @@ const latestTransactions = enTransactions.slice(0, 5);
           <div class="group pl-8 border-l border-[#0A1A2A]/10 hover:border-[#0A1A2A] transition-colors duration-500 ease-in-out">
             <div class="flex items-center gap-3 mb-4 text-[#0A1A2A]/40 group-hover:text-[#0A1A2A] transition-colors">
               <span class="text-xs font-semibold tracking-widest uppercase opacity-80">
-                Rigour
+                Rigueur
               </span>
             </div>
             <h3 class="text-2xl font-medium text-[#0A1A2A] tracking-tight mb-3">
-              M&A execution excellence
+              Excellence d’exécution en M&A
             </h3>
-            <p class="leading-relaxed text-lg font-light text-[#0A1A2A]/70 max-w-xl">Quality of deliverables, mastery and organisation of competitive processes, access to a network of corporate and industrial acquirers across Europe.</p>
+            <p class="leading-relaxed text-lg font-light text-[#0A1A2A]/70 max-w-xl">Qualité des livrables, maîtrise et organisation de process compétitifs, accès à un réseau d’acquéreurs corporate et industriels en Europe.</p>
           </div>
 
           <!-- Block 2 -->
@@ -310,20 +313,20 @@ const latestTransactions = enTransactions.slice(0, 5);
                 Expertise
               </span>
             </div>
-            <h3 class="text-2xl font-medium text-[#0A1A2A] tracking-tight mb-3">Recognised financing expertise</h3>
-            <p class="leading-relaxed text-lg font-light text-[#0A1A2A]/70 max-w-xl">Access to a deep ecosystem of equity, debt and structured financing, built and nurtured over two decades.</p>
+            <h3 class="text-2xl font-medium text-[#0A1A2A] tracking-tight mb-3">Expertise reconnue en financement</h3>
+            <p class="leading-relaxed text-lg font-light text-[#0A1A2A]/70 max-w-xl">Accès à un écosystème profond equity, dettes et financements structurés, développé et entretenu depuis deux décennies.</p>
           </div>
 
           <!-- Block 3 -->
           <div class="group pl-8 border-l border-[#0A1A2A]/10 hover:border-[#0A1A2A] transition-colors duration-500 ease-in-out">
             <div class="flex items-center gap-3 mb-4 text-[#0A1A2A]/40 group-hover:text-[#0A1A2A] transition-colors">
               <span class="text-xs font-semibold tracking-widest uppercase opacity-80">
-                Independence
+                Indépendance
               </span>
             </div>
-            <h3 class="text-2xl font-medium text-[#0A1A2A] tracking-tight mb-3">An entrepreneurial culture, 100% aligned with our clients' objectives
+            <h3 class="text-2xl font-medium text-[#0A1A2A] tracking-tight mb-3">Culture entrepreneuriale, 100% alignée avec le cahier des charges de nos clients
 </h3>
-            <p class="leading-relaxed text-lg font-light text-[#0A1A2A]/70 max-w-xl">Systematic senior involvement, full independence, tailor-made support for executives and shareholders.
+            <p class="leading-relaxed text-lg font-light text-[#0A1A2A]/70 max-w-xl">Implication senior systématique, indépendance totale, accompagnement sur mesure auprès des dirigeants et actionnaires.
 </p>
           </div>
         </div>
@@ -338,12 +341,12 @@ const latestTransactions = enTransactions.slice(0, 5);
       <div class="flex flex-col md:flex-row md:items-end gap-6 mb-12 gap-x-6 gap-y-6 justify-between">
         <div class="max-w-xl">
           <h2 class="serif md:text-5xl lg:text-5xl text-4xl font-medium text-[#0A1A2A] tracking-tight mb-4">
-            Recent transactions
+            Transactions récentes
           </h2>
-          <p class="leading-relaxed text-lg font-light text-[#0A1A2A]/60">A selection of our latest transactions with French and European companies</p>
+          <p class="leading-relaxed text-lg font-light text-[#0A1A2A]/60">Un aperçu de nos dernières réalisations auprès d'entreprises françaises et européennes</p>
         </div>
-        <a href="/transactions" class="group inline-flex items-center gap-2 hover:text-[#0A1A2A] transition-colors hover:border-[#0A1A2A] text-sm font-medium text-[#0A1A2A]/70 border-[#0A1A2A]/30 border-b pb-1">
-          View all transactions
+        <a href="/fr/transactions" class="group inline-flex items-center gap-2 hover:text-[#0A1A2A] transition-colors hover:border-[#0A1A2A] text-sm font-medium text-[#0A1A2A]/70 border-[#0A1A2A]/30 border-b pb-1">
+          Voir toutes les transactions
           <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-right group-hover:translate-x-1 transition-transform">
             <path d="M5 12h14"></path>
             <path d="m12 5 7 7-7 7"></path>
@@ -367,10 +370,10 @@ const latestTransactions = enTransactions.slice(0, 5);
   <section class="z-30 overflow-hidden bg-[#F5F5F3] border-[#0A1A2A]/5 border-t py-48 relative">
     <div class="z-10 max-w-4xl mx-auto px-6 md:px-12 relative w-full flex flex-col items-center text-center">
       <h2 class="serif text-5xl md:text-6xl font-medium text-[#0A1A2A] tracking-tight leading-[1.05] mb-12">
-        A financing or ownership transition project?
+        Un projet de financement ou de transmission ?
       </h2>
-      <a href="/contacts" class="group inline-flex items-center justify-center gap-3 px-10 py-5 bg-gradient-to-br from-[#0A1A2A] to-[#1a2c42] border border-white/10 text-white text-base font-semibold tracking-wide rounded-xl hover:shadow-2xl hover:shadow-[#0A1A2A]/20 hover:-translate-y-1 transition-all duration-300 shadow-xl">
-        Contact us
+      <a href="/fr/contacts" class="group inline-flex items-center justify-center gap-3 px-10 py-5 bg-gradient-to-br from-[#0A1A2A] to-[#1a2c42] border border-white/10 text-white text-base font-semibold tracking-wide rounded-xl hover:shadow-2xl hover:shadow-[#0A1A2A]/20 hover:-translate-y-1 transition-all duration-300 shadow-xl">
+        Contactez nous
         <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-right group-hover:translate-x-1 transition-transform">
           <path d="M5 12h14"></path>
           <path d="m12 5 7 7-7 7"></path>
@@ -653,7 +656,7 @@ const latestTransactions = enTransactions.slice(0, 5);
 
         // Create "View All" card
         const viewAllCard = document.createElement('a');
-        viewAllCard.href = '/transactions';
+        viewAllCard.href = '/fr/transactions';
         viewAllCard.className = 'transaction-card group h-80 relative flex flex-col items-center justify-center bg-gradient-to-br from-[#0A1A2A] to-[#1a2c42] border-white/10 border rounded-xl p-8 shadow-xl hover:shadow-2xl transition-all duration-300 hover:-translate-y-1';
         viewAllCard.innerHTML = `
           <div class="flex flex-col items-center justify-center gap-6 text-center">
@@ -664,10 +667,10 @@ const latestTransactions = enTransactions.slice(0, 5);
               </svg>
             </div>
             <h3 class="serif text-2xl font-medium text-white tracking-tight">
-              View all transactions
+              Voir toutes les transactions
             </h3>
             <p class="text-sm text-white/70 leading-relaxed max-w-xs">
-              Browse all of our transactions
+              Découvrez l'ensemble de nos réalisations
             </p>
           </div>
         `;

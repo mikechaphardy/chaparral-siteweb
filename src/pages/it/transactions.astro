@@ -1,32 +1,32 @@
 ---
-import Base from '../layouts/Base.astro';
-import transactionsFr from '../data/transactions.json';
+import Base from '../../layouts/Base.astro';
+import transactionsFr from '../../data/transactions.json';
 
-// Champs anglais des données
-const transactions = transactionsFr.map((t) => ({ ...t, sector: t.sector_en, deal_type: t.deal_type_en, description: t.description_en }));
+// Champs italiens des données
+const transactions = transactionsFr.map((t) => ({ ...t, sector: t.sector_it, deal_type: t.deal_type_it, description: t.description_it }));
 ---
-<Base current="transactions" locale="en" path="/transactions" bodyClass="antialiased flex flex-col min-h-screen overflow-x-hidden text-[#D3D3B9] bg-[#0A1A2A]">
+<Base current="transactions" locale="it" path="/transactions" bodyClass="antialiased flex flex-col min-h-screen overflow-x-hidden text-[#D3D3B9] bg-[#0A1A2A]">
 
 <Fragment slot="head">
-<title>Transactions - Chaparral Finance</title>
-  <meta name="description" content="Browse our recent transactions: sales, LBOs, fundraisings and build-ups completed with French and European companies.">
-  <link rel="canonical" href="https://www.chaparral-finance.com/transactions">
+<title>Transazioni - Chaparral Finance</title>
+  <meta name="description" content="Scoprite le nostre transazioni recenti: cessioni, LBO, raccolte di capitali e acquisizioni realizzate con imprese francesi ed europee.">
+  <link rel="canonical" href="https://www.chaparral-finance.com/it/transactions">
   
 
   <!-- Open Graph / Social Media -->
-  <meta property="og:title" content="Transactions - Chaparral Finance">
-  <meta property="og:description" content="Browse our recent transactions: sales, LBOs, fundraisings and build-ups completed with French and European companies.">
-  <meta property="og:url" content="https://www.chaparral-finance.com/transactions">
+  <meta property="og:title" content="Transazioni - Chaparral Finance">
+  <meta property="og:description" content="Scoprite le nostre transazioni recenti: cessioni, LBO, raccolte di capitali e acquisizioni realizzate con imprese francesi ed europee.">
+  <meta property="og:url" content="https://www.chaparral-finance.com/it/transactions">
   <meta property="og:type" content="website">
   <meta property="og:image" content="https://res.cloudinary.com/drncmlu30/image/upload/v1766653300/Airbrush-OBJECT-REMOVER-1766652971579_qx1gwx.png">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
-  <meta property="og:image:alt" content="Chaparral Finance - Recent transactions">
+  <meta property="og:image:alt" content="Chaparral Finance - Transazioni recenti">
 
   <!-- Twitter Cards -->
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Transactions - Chaparral Finance">
-  <meta name="twitter:description" content="Browse our recent transactions: sales, LBOs, fundraisings and build-ups completed with French and European companies.">
+  <meta name="twitter:title" content="Transazioni - Chaparral Finance">
+  <meta name="twitter:description" content="Scoprite le nostre transazioni recenti: cessioni, LBO, raccolte di capitali e acquisizioni realizzate con imprese francesi ed europee.">
   <meta name="twitter:image" content="https://res.cloudinary.com/drncmlu30/image/upload/v1766653300/Airbrush-OBJECT-REMOVER-1766652971579_qx1gwx.png">
 
   <!-- Schema.org (JSON-LD) -->
@@ -34,8 +34,8 @@ const transactions = transactionsFr.map((t) => ({ ...t, sector: t.sector_en, dea
     {
       "@context": "https://schema.org",
       "@type": "CollectionPage",
-      "name": "Transactions - Chaparral Finance",
-      "url": "https://www.chaparral-finance.com/transactions",
+      "name": "Transazioni - Chaparral Finance",
+      "url": "https://www.chaparral-finance.com/it/transactions",
       "isPartOf": {
         "@type": "WebSite",
         "name": "Chaparral Finance",
@@ -203,7 +203,7 @@ const transactions = transactionsFr.map((t) => ({ ...t, sector: t.sector_en, dea
       <!-- Header -->
       <div class="flex flex-col mb-12 gap-6">
         <div class="max-w-3xl">
-          <h1 class="serif md:text-5xl lg:text-6xl text-4xl font-medium text-white tracking-tight mb-6">Transactions</h1>
+          <h1 class="serif md:text-5xl lg:text-6xl text-4xl font-medium text-white tracking-tight mb-6">Transazioni</h1>
         </div>
       </div>
 
