@@ -1,6 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://chaparral-finance.com/sitemap.xml
-
-
+Sitemap: https://chaparral-finance.com/sitemap-index.xml
