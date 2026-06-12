@@ -1,0 +1,1289 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chaparral Finance - Banque d'Affaires</title>
+  <meta name="description" content="La banque d'affaires des PME, dédiée aux entrepreneurs dirigeants. Chaparral Finance accompagne vos opérations : M&A, levée de fonds, LBO, cession.">
+  <link rel="canonical" href="https://chaparral-finance.com/">
+  
+  <!-- Favicons -->
+  <link rel="icon" href="/favicon.ico" sizes="48x48">
+  <link rel="icon" type="image/svg+xml" href="https://res.cloudinary.com/drncmlu30/image/upload/v1766651131/Favicon_ttv2uq.svg">
+  <link rel="icon" type="image/png" sizes="96x96" href="https://res.cloudinary.com/drncmlu30/image/upload/w_96,h_96,c_fill,f_png/v1766651131/Favicon_ttv2uq.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="https://res.cloudinary.com/drncmlu30/image/upload/w_32,h_32,c_fill,f_png/v1766651131/Favicon_ttv2uq.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="https://res.cloudinary.com/drncmlu30/image/upload/w_180,h_180,c_fill,f_png/v1766651131/Favicon_ttv2uq.png">
+
+  <!-- Open Graph / Social Media -->
+  <meta property="og:title" content="Chaparral Finance - Banque d'Affaires des PME">
+  <meta property="og:description" content="La banque d'affaires des PME, dédiée aux entrepreneurs dirigeants. Chaparral Finance accompagne vos opérations : M&A, levée de fonds, LBO, cession.">
+  <meta property="og:url" content="https://chaparral-finance.com/">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="https://res.cloudinary.com/drncmlu30/image/upload/v1766653300/Airbrush-OBJECT-REMOVER-1766652971579_qx1gwx.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Chaparral Finance - Banque d'Affaires dédiée aux PME de croissance">
+
+  <!-- Twitter Cards -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Chaparral Finance - Banque d'Affaires des PME">
+  <meta name="twitter:description" content="La banque d'affaires des PME, dédiée aux entrepreneurs dirigeants. Chaparral Finance accompagne vos opérations : M&A, levée de fonds, LBO, cession.">
+  <meta name="twitter:image" content="https://res.cloudinary.com/drncmlu30/image/upload/v1766653300/Airbrush-OBJECT-REMOVER-1766652971579_qx1gwx.png">
+
+  <!-- Schema.org (JSON-LD) -->
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FinancialService",
+      "name": "Chaparral Finance",
+      "url": "https://chaparral-finance.com/",
+      "logo": "https://res.cloudinary.com/dddfggfp3/image/upload/v1767430682/footer_logo_yz4ibv.png",
+      "email": "contact@chaparral-finance.fr",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "16 avenue de Messine",
+        "postalCode": "75008",
+        "addressLocality": "Paris",
+        "addressCountry": "FR"
+      }
+    }
+  </script>
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: #0A1A2A;
+      color: #D3D3B9;
+    }
+    h1, h2, h3, .serif {
+      font-family: 'Playfair Display', serif;
+    }
+    /* Video Background Logic */
+    .video-wrapper {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      overflow: hidden;
+      z-index: 0;
+    }
+    .video-wrapper iframe {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      pointer-events: none;
+    }
+    @media (min-aspect-ratio: 16/9) {
+      .video-wrapper iframe { width: 100vw; height: 56.25vw; }
+    }
+    @media (max-aspect-ratio: 16/9) {
+      .video-wrapper iframe { width: 177.78vh; height: 100vh; }
+    }
+    /* Page Load Animation */
+    body { opacity: 0; transition: opacity 0.6s ease-out; }
+    body.loaded { opacity: 1; }
+    /* Navigation transition state - disable backdrop blur during page switch */
+    body.nav-transitioning header {
+      backdrop-filter: none !important;
+      -webkit-backdrop-filter: none !important;
+      background-color: #0A1A2A !important;
+    }
+    /* Page transition overlay */
+    #page-transition-overlay {
+      position: fixed;
+      inset: 0;
+      background-color: #0A1A2A;
+      z-index: 9999;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.15s ease-out;
+    }
+    body.nav-transitioning #page-transition-overlay {
+      opacity: 1;
+      pointer-events: all;
+    }
+    @keyframes slideUpFade {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .animate-hero { opacity: 0; animation: slideUpFade 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards; }
+    .delay-100 { animation-delay: 0.1s; }
+    .delay-200 { animation-delay: 0.2s; }
+    
+    /* Carousel Styles */
+    .scrollbar-hide {
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+    }
+    .scrollbar-hide::-webkit-scrollbar {
+      display: none;
+    }
+    /* Transaction Card Styles */
+    .transaction-card {
+      transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+      flex-shrink: 0;
+      width: 85vw;
+      max-width: 280px;
+    }
+    @media (min-width: 640px) {
+      .transaction-card {
+        width: 280px;
+      }
+    }
+    /* Desktop only: hover lift effect */
+    @media (hover: hover) {
+      .transaction-card:hover {
+        transform: translateY(-4px);
+      }
+    }
+    /* Card flip state - triggered by JS on tap/click */
+    .transaction-card .card-inner.flipped {
+      transform: rotateY(180deg);
+    }
+    /* Safari fix for backface-visibility */
+    .card-face {
+      -webkit-backface-visibility: hidden;
+      backface-visibility: hidden;
+      -webkit-transform: translateZ(0);
+      transform: translateZ(0);
+    }
+    .card-back {
+      -webkit-backface-visibility: hidden;
+      backface-visibility: hidden;
+      -webkit-transform: rotateY(180deg) translateZ(1px);
+      transform: rotateY(180deg) translateZ(1px);
+    }
+  </style>
+</head>
+<body class="antialiased flex flex-col min-h-screen overflow-x-hidden bg-[#0A1A2A]">
+  <!-- Page Transition Overlay -->
+  <div id="page-transition-overlay"></div>
+  
+  <!-- Navigation Bar -->
+  <header class="z-50 absolute top-0 w-full transition-all duration-300 bg-[#0A1A2A]/20 border-white/10 border-b backdrop-blur-md">
+    <div class="flex md:px-12 w-full pt-3 pr-6 pb-3 pl-6 items-center justify-between">
+      <!-- Left: Logo -->
+      <div class="flex items-center">
+        <a href="index.html" class="flex flex-col items-center group select-none focus:outline-none cursor-pointer">
+          <div class="inline-flex bg-center w-[200px] h-[75px] bg-[url(https://res.cloudinary.com/dddfggfp3/image/upload/v1768029554/Chaparral_header_logo_xk4rbk.png)] bg-contain bg-no-repeat items-center justify-center" onclick="window.location.href='index.html'" role="button"></div>
+        </a>
+      </div>
+
+      <!-- Right: Nav, Utilities & CTA -->
+      <div class="flex items-center gap-8">
+        <!-- Desktop Nav -->
+        <nav class="hidden lg:flex gap-8 items-center">
+          <a href="index.html" class="text-white hover:text-white transition-colors focus:outline-none text-sm font-medium uppercase tracking-widest">
+            Chaparral
+          </a>
+
+          <a href="transactions.html" class="hover:text-white transition-colors focus:outline-none text-sm font-medium text-[#BFC0AB] uppercase tracking-widest">
+            Transactions
+          </a>
+        </nav>
+
+        <div class="flex items-center gap-6">
+          <a href="contacts.html" class="hidden sm:inline-block hover:text-white transition-colors focus:outline-none text-sm font-medium text-[#BFC0AB] uppercase tracking-widest">
+            Contact
+          </a>
+          <a href="https://linkedin.com/company/chaparral-finance/" target="_blank" rel="noopener noreferrer" class="hidden sm:inline-block text-[#BFC0AB] hover:text-white transition-colors focus:outline-none">
+            <svg fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 50" class="cursor-pointer w-[20px] h-[20px]" stroke-width="2">
+              <path d="M41,4H9C6.24,4,4,6.24,4,9v32c0,2.76,2.24,5,5,5h32c2.76,0,5-2.24,5-5V9C46,6.24,43.76,4,41,4z M17,20v19h-6V20H17z M11,14.47c0-1.4,1.2-2.47,3-2.47s2.93,1.07,3,2.47c0,1.4-1.12,2.53-3,2.53C12.2,17,11,15.87,11,14.47z M39,39h-6c0,0,0-9.26,0-10 c0-2-1-4-3.5-4.04h-0.08C27,24.96,26,27.02,26,29c0,0.91,0,10,0,10h-6V20h6v2.56c0,0,1.93-2.56,5.81-2.56 c3.97,0,7.19,2.73,7.19,8.26V39z" class=""></path>
+            </svg>
+          </a>
+          <button class="lg:hidden text-[#BFC0AB] hover:text-white transition-colors" id="mobile-menu-btn">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-menu">
+              <path d="M4 5h16"></path>
+              <path d="M4 12h16"></path>
+              <path d="M4 19h16"></path>
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Menu Overlay -->
+  <div id="mobile-menu" class="fixed inset-0 z-[60] bg-[#0A1A2A] transform translate-x-full transition-transform duration-500 ease-in-out lg:hidden flex flex-col">
+    <div class="flex items-center justify-between p-6 border-b border-[#D3D3B9]/10">
+      <div class="text-[#D3D3B9] font-serif text-xl font-medium">Menu</div>
+      <button id="mobile-menu-close" class="text-[#D3D3B9] hover:text-white transition-colors">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M18 6 6 18"></path>
+          <path d="m6 6 12 12"></path>
+        </svg>
+      </button>
+    </div>
+    <nav class="flex flex-col p-8 gap-6 items-center justify-center flex-1">
+      <a href="index.html" class="mobile-link text-3xl font-serif text-white hover:text-white transition-colors">
+        Chaparral
+      </a>
+      <a href="transactions.html" class="mobile-link text-3xl font-serif text-[#D3D3B9] hover:text-white transition-colors">
+        Transactions
+      </a>
+      <a href="contacts.html" class="mobile-link text-3xl font-serif text-[#D3D3B9] hover:text-white transition-colors">
+        Contact
+      </a>
+    </nav>
+  </div>
+
+  <!-- MAIN CONTENT: HOME (Index) -->
+  <!-- Hero Section -->
+  <main class="min-h-[600px] overflow-hidden bg-[#0A1A2A] w-full h-screen relative">
+    <div class="video-wrapper">
+      <video 
+        id="hero-video"
+        autoplay
+        muted 
+        playsinline
+        preload="auto"
+        poster="https://res.cloudinary.com/dddfggfp3/image/upload/v1767427402/homepage_posterimage_zlz8n1.png"
+        class="w-full h-full object-cover"
+      >
+        <source src="https://res.cloudinary.com/dddfggfp3/video/upload/v1767759902/kling_20260107_Image_to_Video_Slow_forwa_3092_0_2_kzjzn3.mp4" type="video/mp4">
+      </video>
+      <div class="absolute inset-0 bg-[#0A1A2A]/40 mix-blend-multiply pointer-events-none"></div>
+      <div class="absolute inset-0 bg-gradient-to-r from-[#0A1A2A]/90 via-[#0A1A2A]/40 to-transparent pointer-events-none">
+      </div>
+    </div>
+
+    <div class="relative z-10 w-full h-full flex flex-col justify-center px-6 md:px-12 pointer-events-none">
+      <div class="max-w-4xl pointer-events-auto mt-8">
+        <h1 class="serif leading-[1.05] md:text-7xl lg:text-7xl animate-hero text-5xl font-medium text-white tracking-tight mb-8 drop-shadow-2xl">
+          La banque d'affaires <span class="text-white">des PME</span>, dédiée aux entrepreneurs dirigeants</h1>
+        <p class="md:text-xl leading-relaxed animate-hero delay-100 text-lg font-light text-[#D3D3B9]/90 max-w-2xl border-[#D3D3B9]/50 border-l mb-12 pl-6 drop-shadow-md">Chaparral Finance est une boutique de M&A indépendante qui accompagne les entrepreneurs, les dirigeants et les fonds d’investissement dans leurs opérations de haut de bilan Small Caps en Europe : Levée de fonds, LBO, Management Buy Out, Cession, Adossement, Croissances Externes</p>
+      </div>
+    </div>
+
+    <!-- Watermark -->
+    <div class="absolute top-1/2 -translate-y-1/2 right-0 z-0 opacity-[0.05] pointer-events-none overflow-hidden select-none hidden xl:block">
+      <span class="serif text-[30rem] leading-none tracking-tighter -mr-24 text-[#D3D3B9]">
+            CF
+          </span>
+    </div>
+  </main>
+
+  <!-- VISION SECTION (LIGHT THEME) -->
+  <section class="md:py-32 z-20 bg-[#F5F5F3] border-transparent border-t pt-24 pb-24 relative">
+    <div class="md:px-12 max-w-7xl mr-auto ml-auto pr-6 pl-6">
+      <div class="grid lg:grid-cols-2 gap-12 lg:gap-24 mb-24 gap-x-12 gap-y-12 items-center">
+        <div class="flex flex-col justify-center">
+          
+          <h2 class="serif md:text-4xl text-3xl font-medium text-[#0A1A2A] tracking-tight leading-[1.25]">
+            Nos clients sont dirigeants, entrepreneurs et actionnaires familiaux, engagés dans des phases de croissance, de structuration et d’évolution capitalistique de leur entreprise.
+          </h2>
+        </div>
+        <div class="relative w-full">
+          <div class="relative aspect-[3/4] lg:aspect-[4/5] w-full rounded-2xl overflow-hidden group shadow-2xl border border-[#0A1A2A]/5">
+            <img src="https://ik.imagekit.io/iokktghdw/Gemini_Generated_Image_mown3emown3emown.png" alt="Paris" class="transition-transform duration-700 group-hover:scale-105 w-full h-full object-cover">
+            <div class="absolute inset-0 bg-gradient-to-t from-[#0A1A2A]/10 to-transparent mix-blend-multiply pointer-events-none"></div>
+          </div>
+        </div>
+      </div>
+      <div class="w-full h-px bg-gradient-to-r from-transparent via-[#0A1A2A]/10 to-transparent mb-16"></div>
+      <div class="flex flex-col gap-12 gap-x-12 gap-y-12">
+        <div class="grid md:grid-cols-3 gap-6 lg:gap-8 w-full gap-x-6 gap-y-6">
+          <!-- Pillar 1 -->
+          <div class="group hover:shadow-2xl hover:-translate-y-1 transition-all duration-300 flex flex-col bg-gradient-to-br from-[#0A1A2A] to-[#1a2c42] h-full border-white/10 border rounded-2xl pt-8 pr-8 pb-8 pl-8 relative shadow-xl">
+            <div class="mb-6 inline-flex items-center justify-center w-12 h-12 rounded-xl bg-white/10 text-white group-hover:bg-white group-hover:text-[#0A1A2A] transition-colors">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="w-[24px] h-[24px]">
+                <line x1="3" x2="21" y1="22" y2="22"></line>
+                <line x1="6" x2="6" y1="18" y2="11" class=""></line>
+                <line x1="10" x2="10" y1="18" y2="11" class=""></line>
+                <line x1="14" x2="14" y1="18" y2="11"></line>
+                <line x1="18" x2="18" y1="18" y2="11"></line>
+                <polygon points="12 2 20 7 4 7" class=""></polygon>
+              </svg>
+            </div>
+            <h3 class="text-xl font-medium text-white tracking-tight mb-3">PRIVATE EQUITY</h3>
+            <p class="leading-relaxed text-base font-light text-white/70">
+              Renforcement des fonds propres, LBO, Management Buy Out auprès
+              de fonds de capital investissement européens et family office.
+            </p>
+          </div>
+          <!-- Pillar 2 -->
+          <div class="group hover:shadow-2xl hover:-translate-y-1 transition-all duration-300 flex flex-col bg-gradient-to-br from-[#0A1A2A] to-[#1a2c42] h-full border-white/10 border rounded-2xl pt-8 pr-8 pb-8 pl-8 relative shadow-xl">
+            <div class="mb-6 inline-flex items-center justify-center w-12 h-12 rounded-xl bg-white/10 text-white group-hover:bg-white group-hover:text-[#0A1A2A] transition-colors">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="w-[24px] h-[24px]" data-lucide="handshake" data-icon-set="lucide" data-icon-replaced="true">
+                <path d="m11 17 2 2a1 1 0 1 0 3-3"></path>
+                <path d="m14 14 2.5 2.5a1 1 0 1 0 3-3l-3.88-3.88a3 3 0 0 0-4.24 0l-.88.88a1 1 0 1 1-3-3l2.81-2.81a5.79 5.79 0 0 1 7.06-.87l.47.28a2 2 0 0 0 1.42.25L21 4"></path>
+                <path d="m21 3 1 11h-2"></path>
+                <path d="M3 3 2 14l6.5 6.5a1 1 0 1 0 3-3"></path>
+                <path d="M3 4h8"></path>
+              </svg>
+            </div>
+            <h3 class="text-xl font-medium text-white tracking-tight mb-3">M&A (SELL-SIDE ET BUY-SIDE)</h3>
+            <p class="leading-relaxed text-base font-light text-white/70">
+              Adossement/Cession industrielle, croissances externes, carve
+              out.
+            </p>
+          </div>
+          <!-- Pillar 3 -->
+          <div class="group hover:shadow-2xl hover:-translate-y-1 transition-all duration-300 flex flex-col bg-gradient-to-br from-[#0A1A2A] to-[#1a2c42] h-full border-white/10 border rounded-2xl pt-8 pr-8 pb-8 pl-8 relative shadow-xl">
+            <div class="mb-6 inline-flex items-center justify-center w-12 h-12 rounded-xl bg-white/10 text-white group-hover:bg-white group-hover:text-[#0A1A2A] transition-colors">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="w-[24px] h-[24px]" data-lucide="clipboard-list" data-icon-set="lucide" data-icon-replaced="true">
+                <rect width="8" height="4" x="8" y="2" rx="1" ry="1"></rect>
+                <path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"></path>
+                <path d="M12 11h4"></path>
+                <path d="M12 16h4"></path>
+                <path d="M8 11h.01"></path>
+                <path d="M8 16h.01"></path>
+              </svg>
+            </div>
+            <h3 class="text-xl font-medium text-white tracking-tight mb-3">DEBT ADVISORY</h3>
+            <p class="leading-relaxed text-base font-light text-white/70">
+              Levée de dettes structurées, bancaires ou privées ; financement
+              mezzanine.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- NEW SECTION: APPROACH / BOUTIQUE -->
+  <section class="bg-[#F5F5F3] border-t border-[#0A1A2A]/5 py-24 md:py-32">
+    <div class="max-w-7xl mx-auto px-6 md:px-12">
+      <div class="lg:grid lg:grid-cols-12 gap-12 lg:gap-24">
+        <!-- Left: Sticky Title -->
+        <div class="lg:col-span-5 mb-16 lg:mb-0">
+          <div class="sticky top-32">
+            <h2 class="serif text-4xl md:text-5xl lg:text-5xl font-medium text-[#0A1A2A] tracking-tight leading-[1.1] mb-6">
+              Une approche de boutique : rigueur d’exécution, expertise
+              financière, engagement senior.
+            </h2>
+          </div>
+        </div>
+
+        <!-- Right: List Content -->
+        <div class="lg:col-span-7 flex flex-col gap-16">
+          <!-- Block 1 -->
+          <div class="group pl-8 border-l border-[#0A1A2A]/10 hover:border-[#0A1A2A] transition-colors duration-500 ease-in-out">
+            <div class="flex items-center gap-3 mb-4 text-[#0A1A2A]/40 group-hover:text-[#0A1A2A] transition-colors">
+              <span class="text-xs font-semibold tracking-widest uppercase opacity-80">
+                Rigueur
+              </span>
+            </div>
+            <h3 class="text-2xl font-medium text-[#0A1A2A] tracking-tight mb-3">
+              Excellence d’exécution en M&A
+            </h3>
+            <p class="leading-relaxed text-lg font-light text-[#0A1A2A]/70 max-w-xl">Qualité des livrables, maîtrise et organisation de process compétitifs, accès à un réseau d’acquéreurs corporate et industriels en Europe.</p>
+          </div>
+
+          <!-- Block 2 -->
+          <div class="group pl-8 border-l border-[#0A1A2A]/10 hover:border-[#0A1A2A] transition-colors duration-500 ease-in-out">
+            <div class="flex items-center gap-3 mb-4 text-[#0A1A2A]/40 group-hover:text-[#0A1A2A] transition-colors">
+              <span class="text-xs font-semibold tracking-widest uppercase opacity-80">
+                Expertise
+              </span>
+            </div>
+            <h3 class="text-2xl font-medium text-[#0A1A2A] tracking-tight mb-3">Expertise reconnue en financement</h3>
+            <p class="leading-relaxed text-lg font-light text-[#0A1A2A]/70 max-w-xl">Accès à un écosystème profond equity, dettes et financements structurés, développé et entretenu depuis deux décennies.</p>
+          </div>
+
+          <!-- Block 3 -->
+          <div class="group pl-8 border-l border-[#0A1A2A]/10 hover:border-[#0A1A2A] transition-colors duration-500 ease-in-out">
+            <div class="flex items-center gap-3 mb-4 text-[#0A1A2A]/40 group-hover:text-[#0A1A2A] transition-colors">
+              <span class="text-xs font-semibold tracking-widest uppercase opacity-80">
+                Indépendance
+              </span>
+            </div>
+            <h3 class="text-2xl font-medium text-[#0A1A2A] tracking-tight mb-3">Culture entrepreneuriale, 100% alignée avec le cahier des charges de nos clients
+</h3>
+            <p class="leading-relaxed text-lg font-light text-[#0A1A2A]/70 max-w-xl">Implication senior systématique, indépendance totale, accompagnement sur mesure auprès des dirigeants et actionnaires.
+</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TRANSACTIONS SECTION (Light) -->
+  <section class="z-30 bg-[#F5F5F3] border-[#0A1A2A]/5 border-t pt-24 pb-24 relative" id="transactions">
+    <div class="md:px-12 max-w-7xl mr-auto ml-auto pr-6 pl-6">
+      <!-- Header with CTA -->
+      <div class="flex flex-col md:flex-row md:items-end gap-6 mb-12 gap-x-6 gap-y-6 justify-between">
+        <div class="max-w-xl">
+          <h2 class="serif md:text-5xl lg:text-5xl text-4xl font-medium text-[#0A1A2A] tracking-tight mb-4">
+            Transactions récentes
+          </h2>
+          <p class="leading-relaxed text-lg font-light text-[#0A1A2A]/60">Un aperçu de nos dernières réalisations auprès d'entreprises françaises et européennes</p>
+        </div>
+        <a href="transactions.html" class="group inline-flex items-center gap-2 hover:text-[#0A1A2A] transition-colors hover:border-[#0A1A2A] text-sm font-medium text-[#0A1A2A]/70 border-[#0A1A2A]/30 border-b pb-1">
+          Voir toutes les transactions
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-right group-hover:translate-x-1 transition-transform">
+            <path d="M5 12h14"></path>
+            <path d="m12 5 7 7-7 7"></path>
+          </svg>
+        </a>
+      </div>
+
+      <!-- Transactions Carousel Container -->
+      <!-- Full viewport width, extends beyond parent container on both sides -->
+      <div class="relative w-screen ml-[calc(50%-50vw)] overflow-hidden">
+        <div id="transactions-carousel" class="overflow-x-auto scrollbar-hide py-10 touch-pan-y">
+          <div id="carousel-track" class="flex gap-6 will-change-transform">
+            <!-- Content generated by JavaScript: [left-spacer] [cards] [right-spacer] -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA SECTION (Light) -->
+  <section class="z-30 overflow-hidden bg-[#F5F5F3] border-[#0A1A2A]/5 border-t py-48 relative">
+    <div class="z-10 max-w-4xl mx-auto px-6 md:px-12 relative w-full flex flex-col items-center text-center">
+      <h2 class="serif text-5xl md:text-6xl font-medium text-[#0A1A2A] tracking-tight leading-[1.05] mb-12">
+        Un projet de financement ou de transmission ?
+      </h2>
+      <a href="contacts.html" class="group inline-flex items-center justify-center gap-3 px-10 py-5 bg-gradient-to-br from-[#0A1A2A] to-[#1a2c42] border border-white/10 text-white text-base font-semibold tracking-wide rounded-xl hover:shadow-2xl hover:shadow-[#0A1A2A]/20 hover:-translate-y-1 transition-all duration-300 shadow-xl">
+        Contactez nous
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-right group-hover:translate-x-1 transition-transform">
+          <path d="M5 12h14"></path>
+          <path d="m12 5 7 7-7 7"></path>
+        </svg>
+      </a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="z-10 text-[#D3D3B9] bg-[#0A1A2A] border-[#192241]/50 border-t pt-16 pb-8 relative">
+    <div class="md:px-12 max-w-7xl mr-auto ml-auto pr-6 pl-6">
+      <div class="grid grid-cols-1 md:grid-cols-12 gap-12 mb-16">
+        <div class="md:col-span-5">
+          <a href="index.html" class="block mb-6">
+            <div class="inline-flex bg-center w-[180px] h-[82px] bg-[url(https://res.cloudinary.com/dddfggfp3/image/upload/v1767430682/footer_logo_yz4ibv.png)] bg-contain bg-no-repeat"></div>
+          </a>
+          <p class="leading-relaxed text-sm opacity-80 max-w-sm">Chaparral Finance est une banque d’affaires dédiée aux PME de croissance : capital développement - transmission, levée de fonds, LBO, MBO et opérations de cessions - acquisitions</p>
+        </div>
+
+        <div class="md:col-span-2 md:col-start-8">
+          <h4 class="font-serif text-white text-lg mb-6">Navigation</h4>
+          <ul class="space-y-4 text-sm">
+            <li class="">
+              <a href="index.html" class="hover:text-white transition-colors uppercase tracking-widest">
+                Chaparral
+              </a>
+            </li>
+            <li class="">
+              <a href="transactions.html" class="hover:text-white transition-colors uppercase tracking-widest">
+                Transactions
+              </a>
+            </li>
+            <li class="">
+              <a href="contacts.html" class="hover:text-white transition-colors uppercase tracking-widest">
+                Contact
+              </a>
+            </li>
+          </ul>
+        </div>
+
+        <div class="md:col-span-3">
+          <h4 class="font-serif text-white text-lg mb-6">Contact</h4>
+          <ul class="space-y-4 text-sm">
+            <li class="">16, avenue de Messine, 75008 Paris</li>
+            <li class="">
+              <a href="mailto:contact@chaparral-finance.fr" class="hover:text-white transition-colors">
+                contact@chaparral-finance.fr
+              </a>
+            </li>
+            <li class="pt-2">
+              <a href="https://linkedin.com/company/chaparral-finance/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 hover:text-white transition-colors group">
+                <img src="https://ik.imagekit.io/iokktghdw/icons8-linkedin.svg" alt="LinkedIn" class="w-5 h-5 invert brightness-0 opacity-80 group-hover:opacity-100 transition-opacity">
+                <span>Suivez-nous sur LinkedIn</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="pt-8 border-t border-[#D3D3B9]/10 flex flex-col md:flex-row justify-between items-center gap-4 text-xs opacity-60">
+        <p class="">© 2026 Chaparral Finance. Tous droits réservés.</p>
+        <div class="flex gap-6">
+          <a href="legals.html" class="hover:text-white transition-colors">
+            Mentions légales et politique de protection des données
+          </a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Template pour les cartes de transaction -->
+  <template id="transaction-card-template">
+    <div class="transaction-card group [perspective:1000px] h-80 relative snap-start" data-flippable="true">
+      <div class="card-inner relative w-full h-full transition-all duration-700 [transform-style:preserve-3d]">
+          <!-- Face avant -->
+          <div class="card-face overflow-hidden flex flex-col bg-[#0A1A2A] bg-gradient-to-br from-[#1e3a8a]/20 to-[#0A1A2A] w-full h-full border-white/5 border rounded-xl absolute top-0 right-0 bottom-0 left-0 shadow-lg">
+            <div class="flex flex-col z-10 h-full p-6 relative">
+            <div class="absolute top-6 right-6 text-right">
+              <div class="text-xs font-medium uppercase tracking-widest text-[#D3D3B9]/50">
+                {{sector}}
+              </div>
+            </div>
+            <div class="flex gap-2 mt-20 items-start justify-between">
+              <div class="flex flex-col gap-2 items-center flex-1">
+                <div class="w-12 h-12 rounded-full bg-blue-500/10 border border-blue-500/30 flex items-center justify-center text-blue-200 shadow-[0_0_15px_rgba(59,130,246,0.2)]">
+                  <span class="font-serif font-bold text-lg">{{seller_initials}}</span>
+                </div>
+                <span class="text-xs uppercase tracking-wider font-semibold text-[#D3D3B9] text-center leading-tight line-clamp-3 overflow-hidden text-ellipsis">
+                  {{seller}}
+                </span>
+              </div>
+              <div class="flex items-center justify-center w-10 h-12 shrink-0 opacity-40">
+                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-right text-[#D3D3B9]">
+                  <path d="M5 12h14"></path>
+                  <path d="m12 5 7 7-7 7"></path>
+                </svg>
+              </div>
+              <div class="flex flex-col gap-2 flex-1 items-center">
+                <div class="flex text-white/90 bg-white/5 w-12 h-12 border-white/10 border rounded-full items-center justify-center">
+                  <span class="font-serif font-bold text-lg">{{buyer_initials}}</span>
+                </div>
+                <span class="uppercase leading-tight text-xs font-semibold text-[#D3D3B9] tracking-wider text-center line-clamp-3 overflow-hidden text-ellipsis">
+                  {{buyer}}
+                </span>
+              </div>
+            </div>
+            <div class="mt-auto">
+              <h3 class="serif text-xl font-medium text-white tracking-tight">
+                {{deal_type}}
+              </h3>
+            </div>
+          </div>
+          <div class="absolute top-0 right-0 w-48 h-48 bg-blue-600/10 rounded-full blur-[60px] -translate-y-1/2 translate-x-1/2 pointer-events-none transition-all duration-500"></div>
+        </div>
+        <!-- Face arrière -->
+        <div class="card-back absolute inset-0 w-full h-full bg-white rounded-xl overflow-hidden shadow-lg border border-white/20 flex flex-col">
+          <div class="h-[50%] w-full bg-white relative overflow-hidden flex items-center justify-center p-4">
+            <img src="{{image}}" class="w-full h-full object-contain" alt="{{alt}}">
+          </div>
+          <div class="p-5 flex flex-col justify-center items-center text-center flex-grow bg-white border-t border-gray-100">
+            <p class="text-[#0A1A2A] text-xs leading-relaxed font-medium">
+              {{description}}
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </template>
+
+  <script>
+    lucide.createIcons();
+
+    // Initial Load Animation - use DOMContentLoaded for faster page visibility
+    // Don't wait for all resources (videos, images) to load
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', () => {
+        document.body.classList.add('loaded');
+      });
+    } else {
+      // DOM already loaded
+      document.body.classList.add('loaded');
+    }
+
+    // Page transition - prevent video freeze glitch during navigation
+    function initPageTransition() {
+      document.querySelectorAll('a[href]').forEach(link => {
+        const href = link.getAttribute('href') || '';
+        
+        // Skip external links, mailto, tel, hash anchors, and links with target
+        if (link.hostname !== window.location.hostname) return;
+        if (link.hasAttribute('target')) return;
+        if (href.startsWith('#') || href.startsWith('mailto:') || href.startsWith('tel:')) return;
+        
+        link.addEventListener('click', (e) => {
+          e.preventDefault();
+          
+          // Disable backdrop blur and show overlay
+          document.body.classList.add('nav-transitioning');
+          
+          // Navigate after brief fade (150ms)
+          setTimeout(() => {
+            window.location.href = href;
+          }, 150);
+        });
+      });
+      
+      // Also handle beforeunload to catch browser back/forward
+      window.addEventListener('beforeunload', () => {
+        document.body.classList.add('nav-transitioning');
+      });
+      
+      // Remove transition class when page becomes visible again (bfcache restore)
+      window.addEventListener('pageshow', (e) => {
+        if (e.persisted) {
+          document.body.classList.remove('nav-transitioning');
+        }
+      });
+    }
+    
+    // Immediately remove any stuck transition state on page load
+    document.body.classList.remove('nav-transitioning');
+    initPageTransition();
+
+    // Simple Mobile Menu Toggle
+    const menuBtn = document.getElementById('mobile-menu-btn');
+    const closeBtn = document.getElementById('mobile-menu-close');
+    const menu = document.getElementById('mobile-menu');
+
+    function openMenu() {
+      menu.classList.remove('translate-x-full');
+    }
+
+    function closeMenu() {
+      menu.classList.add('translate-x-full');
+    }
+
+    if (menuBtn) menuBtn.addEventListener('click', openMenu);
+    if (closeBtn) closeBtn.addEventListener('click', closeMenu);
+
+    // Close menu when clicking links
+    const mobileLinks = document.querySelectorAll('.mobile-link');
+    mobileLinks.forEach(link => {
+      link.addEventListener('click', closeMenu);
+    });
+
+    // Transactions Carousel
+    const latestTransactions = [
+      {
+        order: 1,
+        sector: "Bien commun durable",
+        seller: "Avenir Formation - PGE-PGO",
+        seller_initials: "AF/PP",
+        buyer: "Hello Prépa",
+        buyer_initials: "HP",
+        deal_type: "Cession",
+        description: "Avenir Formation, spécialiste de la préparation aux concours des grandes écoles (Commerce, ingénieur, IEP/SciencesPo) ainsi qu'au professorat des écoles, s'adosse au groupe HELLO PREPA",
+        image: "https://res.cloudinary.com/drncmlu30/image/upload/v1767413362/PGE-PGO_x_HELLO_pre%CC%81pa_mlnqgc.png",
+        alt: "Avenir Formation - PGE-PGO"
+      },
+      {
+        order: 2,
+        sector: "Bien commun durable",
+        seller: "Ulysse",
+        seller_initials: "U",
+        buyer: "Zencap AM",
+        buyer_initials: "ZA",
+        deal_type: "Dividend Recap",
+        description: "ULYSSE et ses actionnaires financiers (Sparring Opportunities / MACSF) font appel au prêteur privé ZENCAP AM pour accélerer son développement et construire un leader européen du transport pour les personnes à mobilité réduite",
+        image: "https://res.cloudinary.com/drncmlu30/image/upload/v1766634143/ULYSSE_-__ZENCAP_AM_x0xhjf.png",
+        alt: "Ulysse"
+      },
+      {
+        order: 3,
+        sector: "Industrie & systèmes productifs",
+        seller: "Renolit / Ondex",
+        seller_initials: "R/O",
+        buyer: "AIAC",
+        buyer_initials: "A",
+        deal_type: "Cession industrielle",
+        description: "Le fonds américain AIAC Partners, spécialiste de la reprise de sociétés industrielles, acquiert 100% de la filiale française du Groupe allemand RENOLIT (films et produits plastiques)",
+        image: "https://res.cloudinary.com/drncmlu30/image/upload/v1766634133/Ondex_-__AIAC_lnllhx.png",
+        alt: "Renolit / Ondex"
+      },
+      {
+        order: 4,
+        sector: "Conseil & Ingénierie",
+        seller: "Domobat",
+        seller_initials: "D",
+        buyer: "Groupe Ginger",
+        buyer_initials: "GG",
+        deal_type: "Cession",
+        description: "GINGER, leader français dans l'ingénierie de prescription se renforce dans le diagnostic des infrastructures avec l'acquisition de la société DOMOBAT - BATISCOPIE",
+        image: "https://res.cloudinary.com/drncmlu30/image/upload/v1766634130/Domobat_-__Groupe_Ginger_wh0wrz.png",
+        alt: "Domobat"
+      },
+      {
+        order: 5,
+        sector: "Tech & Digital",
+        seller: "Qyyp",
+        seller_initials: "Q",
+        buyer: "Momentum",
+        buyer_initials: "M",
+        deal_type: "Capital-Développement",
+        description: "QYYP fait entrer Momentum Invest à son capital pour accélerer sa stratégie de consolidation / build up dans le Service IT managé et l'infogérance pour les PME-ETI",
+        image: "https://res.cloudinary.com/drncmlu30/image/upload/v1766634130/QYYP_-__MOMENTUM_INVEST_ty0iae.png",
+        alt: "Qyyp"
+      }
+    ];
+
+    /**
+     * Helper to get font size class based on text length
+     */
+    function getFontSizeClass(text) {
+      if (!text) return 'text-lg';
+      if (text.length > 3) return 'text-[10px] leading-tight';
+      if (text.length > 2) return 'text-sm';
+      return 'text-lg';
+    }
+
+    /**
+     * Fonction pour remplacer les placeholders dans le template
+     */
+    function replacePlaceholders(template, data) {
+      let html = template.innerHTML;
+      
+      // Calculate font sizes
+      const sellerSizeClass = getFontSizeClass(data.seller_initials);
+      const buyerSizeClass = getFontSizeClass(data.buyer_initials);
+
+      // Standard replacements
+      html = html.replace(/\{\{sector\}\}/g, escapeHtml(data.sector));
+      html = html.replace(/\{\{seller\}\}/g, escapeHtml(data.seller));
+      html = html.replace(/\{\{buyer\}\}/g, escapeHtml(data.buyer));
+      html = html.replace(/\{\{deal_type\}\}/g, escapeHtml(data.deal_type));
+      html = html.replace(/\{\{description\}\}/g, escapeHtml(data.description));
+      html = html.replace(/\{\{image\}\}/g, escapeHtml(data.image));
+      html = html.replace(/\{\{alt\}\}/g, escapeHtml(data.alt));
+      
+      // Initials replacement with dynamic font size
+      // We target the specific class string from the template
+      html = html.replace(
+        /class="font-serif font-bold text-lg">{{seller_initials}}<\/span>/g, 
+        `class="font-serif font-bold ${sellerSizeClass}">${escapeHtml(data.seller_initials)}</span>`
+      );
+      
+      html = html.replace(
+        /class="font-serif font-bold text-lg">{{buyer_initials}}<\/span>/g, 
+        `class="font-serif font-bold ${buyerSizeClass}">${escapeHtml(data.buyer_initials)}</span>`
+      );
+      
+      // Fallback
+      html = html.replace(/\{\{seller_initials\}\}/g, escapeHtml(data.seller_initials));
+      html = html.replace(/\{\{buyer_initials\}\}/g, escapeHtml(data.buyer_initials));
+      
+      return html;
+    }
+
+    /**
+     * Fonction pour échapper les caractères HTML
+     */
+    function escapeHtml(text) {
+      const div = document.createElement('div');
+      div.textContent = text;
+      return div.innerHTML;
+    }
+
+    /**
+     * ============================================
+     * TRANSACTIONS CAROUSEL - INFINITE SCROLL
+     * ============================================
+     * 
+     * Features:
+     * - Cards left-aligned with page content initially
+     * - Horizontal scrolling extends beyond viewport on both sides
+     * - Slow, continuous auto-scroll (marquee-style)
+     * - Pauses on hover, resumes on mouse leave
+     * - Manual scroll does not fight with auto-scroll
+     * - Intersection Observer for viewport visibility
+     */
+
+    function initTransactionsCarousel() {
+      // === DOM ELEMENTS ===
+      const carousel = document.getElementById('transactions-carousel');
+      const track = document.getElementById('carousel-track');
+      const template = document.getElementById('transaction-card-template');
+
+      if (!carousel || !track || !template) {
+        console.error('Required elements not found: carousel, track, or template');
+        return;
+      }
+
+      // === CONFIGURATION ===
+      const CONFIG = {
+        scrollSpeed: 0.15,          // Pixels per frame (extremely subtle marquee-style)
+        userScrollTimeout: 2000,    // Ms before auto-scroll resumes after user interaction
+        startDelay: 500,            // Ms delay before auto-scroll starts
+        gap: 24                     // Gap between cards (matches gap-6)
+      };
+
+      // === STATE ===
+      let animationId = null;       // requestAnimationFrame ID
+      let isPaused = false;         // Paused by hover
+      let isVisible = false;        // Section in viewport
+      let isUserScrolling = false;  // User is manually scrolling
+      let userScrollTimer = null;   // Timer to detect user scroll end
+      let currentTranslateX = 0;    // Current transform position (supports sub-pixel)
+
+      // === CALCULATE ALIGNMENT PADDING ===
+      // This returns the total distance from viewport edge to where content should align
+      function calculateAlignmentPadding() {
+        const maxWidth = 1280; // max-w-7xl in pixels
+        const pagePadding = window.innerWidth >= 768 ? 48 : 24; // md:px-12 : px-6
+        const viewportWidth = window.innerWidth;
+        
+        if (viewportWidth >= maxWidth) {
+          // Centered container: calc margin + padding
+          return (viewportWidth - maxWidth) / 2 + pagePadding;
+        } else {
+          // Full-width container: just padding
+          return pagePadding;
+        }
+      }
+
+      // === BUILD CAROUSEL CONTENT ===
+      function buildCarousel() {
+        track.innerHTML = '';
+        
+        const alignmentPadding = calculateAlignmentPadding();
+        
+        // Use padding-left on track for alignment (more reliable than spacer, especially on mobile)
+        track.style.paddingLeft = `${alignmentPadding}px`;
+
+        // Generate transaction cards
+        latestTransactions.forEach(transaction => {
+          const cardHtml = replacePlaceholders(template, transaction);
+          const tempDiv = document.createElement('div');
+          tempDiv.innerHTML = cardHtml;
+          const card = tempDiv.firstElementChild;
+          track.appendChild(card);
+        });
+
+        // Create "View All" card
+        const viewAllCard = document.createElement('a');
+        viewAllCard.href = 'transactions.html';
+        viewAllCard.className = 'transaction-card group h-80 relative flex flex-col items-center justify-center bg-gradient-to-br from-[#0A1A2A] to-[#1a2c42] border-white/10 border rounded-xl p-8 shadow-xl hover:shadow-2xl transition-all duration-300 hover:-translate-y-1';
+        viewAllCard.innerHTML = `
+          <div class="flex flex-col items-center justify-center gap-6 text-center">
+            <div class="w-16 h-16 rounded-full bg-white/10 flex items-center justify-center group-hover:bg-white group-hover:text-[#0A1A2A] transition-colors">
+              <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="text-white group-hover:text-[#0A1A2A]">
+                <path d="M5 12h14"></path>
+                <path d="m12 5 7 7-7 7"></path>
+              </svg>
+            </div>
+            <h3 class="serif text-2xl font-medium text-white tracking-tight">
+              Voir toutes les transactions
+            </h3>
+            <p class="text-sm text-white/70 leading-relaxed max-w-xs">
+              Découvrez l'ensemble de nos réalisations
+            </p>
+          </div>
+        `;
+        track.appendChild(viewAllCard);
+
+        // Use padding-right on track for end spacing (matches left padding)
+        track.style.paddingRight = `${alignmentPadding}px`;
+
+        // Reset transform position
+        currentTranslateX = 0;
+        track.style.transform = `translateX(0px)`;
+      }
+
+      // === SCROLL BOUNDARIES ===
+      function getScrollBoundaries() {
+        const alignmentPadding = calculateAlignmentPadding();
+        const contentRightEdge = window.innerWidth - alignmentPadding;
+        
+        // Find the last card and calculate max scroll
+        const cards = track.querySelectorAll('.transaction-card');
+        const lastCard = cards[cards.length - 1];
+        
+        const minTranslateX = 0; // Start position (first card aligned with title)
+        let maxTranslateX = 0;
+        
+        if (lastCard) {
+          // Max translate = when last card right edge aligns with content right edge
+          const lastCardRightEdge = lastCard.offsetLeft + lastCard.offsetWidth;
+          maxTranslateX = lastCardRightEdge - contentRightEdge;
+        }
+        
+        return { minTranslateX, maxTranslateX };
+      }
+
+      // === AUTO-SCROLL ANIMATION ===
+      // Uses CSS transform for true sub-pixel smooth scrolling
+      function animate() {
+        // Only scroll if: visible, not paused, and user not manually scrolling
+        if (isVisible && !isPaused && !isUserScrolling) {
+          const { maxTranslateX } = getScrollBoundaries();
+          
+          if (currentTranslateX < maxTranslateX) {
+            // Increment by fractional amount (CSS transforms support sub-pixel)
+            currentTranslateX += CONFIG.scrollSpeed;
+            
+            // Clamp to max
+            if (currentTranslateX > maxTranslateX) {
+              currentTranslateX = maxTranslateX;
+            }
+            
+            // Apply smooth transform
+            track.style.transform = `translateX(${-currentTranslateX}px)`;
+          }
+        }
+        
+        animationId = requestAnimationFrame(animate);
+      }
+
+      function startAutoScroll() {
+        if (!animationId) {
+          animationId = requestAnimationFrame(animate);
+        }
+      }
+
+      function stopAutoScroll() {
+        if (animationId) {
+          cancelAnimationFrame(animationId);
+          animationId = null;
+        }
+      }
+
+      // === INTERSECTION OBSERVER ===
+      // Start auto-scroll only when section is visible
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          isVisible = entry.isIntersecting;
+          
+          if (isVisible) {
+            // Delay before starting auto-scroll
+            setTimeout(() => {
+              if (isVisible) {
+                startAutoScroll();
+              }
+            }, CONFIG.startDelay);
+          } else {
+            stopAutoScroll();
+          }
+        });
+      }, { 
+        threshold: 0.1,
+        rootMargin: '0px'
+      });
+
+      observer.observe(carousel);
+
+      // === HOVER PAUSE/RESUME ===
+      carousel.addEventListener('mouseenter', () => {
+        isPaused = true;
+      });
+
+      carousel.addEventListener('mouseleave', () => {
+        isPaused = false;
+      });
+
+      // === USER SCROLL HANDLING ===
+      // Handle manual scrolling via wheel and touch while using transforms
+      let touchStartX = 0;
+      let touchStartTranslate = 0;
+      
+      function handleUserScrollStart() {
+        isUserScrolling = true;
+        if (userScrollTimer) {
+          clearTimeout(userScrollTimer);
+        }
+      }
+      
+      function handleUserScrollEnd() {
+        userScrollTimer = setTimeout(() => {
+          isUserScrolling = false;
+        }, CONFIG.userScrollTimeout);
+      }
+      
+      // Clamp translate value to boundaries
+      function clampTranslate(value) {
+        const { minTranslateX, maxTranslateX } = getScrollBoundaries();
+        return Math.max(minTranslateX, Math.min(maxTranslateX, value));
+      }
+      
+      // Apply transform with boundary enforcement
+      function applyTransform(newTranslateX) {
+        currentTranslateX = clampTranslate(newTranslateX);
+        track.style.transform = `translateX(${-currentTranslateX}px)`;
+      }
+      
+      // Mouse wheel scrolling
+      carousel.addEventListener('wheel', (e) => {
+        // Only intercept if mostly horizontal scrolling
+        if (Math.abs(e.deltaX) > Math.abs(e.deltaY)) {
+          e.preventDefault();
+          handleUserScrollStart();
+          applyTransform(currentTranslateX + e.deltaX);
+          handleUserScrollEnd();
+        }
+      }, { passive: false });
+      
+      // Touch scrolling with momentum
+      let lastTouchX = 0;
+      let lastTouchTime = 0;
+      let touchVelocity = 0;
+      let momentumAnimationId = null;
+      let touchMoved = false;
+      let touchStartY = 0;
+      
+      carousel.addEventListener('touchstart', (e) => {
+        // Cancel any ongoing momentum animation
+        if (momentumAnimationId) {
+          cancelAnimationFrame(momentumAnimationId);
+          momentumAnimationId = null;
+        }
+        
+        handleUserScrollStart();
+        touchStartX = e.touches[0].clientX;
+        touchStartY = e.touches[0].clientY;
+        touchStartTranslate = currentTranslateX;
+        lastTouchX = touchStartX;
+        lastTouchTime = Date.now();
+        touchVelocity = 0;
+        touchMoved = false;
+      }, { passive: true });
+      
+      carousel.addEventListener('touchmove', (e) => {
+        const touchX = e.touches[0].clientX;
+        const touchY = e.touches[0].clientY;
+        const now = Date.now();
+        const deltaTime = now - lastTouchTime;
+        
+        // Calculate velocity (pixels per millisecond)
+        if (deltaTime > 0) {
+          touchVelocity = (lastTouchX - touchX) / deltaTime;
+        }
+        
+        lastTouchX = touchX;
+        lastTouchTime = now;
+        
+        const diff = touchStartX - touchX;
+        
+        // Check if user has moved enough to be considered a scroll (not a tap)
+        if (Math.abs(diff) > 10 || Math.abs(touchY - touchStartY) > 10) {
+          touchMoved = true;
+        }
+        
+        applyTransform(touchStartTranslate + diff);
+      }, { passive: true });
+      
+      carousel.addEventListener('touchend', () => {
+        // Apply momentum if there's significant velocity
+        if (Math.abs(touchVelocity) > 0.1) {
+          applyMomentum(touchVelocity);
+        } else {
+          handleUserScrollEnd();
+        }
+      }, { passive: true });
+      
+      // Momentum animation
+      function applyMomentum(velocity) {
+        const friction = 0.95; // Deceleration factor
+        const minVelocity = 0.01; // Stop when velocity is below this
+        
+        function momentumStep() {
+          velocity *= friction;
+          
+          if (Math.abs(velocity) < minVelocity) {
+            momentumAnimationId = null;
+            handleUserScrollEnd();
+            return;
+          }
+          
+          const { minTranslateX, maxTranslateX } = getScrollBoundaries();
+          const newTranslate = currentTranslateX + velocity * 16; // ~16ms per frame
+          
+          // Check boundaries and apply bounce effect
+          if (newTranslate < minTranslateX || newTranslate > maxTranslateX) {
+            velocity *= -0.3; // Bounce back with reduced velocity
+          }
+          
+          applyTransform(newTranslate);
+          momentumAnimationId = requestAnimationFrame(momentumStep);
+        }
+        
+        momentumAnimationId = requestAnimationFrame(momentumStep);
+      }
+      
+      // Mouse drag scrolling
+      let isDragging = false;
+      let dragStartX = 0;
+      let dragStartTranslate = 0;
+      
+      carousel.addEventListener('mousedown', (e) => {
+        isDragging = true;
+        dragStartX = e.clientX;
+        dragStartTranslate = currentTranslateX;
+        carousel.style.cursor = 'grabbing';
+        handleUserScrollStart();
+      });
+      
+      document.addEventListener('mousemove', (e) => {
+        if (!isDragging) return;
+        const diff = dragStartX - e.clientX;
+        applyTransform(dragStartTranslate + diff);
+      });
+      
+      document.addEventListener('mouseup', () => {
+        if (isDragging) {
+          isDragging = false;
+          carousel.style.cursor = 'grab';
+          handleUserScrollEnd();
+        }
+      });
+      
+      // Set grab cursor
+      carousel.style.cursor = 'grab';
+
+      // === RESPONSIVE HANDLING ===
+      // Rebuild carousel on resize to maintain alignment
+      let resizeTimer;
+      window.addEventListener('resize', () => {
+        clearTimeout(resizeTimer);
+        resizeTimer = setTimeout(() => {
+          // Store current position ratio
+          const { maxTranslateX } = getScrollBoundaries();
+          const positionRatio = maxTranslateX > 0 ? currentTranslateX / maxTranslateX : 0;
+          
+          buildCarousel();
+          
+          // Restore position after rebuild
+          requestAnimationFrame(() => {
+            const newBounds = getScrollBoundaries();
+            currentTranslateX = clampTranslate(positionRatio * newBounds.maxTranslateX);
+            track.style.transform = `translateX(${-currentTranslateX}px)`;
+          });
+        }, 250);
+      });
+
+      // === CARD FLIP HANDLING ===
+      // Separate logic for touch (tap to toggle) vs. hover (mouse over/out)
+      const hasHoverCapability = window.matchMedia('(hover: hover)').matches;
+      const hasTouchCapability = 'ontouchstart' in window || navigator.maxTouchPoints > 0;
+      
+      // Track currently hovered card for desktop
+      let currentlyHoveredCard = null;
+      
+      if (hasHoverCapability && !hasTouchCapability) {
+        // DESKTOP ONLY: Pure hover flip using mouseover/mouseout (they bubble, unlike mouseenter/mouseleave)
+        carousel.addEventListener('mouseover', (e) => {
+          const card = e.target.closest('.transaction-card[data-flippable="true"]');
+          if (!card) return;
+          
+          // Skip if already hovering this card
+          if (card === currentlyHoveredCard) return;
+          
+          // Unflip previous card if any
+          if (currentlyHoveredCard) {
+            const prevInner = currentlyHoveredCard.querySelector('.card-inner');
+            if (prevInner) prevInner.classList.remove('flipped');
+          }
+          
+          currentlyHoveredCard = card;
+          const cardInner = card.querySelector('.card-inner');
+          if (cardInner) cardInner.classList.add('flipped');
+        });
+        
+        carousel.addEventListener('mouseout', (e) => {
+          const card = e.target.closest('.transaction-card[data-flippable="true"]');
+          if (!card) return;
+          
+          // Check if we're still inside the same card (mouseout fires for child elements too)
+          const relatedCard = e.relatedTarget?.closest('.transaction-card[data-flippable="true"]');
+          if (relatedCard === card) return;
+          
+          const cardInner = card.querySelector('.card-inner');
+          if (cardInner) cardInner.classList.remove('flipped');
+          
+          if (card === currentlyHoveredCard) {
+            currentlyHoveredCard = null;
+          }
+        });
+      } else {
+        // TOUCH/MOBILE: Tap to toggle flip
+        let lastTapTime = 0;
+        
+        carousel.addEventListener('click', (e) => {
+          // Don't flip if user was scrolling
+          if (touchMoved) {
+            touchMoved = false;
+            return;
+          }
+          
+          // Find the clicked card
+          const card = e.target.closest('.transaction-card[data-flippable="true"]');
+          if (!card) return;
+          
+          // Prevent rapid double-taps
+          const now = Date.now();
+          if (now - lastTapTime < 300) return;
+          lastTapTime = now;
+          
+          // Close any other flipped cards first
+          carousel.querySelectorAll('.card-inner.flipped').forEach(inner => {
+            if (inner.closest('.transaction-card') !== card) {
+              inner.classList.remove('flipped');
+            }
+          });
+          
+          // Toggle flip state
+          const cardInner = card.querySelector('.card-inner');
+          if (cardInner) {
+            cardInner.classList.toggle('flipped');
+          }
+        });
+      }
+
+      // === INITIALIZE ===
+      buildCarousel();
+    }
+
+    /**
+     * Hero Video - Slow playback, stops on last frame
+     * Safari-compatible: uses multiple event listeners as fallbacks
+     */
+    function initHeroVideo() {
+      const video = document.getElementById('hero-video');
+      if (!video) return;
+      
+      let hasStarted = false;
+      let hasStopped = false;
+      
+      // Set slower playback rate (0.5 = 50% speed / half speed)
+      video.playbackRate = 0.5;
+      
+      // Stop smoothly BEFORE reaching the end (avoids the jump from 'ended' event)
+      video.addEventListener('timeupdate', () => {
+        if (hasStopped) return;
+        
+        // Pause 0.05 seconds before the end to avoid any jump
+        if (video.duration && video.currentTime >= video.duration - 0.05) {
+          hasStopped = true;
+          video.pause();
+        }
+      });
+      
+      // Attempt to play the video
+      function tryPlay() {
+        if (hasStarted) return;
+        hasStarted = true;
+        
+        // Ensure playback rate is set before playing
+        video.playbackRate = 0.5;
+        
+        video.play().catch(() => {
+          // Autoplay failed (browser policy) - poster image remains visible
+          console.log('Video autoplay blocked by browser');
+          hasStarted = false; // Allow retry on user interaction
+        });
+      }
+      
+      // Multiple event listeners for Safari compatibility
+      // Safari may not fire 'canplaythrough' reliably with poster images
+      video.addEventListener('canplaythrough', tryPlay, { once: true });
+      video.addEventListener('canplay', tryPlay, { once: true });
+      video.addEventListener('loadeddata', tryPlay, { once: true });
+      
+      // Force load the video (Safari sometimes needs this with poster)
+      video.load();
+    }
+
+    // Initialize on page load
+    document.addEventListener('DOMContentLoaded', () => {
+      initTransactionsCarousel();
+      initHeroVideo();
+    });
+  </script>
+</body>
+</html>
