@@ -1,0 +1,715 @@
+---
+import Base from '../layouts/Base.astro';
+import transactions from '../data/transactions.json';
+---
+<Base current="transactions" bodyClass="antialiased flex flex-col min-h-screen overflow-x-hidden text-[#D3D3B9] bg-[#0A1A2A]">
+
+<Fragment slot="head">
+<title>Transactions - Chaparral Finance</title>
+  <meta name="description" content="Découvrez nos transactions récentes : cessions, LBO, levées de fonds et croissances externes réalisées auprès d'entreprises françaises et européennes.">
+  <link rel="canonical" href="https://chaparral-finance.com/transactions">
+  
+
+  <!-- Open Graph / Social Media -->
+  <meta property="og:title" content="Transactions - Chaparral Finance">
+  <meta property="og:description" content="Découvrez nos transactions récentes : cessions, LBO, levées de fonds et croissances externes réalisées auprès d'entreprises françaises et européennes.">
+  <meta property="og:url" content="https://chaparral-finance.com/transactions">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="https://res.cloudinary.com/drncmlu30/image/upload/v1766653300/Airbrush-OBJECT-REMOVER-1766652971579_qx1gwx.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Chaparral Finance - Transactions récentes">
+
+  <!-- Twitter Cards -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Transactions - Chaparral Finance">
+  <meta name="twitter:description" content="Découvrez nos transactions récentes : cessions, LBO, levées de fonds et croissances externes réalisées auprès d'entreprises françaises et européennes.">
+  <meta name="twitter:image" content="https://res.cloudinary.com/drncmlu30/image/upload/v1766653300/Airbrush-OBJECT-REMOVER-1766652971579_qx1gwx.png">
+
+  <!-- Schema.org (JSON-LD) -->
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "CollectionPage",
+      "name": "Transactions - Chaparral Finance",
+      "url": "https://chaparral-finance.com/transactions",
+      "isPartOf": {
+        "@type": "WebSite",
+        "name": "Chaparral Finance",
+        "url": "https://chaparral-finance.com/"
+      }
+    }
+  </script>
+</Fragment>
+
+<Fragment slot="styles">
+<style is:inline>
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: #0A1A2A;
+    }
+    h1, h2, h3, .serif {
+      font-family: 'Playfair Display', serif;
+    }
+    /* Smooth scrolling */
+    html { scroll-behavior: smooth; }
+    /* Card Hover Effects */
+    .transaction-card {
+      transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    .transaction-card:hover {
+      transform: translateY(-4px);
+    }
+    /* Safari fix for backface-visibility */
+    .card-face {
+      -webkit-backface-visibility: hidden;
+      backface-visibility: hidden;
+      -webkit-transform: translateZ(0);
+      transform: translateZ(0);
+    }
+    .card-back {
+      -webkit-backface-visibility: hidden;
+      backface-visibility: hidden;
+      -webkit-transform: rotateY(180deg) translateZ(1px);
+      transform: rotateY(180deg) translateZ(1px);
+    }
+    /* Flipped state for touch devices */
+    .transaction-card.is-flipped .card-inner {
+      -webkit-transform: rotateY(180deg);
+      transform: rotateY(180deg);
+    }
+    /* Mobile Menu Transition */
+    #mobile-menu {
+      transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    /* Skeleton Loading Animation */
+    @keyframes shimmer {
+      0% {
+        background-position: -200% 0;
+      }
+      100% {
+        background-position: 200% 0;
+      }
+    }
+    .skeleton-element {
+      background: linear-gradient(
+        90deg,
+        rgba(255, 255, 255, 0.03) 25%,
+        rgba(255, 255, 255, 0.08) 50%,
+        rgba(255, 255, 255, 0.03) 75%
+      );
+      background-size: 200% 100%;
+      animation: shimmer 1.5s ease-in-out infinite;
+      border-radius: 4px;
+    }
+    .skeleton-card {
+      height: 320px;
+      border-radius: 12px;
+      border: 1px solid rgba(255, 255, 255, 0.05);
+      background: linear-gradient(to bottom right, rgba(30, 58, 138, 0.15), rgba(10, 26, 42, 0.8));
+      position: relative;
+      overflow: hidden;
+      padding: 24px;
+      display: flex;
+      flex-direction: column;
+    }
+    .skeleton-card::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(
+        90deg,
+        transparent 25%,
+        rgba(255, 255, 255, 0.03) 50%,
+        transparent 75%
+      );
+      background-size: 200% 100%;
+      animation: shimmer 1.5s ease-in-out infinite;
+      pointer-events: none;
+    }
+    .skeleton-sector {
+      width: 80px;
+      height: 12px;
+      margin-left: auto;
+    }
+    .skeleton-avatars {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 56px;
+      padding: 0 8px;
+    }
+    .skeleton-avatar {
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+    }
+    .skeleton-arrow {
+      width: 24px;
+      height: 24px;
+      border-radius: 50%;
+      opacity: 0.3;
+    }
+    .skeleton-names {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 12px;
+      padding: 0 8px;
+    }
+    .skeleton-name {
+      width: 60px;
+      height: 10px;
+    }
+    .skeleton-title {
+      margin-top: auto;
+      width: 120px;
+      height: 20px;
+    }
+
+    /* Navigation transition state - disable backdrop blur during page switch */
+    body.nav-transitioning header {
+      backdrop-filter: none !important;
+      -webkit-backdrop-filter: none !important;
+      background-color: #0A1A2A !important;
+    }
+    /* Page transition overlay */
+    #page-transition-overlay {
+      position: fixed;
+      inset: 0;
+      background-color: #0A1A2A;
+      z-index: 9999;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.15s ease-out;
+    }
+    body.nav-transitioning #page-transition-overlay {
+      opacity: 1;
+      pointer-events: all;
+    }
+  </style>
+</Fragment>
+
+
+  <!-- TRANSACTIONS SECTION - GRID LAYOUT (MAIN CONTENT) -->
+  <main class="flex-grow bg-[#0A1A2A] pt-16 pb-32 relative">
+    <!-- Background subtle glow -->
+    <div class="absolute top-0 left-1/2 -translate-x-1/2 w-full h-[500px] bg-[#D3D3B9]/5 blur-[120px] rounded-full pointer-events-none -z-0"></div>
+
+    <div class="md:px-12 z-10 max-w-7xl mr-auto ml-auto pr-6 pl-6 relative">
+      <!-- Header -->
+      <div class="flex flex-col mb-12 gap-6">
+        <div class="max-w-3xl">
+          <h1 class="serif md:text-5xl lg:text-6xl text-4xl font-medium text-white tracking-tight mb-6">Transactions</h1>
+        </div>
+      </div>
+
+      <!-- Transactions Cards Grid -->
+      <div id="transactions-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+        <!-- Initial skeleton cards (shown before JS loads, then replaced) -->
+        <div class="skeleton-card" data-skeleton="true"><div class="skeleton-element skeleton-sector"></div><div class="skeleton-avatars"><div class="skeleton-element skeleton-avatar"></div><div class="skeleton-element skeleton-arrow"></div><div class="skeleton-element skeleton-avatar"></div></div><div class="skeleton-names"><div class="skeleton-element skeleton-name"></div><div class="skeleton-element skeleton-name"></div></div><div class="skeleton-element skeleton-title"></div></div>
+        <div class="skeleton-card" data-skeleton="true"><div class="skeleton-element skeleton-sector"></div><div class="skeleton-avatars"><div class="skeleton-element skeleton-avatar"></div><div class="skeleton-element skeleton-arrow"></div><div class="skeleton-element skeleton-avatar"></div></div><div class="skeleton-names"><div class="skeleton-element skeleton-name"></div><div class="skeleton-element skeleton-name"></div></div><div class="skeleton-element skeleton-title"></div></div>
+        <div class="skeleton-card" data-skeleton="true"><div class="skeleton-element skeleton-sector"></div><div class="skeleton-avatars"><div class="skeleton-element skeleton-avatar"></div><div class="skeleton-element skeleton-arrow"></div><div class="skeleton-element skeleton-avatar"></div></div><div class="skeleton-names"><div class="skeleton-element skeleton-name"></div><div class="skeleton-element skeleton-name"></div></div><div class="skeleton-element skeleton-title"></div></div>
+        <div class="skeleton-card" data-skeleton="true"><div class="skeleton-element skeleton-sector"></div><div class="skeleton-avatars"><div class="skeleton-element skeleton-avatar"></div><div class="skeleton-element skeleton-arrow"></div><div class="skeleton-element skeleton-avatar"></div></div><div class="skeleton-names"><div class="skeleton-element skeleton-name"></div><div class="skeleton-element skeleton-name"></div></div><div class="skeleton-element skeleton-title"></div></div>
+        <div class="skeleton-card" data-skeleton="true"><div class="skeleton-element skeleton-sector"></div><div class="skeleton-avatars"><div class="skeleton-element skeleton-avatar"></div><div class="skeleton-element skeleton-arrow"></div><div class="skeleton-element skeleton-avatar"></div></div><div class="skeleton-names"><div class="skeleton-element skeleton-name"></div><div class="skeleton-element skeleton-name"></div></div><div class="skeleton-element skeleton-title"></div></div>
+        <div class="skeleton-card" data-skeleton="true"><div class="skeleton-element skeleton-sector"></div><div class="skeleton-avatars"><div class="skeleton-element skeleton-avatar"></div><div class="skeleton-element skeleton-arrow"></div><div class="skeleton-element skeleton-avatar"></div></div><div class="skeleton-names"><div class="skeleton-element skeleton-name"></div><div class="skeleton-element skeleton-name"></div></div><div class="skeleton-element skeleton-title"></div></div>
+        <div class="skeleton-card" data-skeleton="true"><div class="skeleton-element skeleton-sector"></div><div class="skeleton-avatars"><div class="skeleton-element skeleton-avatar"></div><div class="skeleton-element skeleton-arrow"></div><div class="skeleton-element skeleton-avatar"></div></div><div class="skeleton-names"><div class="skeleton-element skeleton-name"></div><div class="skeleton-element skeleton-name"></div></div><div class="skeleton-element skeleton-title"></div></div>
+        <div class="skeleton-card" data-skeleton="true"><div class="skeleton-element skeleton-sector"></div><div class="skeleton-avatars"><div class="skeleton-element skeleton-avatar"></div><div class="skeleton-element skeleton-arrow"></div><div class="skeleton-element skeleton-avatar"></div></div><div class="skeleton-names"><div class="skeleton-element skeleton-name"></div><div class="skeleton-element skeleton-name"></div></div><div class="skeleton-element skeleton-title"></div></div>
+        <div class="skeleton-card" data-skeleton="true"><div class="skeleton-element skeleton-sector"></div><div class="skeleton-avatars"><div class="skeleton-element skeleton-avatar"></div><div class="skeleton-element skeleton-arrow"></div><div class="skeleton-element skeleton-avatar"></div></div><div class="skeleton-names"><div class="skeleton-element skeleton-name"></div><div class="skeleton-element skeleton-name"></div></div><div class="skeleton-element skeleton-title"></div></div>
+        <div class="skeleton-card" data-skeleton="true"><div class="skeleton-element skeleton-sector"></div><div class="skeleton-avatars"><div class="skeleton-element skeleton-avatar"></div><div class="skeleton-element skeleton-arrow"></div><div class="skeleton-element skeleton-avatar"></div></div><div class="skeleton-names"><div class="skeleton-element skeleton-name"></div><div class="skeleton-element skeleton-name"></div></div><div class="skeleton-element skeleton-title"></div></div>
+        <div class="skeleton-card" data-skeleton="true"><div class="skeleton-element skeleton-sector"></div><div class="skeleton-avatars"><div class="skeleton-element skeleton-avatar"></div><div class="skeleton-element skeleton-arrow"></div><div class="skeleton-element skeleton-avatar"></div></div><div class="skeleton-names"><div class="skeleton-element skeleton-name"></div><div class="skeleton-element skeleton-name"></div></div><div class="skeleton-element skeleton-title"></div></div>
+        <div class="skeleton-card" data-skeleton="true"><div class="skeleton-element skeleton-sector"></div><div class="skeleton-avatars"><div class="skeleton-element skeleton-avatar"></div><div class="skeleton-element skeleton-arrow"></div><div class="skeleton-element skeleton-avatar"></div></div><div class="skeleton-names"><div class="skeleton-element skeleton-name"></div><div class="skeleton-element skeleton-name"></div></div><div class="skeleton-element skeleton-title"></div></div>
+      </div>
+    </div>
+  </main>
+
+
+<Fragment slot="scripts">
+
+  <!-- Template pour les cartes de transaction -->
+  <template is:raw id="transaction-card-template">
+    <div class="transaction-card group [perspective:1000px] h-80 relative cursor-pointer">
+      <div class="card-inner relative w-full h-full transition-all duration-700 [transform-style:preserve-3d] group-hover:[transform:rotateY(180deg)]">
+        <!-- Face avant -->
+        <div class="card-face overflow-hidden flex flex-col bg-gradient-to-br from-[#1e3a8a]/20 to-[#0A1A2A] w-full h-full border-white/5 border rounded-xl absolute top-0 right-0 bottom-0 left-0 shadow-lg">
+          <div class="flex flex-col z-10 h-full p-6 relative">
+            <div class="absolute top-6 right-6 text-right">
+              <div class="text-xs font-medium uppercase tracking-widest text-[#D3D3B9]/50">
+                {{sector}}
+              </div>
+            </div>
+            <div class="flex gap-2 mt-20 items-start justify-between">
+              <div class="flex flex-col gap-2 items-center flex-1">
+                <div class="w-12 h-12 rounded-full bg-blue-500/10 border border-blue-500/30 flex items-center justify-center text-blue-200 shadow-[0_0_15px_rgba(59,130,246,0.2)]">
+                  <span class="font-serif font-bold text-lg">{{seller_initials}}</span>
+                </div>
+                <span class="text-xs uppercase tracking-wider font-semibold text-[#D3D3B9] text-center leading-tight line-clamp-3 overflow-hidden text-ellipsis">
+                  {{seller}}
+                </span>
+              </div>
+              <div class="flex items-center justify-center w-10 h-12 shrink-0 opacity-40">
+                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-right text-[#D3D3B9]">
+                  <path d="M5 12h14"></path>
+                  <path d="m12 5 7 7-7 7"></path>
+                </svg>
+              </div>
+              <div class="flex flex-col gap-2 flex-1 items-center">
+                <div class="flex text-white/90 bg-white/5 w-12 h-12 border-white/10 border rounded-full items-center justify-center">
+                  <span class="font-serif font-bold text-lg">{{buyer_initials}}</span>
+                </div>
+                <span class="uppercase leading-tight text-xs font-semibold text-[#D3D3B9] tracking-wider text-center line-clamp-3 overflow-hidden text-ellipsis">
+                  {{buyer}}
+                </span>
+              </div>
+            </div>
+            <div class="mt-auto">
+              <h3 class="serif text-xl font-medium text-white tracking-tight">
+                {{deal_type}}
+              </h3>
+            </div>
+          </div>
+          <div class="absolute top-0 right-0 w-48 h-48 bg-blue-600/10 rounded-full blur-[60px] -translate-y-1/2 translate-x-1/2 pointer-events-none transition-all duration-500"></div>
+        </div>
+        <!-- Face arrière -->
+        <div class="card-back absolute inset-0 w-full h-full bg-white rounded-xl overflow-hidden shadow-lg border border-white/20 flex flex-col">
+          <div class="h-[50%] w-full bg-white relative overflow-hidden flex items-center justify-center p-4">
+            <img src="{{image}}" loading="lazy" decoding="async" class="w-full h-full object-contain" alt="{{alt}}">
+          </div>
+          <div class="p-5 flex flex-col justify-center items-center text-center flex-grow bg-white border-t border-gray-100">
+            <p class="text-[#0A1A2A] text-xs leading-relaxed font-medium">
+              {{description}}
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </template>
+
+  <script is:inline define:vars={{ transactions }}>
+    // Données des transactions
+    /**
+     * Helper to get font size class based on text length
+     */
+    function getFontSizeClass(text) {
+      if (!text) return 'text-lg';
+      if (text.length > 3) return 'text-[10px] leading-tight';
+      if (text.length > 2) return 'text-sm';
+      return 'text-lg';
+    }
+
+    /**
+     * Fonction pour remplacer les placeholders dans le template
+     */
+    function replacePlaceholders(template, data) {
+      let html = template.innerHTML;
+      
+      // Calculate font sizes for initials
+      const sellerSizeClass = getFontSizeClass(data.seller_initials);
+      const buyerSizeClass = getFontSizeClass(data.buyer_initials);
+      
+      // Replace content placeholders
+      html = html.replace(/\{\{sector\}\}/g, escapeHtml(data.sector));
+      html = html.replace(/\{\{seller\}\}/g, escapeHtml(data.seller));
+      
+      // Handle seller initials with dynamic font size
+      // We need to find the span containing seller_initials and replace its class or content
+      // Since we're doing simple string replacement, we can replace the class in the template if we modify it first,
+      // or we can just replace the variable and assume the template has a standard class we can target?
+      // Actually, regex replacement on the HTML string is risky if we try to change classes.
+      // Better approach: The template has <span class="... text-lg">{{seller_initials}}</span>
+      // We can replace "text-lg" locally within the replacement logic, but that's hard with just string replace.
+      
+      // Alternative: Inject the class into the data object and use a new placeholder {{seller_size_class}} in template?
+      // That requires changing the template.
+      
+      // Let's modify the template to use a placeholder for the class, OR 
+      // do a regex replace on the specific span context.
+      
+      // Context from file: 
+      // <span class="font-serif font-bold text-lg">{{seller_initials}}</span>
+      
+      // Let's replace the placeholder AND the surrounding class in one go if possible, 
+      // or better: let's modify the template to accept a class placeholder? 
+      // No, user didn't ask to change template structure.
+      
+      // Let's use regex to find the specific span with text-lg and the placeholder
+      
+      // First, let's simple replace the content
+      html = html.replace(/\{\{sector\}\}/g, escapeHtml(data.sector));
+      html = html.replace(/\{\{seller\}\}/g, escapeHtml(data.seller));
+      html = html.replace(/\{\{buyer\}\}/g, escapeHtml(data.buyer));
+      html = html.replace(/\{\{deal_type\}\}/g, escapeHtml(data.deal_type));
+      html = html.replace(/\{\{description\}\}/g, escapeHtml(data.description));
+      html = html.replace(/\{\{image\}\}/g, escapeHtml(data.image));
+      html = html.replace(/\{\{alt\}\}/g, escapeHtml(data.alt));
+      
+      // Now handle initials and their font sizes
+      // We'll replace the text-lg class specifically for the spans containing the initials
+      // This relies on the exact string structure in the template
+      
+      // Replace seller initials and adjust font size
+      html = html.replace(
+        /class="font-serif font-bold text-lg">{{seller_initials}}<\/span>/g, 
+        `class="font-serif font-bold ${sellerSizeClass}">${escapeHtml(data.seller_initials)}</span>`
+      );
+      
+      // Replace buyer initials and adjust font size
+      html = html.replace(
+        /class="font-serif font-bold text-lg">{{buyer_initials}}<\/span>/g, 
+        `class="font-serif font-bold ${buyerSizeClass}">${escapeHtml(data.buyer_initials)}</span>`
+      );
+
+      // Fallback for standard replacement if regex didn't match (safety)
+      html = html.replace(/\{\{seller_initials\}\}/g, escapeHtml(data.seller_initials));
+      html = html.replace(/\{\{buyer_initials\}\}/g, escapeHtml(data.buyer_initials));
+      
+      return html;
+    }
+
+    /**
+     * Fonction pour échapper les caractères HTML
+     */
+    function escapeHtml(text) {
+      const div = document.createElement('div');
+      div.textContent = text;
+      return div.innerHTML;
+    }
+
+    /**
+     * Infinite Scroll Implementation
+     * Loads 12 cards initially, then 12 more as user scrolls
+     */
+    const CARDS_PER_BATCH = 12;
+    let currentIndex = 0;
+    let sortedTransactions = [];
+    let isLoading = false;
+    let allLoaded = false;
+
+    /**
+     * Create skeleton loading cards
+     */
+    function createSkeletons(count = CARDS_PER_BATCH) {
+      const grid = document.getElementById('transactions-grid');
+      if (!grid) return;
+      
+      const skeletons = [];
+      for (let i = 0; i < count; i++) {
+        const skeleton = document.createElement('div');
+        skeleton.className = 'skeleton-card';
+        skeleton.setAttribute('data-skeleton', 'true');
+        skeleton.innerHTML = `
+          <div class="skeleton-element skeleton-sector"></div>
+          <div class="skeleton-avatars">
+            <div class="skeleton-element skeleton-avatar"></div>
+            <div class="skeleton-element skeleton-arrow"></div>
+            <div class="skeleton-element skeleton-avatar"></div>
+          </div>
+          <div class="skeleton-names">
+            <div class="skeleton-element skeleton-name"></div>
+            <div class="skeleton-element skeleton-name"></div>
+          </div>
+          <div class="skeleton-element skeleton-title"></div>
+        `;
+        grid.appendChild(skeleton);
+        skeletons.push(skeleton);
+      }
+      return skeletons;
+    }
+
+    /**
+     * Remove skeleton loading cards
+     */
+    function removeSkeletons() {
+      const grid = document.getElementById('transactions-grid');
+      if (!grid) return;
+      
+      const skeletons = grid.querySelectorAll('[data-skeleton="true"]');
+      skeletons.forEach(skeleton => skeleton.remove());
+    }
+
+    /**
+     * Load a batch of transaction cards
+     */
+    function loadMoreCards() {
+      if (isLoading || allLoaded) return;
+      
+      const grid = document.getElementById('transactions-grid');
+      const template = document.getElementById('transaction-card-template');
+      
+      if (!grid || !template) return;
+      
+      isLoading = true;
+      
+      // Calculate how many cards to load
+      const remainingCards = sortedTransactions.length - currentIndex;
+      const cardsToLoad = Math.min(CARDS_PER_BATCH, remainingCards);
+      
+      // Show skeletons for upcoming cards (only for infinite scroll, not initial load)
+      if (currentIndex > 0) {
+        createSkeletons(cardsToLoad);
+      }
+      
+      // Simulate minimal delay to show loading state (for smoother UX)
+      const loadDelay = currentIndex > 0 ? 100 : 0;
+      
+      setTimeout(() => {
+        // Remove skeletons before adding real cards
+        removeSkeletons();
+        
+        // Get next batch
+        const endIndex = Math.min(currentIndex + CARDS_PER_BATCH, sortedTransactions.length);
+        const batch = sortedTransactions.slice(currentIndex, endIndex);
+        
+        // Append cards to grid
+        batch.forEach(transaction => {
+          const cardHtml = replacePlaceholders(template, transaction);
+          const tempDiv = document.createElement('div');
+          tempDiv.innerHTML = cardHtml;
+          const card = tempDiv.firstElementChild;
+          grid.appendChild(card);
+        });
+        
+        currentIndex = endIndex;
+        isLoading = false;
+        
+        // Check if all cards are loaded
+        if (currentIndex >= sortedTransactions.length) {
+          allLoaded = true;
+          // Remove the sentinel if all loaded
+          const sentinel = document.getElementById('scroll-sentinel');
+          if (sentinel) sentinel.remove();
+        }
+      }, loadDelay);
+    }
+
+    /**
+     * Initialize infinite scroll with Intersection Observer
+     */
+    function initInfiniteScroll() {
+      const grid = document.getElementById('transactions-grid');
+      if (!grid) return;
+      
+      // Create sentinel element (invisible element at the bottom)
+      const sentinel = document.createElement('div');
+      sentinel.id = 'scroll-sentinel';
+      sentinel.className = 'h-10 w-full';
+      sentinel.setAttribute('aria-hidden', 'true');
+      grid.parentElement.appendChild(sentinel);
+      
+      // Create intersection observer
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting && !allLoaded) {
+            loadMoreCards();
+          }
+        });
+      }, {
+        rootMargin: '200px', // Start loading before user reaches the bottom
+        threshold: 0
+      });
+      
+      observer.observe(sentinel);
+    }
+
+    /**
+     * Fonction principale pour rendre les transactions
+     */
+    function renderTransactions() {
+      const grid = document.getElementById('transactions-grid');
+      const template = document.getElementById('transaction-card-template');
+      
+      if (!grid || !template) {
+        console.error('Éléments requis non trouvés');
+        return;
+      }
+
+      // Reset state
+      currentIndex = 0;
+      allLoaded = false;
+
+      // Sort transactions by order (ascending)
+      sortedTransactions = [...transactions].sort((a, b) => a.order - b.order);
+
+      // Remove existing skeleton cards (they were in HTML for initial load)
+      removeSkeletons();
+      
+      // Get initial batch
+      const endIndex = Math.min(CARDS_PER_BATCH, sortedTransactions.length);
+      const batch = sortedTransactions.slice(0, endIndex);
+      
+      // Append cards to grid
+      batch.forEach(transaction => {
+        const cardHtml = replacePlaceholders(template, transaction);
+        const tempDiv = document.createElement('div');
+        tempDiv.innerHTML = cardHtml;
+        const card = tempDiv.firstElementChild;
+        grid.appendChild(card);
+      });
+      
+      currentIndex = endIndex;
+      
+      // Check if all cards are loaded
+      if (currentIndex >= sortedTransactions.length) {
+        allLoaded = true;
+      } else {
+        // Initialize infinite scroll only if there are more cards
+        initInfiniteScroll();
+      }
+    }
+
+    /**
+     * Initialize card flip on tap/click for touch devices
+     */
+    function initCardFlip() {
+      const grid = document.getElementById('transactions-grid');
+      if (!grid) return;
+
+      // Use event delegation for dynamically loaded cards
+      grid.addEventListener('click', (e) => {
+        const card = e.target.closest('.transaction-card');
+        if (!card) return;
+
+        // Toggle the flipped state
+        card.classList.toggle('is-flipped');
+      });
+
+      // Close flipped card when clicking outside
+      document.addEventListener('click', (e) => {
+        if (!e.target.closest('.transaction-card')) {
+          // Unflip all cards when clicking outside
+          document.querySelectorAll('.transaction-card.is-flipped').forEach(card => {
+            card.classList.remove('is-flipped');
+          });
+        }
+      });
+    }
+
+    /**
+     * Gestion du menu mobile
+     */
+    function initMobileMenu() {
+      const menuBtn = document.getElementById('mobile-menu-btn');
+      const menuClose = document.getElementById('mobile-menu-close');
+      const menu = document.getElementById('mobile-menu');
+
+      if (!menuBtn || !menuClose || !menu) return;
+
+      function openMenu() {
+        menu.classList.remove('translate-x-full');
+      }
+
+      function closeMenu() {
+        menu.classList.add('translate-x-full');
+      }
+
+      menuBtn.addEventListener('click', openMenu);
+      menuClose.addEventListener('click', closeMenu);
+
+      // Fermer le menu lors du clic sur un lien
+      const mobileLinks = menu.querySelectorAll('.mobile-link');
+      mobileLinks.forEach(link => {
+        link.addEventListener('click', closeMenu);
+      });
+    }
+
+    /**
+     * Mise à jour des liens de navigation actifs
+     */
+    function updateActiveNavLinks() {
+      const pathname = window.location.pathname.toLowerCase();
+      
+      // Helper to extract page name from path (works for both /page and /page.html)
+      function getPageName(path) {
+        // Remove trailing slash
+        const cleanPath = path.replace(/\/$/, '');
+        // Get last segment
+        const lastSegment = cleanPath.split('/').pop() || '';
+        // Remove .html extension
+        return lastSegment.replace('.html', '').toLowerCase();
+      }
+      
+      const currentPage = getPageName(pathname);
+      
+      // Helper to check if current page matches a link
+      function isActivePage(href) {
+        const linkPage = getPageName(href);
+        
+        // Handle home/index page
+        if (linkPage === 'index' || linkPage === '') {
+          return currentPage === 'index' || currentPage === '' || pathname === '/';
+        }
+        
+        // Direct page name comparison
+        return currentPage === linkPage;
+      }
+      
+      // Update desktop nav links
+      const navLinks = document.querySelectorAll('.nav-link');
+      navLinks.forEach(link => {
+        const linkPath = link.getAttribute('href');
+        if (isActivePage(linkPath)) {
+          link.classList.remove('text-[#BFC0AB]');
+          link.classList.add('text-white');
+        } else {
+          link.classList.remove('text-white');
+          link.classList.add('text-[#BFC0AB]');
+        }
+      });
+      
+      // Update mobile nav links
+      const mobileLinks = document.querySelectorAll('.mobile-link');
+      mobileLinks.forEach(link => {
+        const linkPath = link.getAttribute('href');
+        if (isActivePage(linkPath)) {
+          link.classList.remove('text-[#D3D3B9]');
+          link.classList.add('text-white');
+        } else {
+          link.classList.remove('text-white');
+          link.classList.add('text-[#D3D3B9]');
+        }
+      });
+    }
+
+    /**
+     * Page transition - prevent video freeze glitch during navigation
+     */
+    function initPageTransition() {
+      document.querySelectorAll('a[href]').forEach(link => {
+        const href = link.getAttribute('href') || '';
+        
+        // Skip external links, mailto, tel, hash anchors, and links with target
+        if (link.hostname !== window.location.hostname) return;
+        if (link.hasAttribute('target')) return;
+        if (href.startsWith('#') || href.startsWith('mailto:') || href.startsWith('tel:')) return;
+        
+        link.addEventListener('click', (e) => {
+          e.preventDefault();
+          
+          // Disable backdrop blur and show overlay
+          document.body.classList.add('nav-transitioning');
+          
+          // Navigate after brief fade (150ms)
+          setTimeout(() => {
+            window.location.href = href;
+          }, 150);
+        });
+      });
+      
+      // Also handle beforeunload to catch browser back/forward
+      window.addEventListener('beforeunload', () => {
+        document.body.classList.add('nav-transitioning');
+      });
+    }
+
+    // Initialisation au chargement de la page
+    document.addEventListener('DOMContentLoaded', () => {
+      initPageTransition();
+      renderTransactions();
+      initCardFlip();
+      initMobileMenu();
+      updateActiveNavLinks();
+    });
+  </script>
+</Fragment>
+
+</Base>
