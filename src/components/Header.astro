@@ -10,6 +10,10 @@
 // vercel.json et Base.astro).
 const { current, locale = 'fr', path = '/' } = Astro.props;
 
+// Liens internes préfixés par la langue pour ne pas la perdre en naviguant
+const base = { fr: '/fr', en: '', it: '/it' }[locale];
+const home = base || '/';
+
 const frUrl = path === '/' ? '/fr' : `/fr${path}`;
 const enUrl = `${path}?lang=en`;
 const itUrl = path === '/' ? '/it' : `/it${path}`;
@@ -50,8 +54,8 @@ const navLink = {
   <div class="flex md:px-12 w-full pt-3 pr-6 pb-3 pl-6 items-center justify-between">
     <!-- Left: Logo -->
     <div class="flex items-center">
-      <a href="/" class="flex flex-col items-center group select-none focus:outline-none cursor-pointer">
-        <div class="inline-flex bg-center w-[200px] h-[75px] bg-[url(https://res.cloudinary.com/dddfggfp3/image/upload/v1768029554/Chaparral_header_logo_xk4rbk.png)] bg-contain bg-no-repeat items-center justify-center" onclick="window.location.href='/'" role="button"></div>
+      <a href={home} class="flex flex-col items-center group select-none focus:outline-none cursor-pointer">
+        <div class="inline-flex bg-center w-[200px] h-[75px] bg-[url(https://res.cloudinary.com/dddfggfp3/image/upload/v1768029554/Chaparral_header_logo_xk4rbk.png)] bg-contain bg-no-repeat items-center justify-center" role="button"></div>
       </a>
     </div>
 
@@ -59,17 +63,17 @@ const navLink = {
     <div class="flex items-center gap-8">
       <!-- Desktop Nav -->
       <nav class="hidden lg:flex gap-8 items-center">
-        <a href="/" class={navLink.home}>
+        <a href={home} class={navLink.home}>
           Chaparral
         </a>
 
-        <a href="/transactions" class={navLink.transactions}>
+        <a href={base + '/transactions'} class={navLink.transactions}>
           Transactions
         </a>
       </nav>
 
       <div class="flex items-center gap-6">
-        <a href="/contacts" class={navLink.contacts}>
+        <a href={base + '/contacts'} class={navLink.contacts}>
           Contact
         </a>
         <a href="https://linkedin.com/company/chaparral-finance/" target="_blank" rel="noopener noreferrer" class="hidden sm:inline-block text-[#BFC0AB] hover:text-white transition-colors focus:outline-none">

@@ -7,6 +7,10 @@ const active = 'mobile-link text-3xl font-serif text-white hover:text-white tran
 const inactive = 'mobile-link text-3xl font-serif text-[#D3D3B9] hover:text-white transition-colors';
 const link = (page) => (current === page ? active : inactive);
 
+// Liens internes préfixés par la langue pour ne pas la perdre en naviguant
+const base = { fr: '/fr', en: '', it: '/it' }[locale];
+const home = base || '/';
+
 const frUrl = path === '/' ? '/fr' : `/fr${path}`;
 const enUrl = `${path}?lang=en`;
 const itUrl = path === '/' ? '/it' : `/it${path}`;
@@ -22,13 +26,13 @@ const itUrl = path === '/' ? '/it' : `/it${path}`;
     </button>
   </div>
   <nav class="flex flex-col p-8 gap-6 items-center justify-center flex-1">
-    <a href="/" class={link('home')}>
+    <a href={home} class={link('home')}>
       Chaparral
     </a>
-    <a href="/transactions" class={link('transactions')}>
+    <a href={base + '/transactions'} class={link('transactions')}>
       Transactions
     </a>
-    <a href="/contacts" class={link('contacts')}>
+    <a href={base + '/contacts'} class={link('contacts')}>
       Contact
     </a>
     <div class="flex items-center gap-3 mt-8" aria-label="Langue / Language">
