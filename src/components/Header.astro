@@ -3,13 +3,15 @@
 // (absolute/sticky/relative), opacité du fond et lien actif — chaînes
 // reprises à l'identique des pages d'origine.
 //
-// Sélecteur de langue (FR | EN) en haut à droite : liens croisés vers la
-// même page sur l'autre domaine. Le lien EN porte ?lang=en pour neutraliser
-// la géo-redirection France → .fr (voir vercel.json et Base.astro).
+// Sélecteur de langue (FR | EN | IT) en haut à droite : FR et EN renvoient
+// vers la même page sur leur domaine respectif (le lien EN porte ?lang=en
+// pour neutraliser la géo-redirection France → .fr, voir vercel.json et
+// Base.astro) ; IT n'est lié à aucun domaine et vit sous /it sur les deux.
 const { current, locale = 'fr', path = '/' } = Astro.props;
 
 const frUrl = `https://www.chaparral-finance.fr${path}`;
 const enUrl = `https://www.chaparral-finance.com${path}?lang=en`;
+const itUrl = path === '/' ? '/it' : `/it${path}`;
 const langActive = 'text-white text-xs font-semibold uppercase tracking-widest';
 const langInactive = 'text-[#BFC0AB] hover:text-white transition-colors text-xs font-semibold uppercase tracking-widest';
 
@@ -83,6 +85,10 @@ const navLink = {
           {locale === 'en'
             ? <span class={langActive}>EN</span>
             : <a href={enUrl} class={langInactive} hreflang="en" lang="en" title="English version">EN</a>}
+          <span class="text-[#BFC0AB]/40 text-xs">/</span>
+          {locale === 'it'
+            ? <span class={langActive}>IT</span>
+            : <a href={itUrl} class={langInactive} hreflang="it" lang="it" title="Versione italiana">IT</a>}
         </div>
         <button class="lg:hidden text-[#BFC0AB] hover:text-white transition-colors" id="mobile-menu-btn">
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-menu">

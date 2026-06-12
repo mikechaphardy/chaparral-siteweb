@@ -9,6 +9,7 @@ const link = (page) => (current === page ? active : inactive);
 
 const frUrl = `https://www.chaparral-finance.fr${path}`;
 const enUrl = `https://www.chaparral-finance.com${path}?lang=en`;
+const itUrl = path === '/' ? '/it' : `/it${path}`;
 ---
 <div id="mobile-menu" class="fixed inset-0 z-[60] bg-[#0A1A2A] transform translate-x-full transition-transform duration-500 ease-in-out lg:hidden flex flex-col">
   <div class="flex items-center justify-between p-6 border-b border-[#D3D3B9]/10">
@@ -38,6 +39,10 @@ const enUrl = `https://www.chaparral-finance.com${path}?lang=en`;
       {locale === 'en'
         ? <span class="text-white text-sm font-semibold uppercase tracking-widest">EN</span>
         : <a href={enUrl} class="text-[#D3D3B9] hover:text-white transition-colors text-sm font-semibold uppercase tracking-widest" hreflang="en" lang="en">EN</a>}
+      <span class="text-[#D3D3B9]/40 text-sm">/</span>
+      {locale === 'it'
+        ? <span class="text-white text-sm font-semibold uppercase tracking-widest">IT</span>
+        : <a href={itUrl} class="text-[#D3D3B9] hover:text-white transition-colors text-sm font-semibold uppercase tracking-widest" hreflang="it" lang="it">IT</a>}
     </div>
   </nav>
 </div>
