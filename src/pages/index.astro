@@ -1,18 +1,17 @@
-<!DOCTYPE html>
-<html lang="fr">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Chaparral Finance - Banque d'Affaires</title>
+---
+import Base from '../layouts/Base.astro';
+import transactions from '../data/transactions.json';
+
+// La page d'accueil présente les 5 transactions les plus récentes
+const latestTransactions = transactions.slice(0, 5);
+---
+<Base current="home" bodyClass="antialiased flex flex-col min-h-screen overflow-x-hidden bg-[#0A1A2A]">
+
+<Fragment slot="head">
+<title>Chaparral Finance - Banque d'Affaires</title>
   <meta name="description" content="La banque d'affaires des PME, dédiée aux entrepreneurs dirigeants. Chaparral Finance accompagne vos opérations : M&A, levée de fonds, LBO, cession.">
   <link rel="canonical" href="https://chaparral-finance.com/">
   
-  <!-- Favicons -->
-  <link rel="icon" href="/favicon.ico" sizes="48x48">
-  <link rel="icon" type="image/svg+xml" href="https://res.cloudinary.com/drncmlu30/image/upload/v1766651131/Favicon_ttv2uq.svg">
-  <link rel="icon" type="image/png" sizes="96x96" href="https://res.cloudinary.com/drncmlu30/image/upload/w_96,h_96,c_fill,f_png/v1766651131/Favicon_ttv2uq.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="https://res.cloudinary.com/drncmlu30/image/upload/w_32,h_32,c_fill,f_png/v1766651131/Favicon_ttv2uq.png">
-  <link rel="apple-touch-icon" sizes="180x180" href="https://res.cloudinary.com/drncmlu30/image/upload/w_180,h_180,c_fill,f_png/v1766651131/Favicon_ttv2uq.png">
 
   <!-- Open Graph / Social Media -->
   <meta property="og:title" content="Chaparral Finance - Banque d'Affaires des PME">
@@ -48,15 +47,10 @@
       }
     }
   </script>
+</Fragment>
 
-  <link rel="stylesheet" href="/assets/styles.css">
-  <script src="https://unpkg.com/lucide@1.17.0/dist/umd/lucide.min.js"></script>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="preconnect" href="https://res.cloudinary.com">
-  <link rel="preconnect" href="https://ik.imagekit.io">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
-  <style>
+<Fragment slot="styles">
+<style is:inline>
     body {
       font-family: 'Inter', sans-serif;
       background-color: #0A1A2A;
@@ -164,78 +158,8 @@
       transform: rotateY(180deg) translateZ(1px);
     }
   </style>
-</head>
-<body class="antialiased flex flex-col min-h-screen overflow-x-hidden bg-[#0A1A2A]">
-  <!-- Page Transition Overlay -->
-  <div id="page-transition-overlay"></div>
-  
-  <!-- Navigation Bar -->
-  <header class="z-50 absolute top-0 w-full transition-all duration-300 bg-[#0A1A2A]/20 border-white/10 border-b backdrop-blur-md">
-    <div class="flex md:px-12 w-full pt-3 pr-6 pb-3 pl-6 items-center justify-between">
-      <!-- Left: Logo -->
-      <div class="flex items-center">
-        <a href="/" class="flex flex-col items-center group select-none focus:outline-none cursor-pointer">
-          <div class="inline-flex bg-center w-[200px] h-[75px] bg-[url(https://res.cloudinary.com/dddfggfp3/image/upload/v1768029554/Chaparral_header_logo_xk4rbk.png)] bg-contain bg-no-repeat items-center justify-center" onclick="window.location.href='index.html'" role="button"></div>
-        </a>
-      </div>
+</Fragment>
 
-      <!-- Right: Nav, Utilities & CTA -->
-      <div class="flex items-center gap-8">
-        <!-- Desktop Nav -->
-        <nav class="hidden lg:flex gap-8 items-center">
-          <a href="/" class="text-white hover:text-white transition-colors focus:outline-none text-sm font-medium uppercase tracking-widest">
-            Chaparral
-          </a>
-
-          <a href="/transactions" class="hover:text-white transition-colors focus:outline-none text-sm font-medium text-[#BFC0AB] uppercase tracking-widest">
-            Transactions
-          </a>
-        </nav>
-
-        <div class="flex items-center gap-6">
-          <a href="/contacts" class="hidden sm:inline-block hover:text-white transition-colors focus:outline-none text-sm font-medium text-[#BFC0AB] uppercase tracking-widest">
-            Contact
-          </a>
-          <a href="https://linkedin.com/company/chaparral-finance/" target="_blank" rel="noopener noreferrer" class="hidden sm:inline-block text-[#BFC0AB] hover:text-white transition-colors focus:outline-none">
-            <svg fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 50" class="cursor-pointer w-[20px] h-[20px]" stroke-width="2">
-              <path d="M41,4H9C6.24,4,4,6.24,4,9v32c0,2.76,2.24,5,5,5h32c2.76,0,5-2.24,5-5V9C46,6.24,43.76,4,41,4z M17,20v19h-6V20H17z M11,14.47c0-1.4,1.2-2.47,3-2.47s2.93,1.07,3,2.47c0,1.4-1.12,2.53-3,2.53C12.2,17,11,15.87,11,14.47z M39,39h-6c0,0,0-9.26,0-10 c0-2-1-4-3.5-4.04h-0.08C27,24.96,26,27.02,26,29c0,0.91,0,10,0,10h-6V20h6v2.56c0,0,1.93-2.56,5.81-2.56 c3.97,0,7.19,2.73,7.19,8.26V39z" class=""></path>
-            </svg>
-          </a>
-          <button class="lg:hidden text-[#BFC0AB] hover:text-white transition-colors" id="mobile-menu-btn">
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-menu">
-              <path d="M4 5h16"></path>
-              <path d="M4 12h16"></path>
-              <path d="M4 19h16"></path>
-            </svg>
-          </button>
-        </div>
-      </div>
-    </div>
-  </header>
-
-  <!-- Mobile Menu Overlay -->
-  <div id="mobile-menu" class="fixed inset-0 z-[60] bg-[#0A1A2A] transform translate-x-full transition-transform duration-500 ease-in-out lg:hidden flex flex-col">
-    <div class="flex items-center justify-between p-6 border-b border-[#D3D3B9]/10">
-      <div class="text-[#D3D3B9] font-serif text-xl font-medium">Menu</div>
-      <button id="mobile-menu-close" class="text-[#D3D3B9] hover:text-white transition-colors">
-        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-          <path d="M18 6 6 18"></path>
-          <path d="m6 6 12 12"></path>
-        </svg>
-      </button>
-    </div>
-    <nav class="flex flex-col p-8 gap-6 items-center justify-center flex-1">
-      <a href="/" class="mobile-link text-3xl font-serif text-white hover:text-white transition-colors">
-        Chaparral
-      </a>
-      <a href="/transactions" class="mobile-link text-3xl font-serif text-[#D3D3B9] hover:text-white transition-colors">
-        Transactions
-      </a>
-      <a href="/contacts" class="mobile-link text-3xl font-serif text-[#D3D3B9] hover:text-white transition-colors">
-        Contact
-      </a>
-    </nav>
-  </div>
 
   <!-- MAIN CONTENT: HOME (Index) -->
   <!-- Hero Section -->
@@ -457,69 +381,11 @@
   </section>
 
   <!-- Footer -->
-  <footer class="z-10 text-[#D3D3B9] bg-[#0A1A2A] border-[#192241]/50 border-t pt-16 pb-8 relative">
-    <div class="md:px-12 max-w-7xl mr-auto ml-auto pr-6 pl-6">
-      <div class="grid grid-cols-1 md:grid-cols-12 gap-12 mb-16">
-        <div class="md:col-span-5">
-          <a href="/" class="block mb-6">
-            <div class="inline-flex bg-center w-[180px] h-[82px] bg-[url(https://res.cloudinary.com/dddfggfp3/image/upload/v1767430682/footer_logo_yz4ibv.png)] bg-contain bg-no-repeat"></div>
-          </a>
-          <p class="leading-relaxed text-sm opacity-80 max-w-sm">Chaparral Finance est une banque d’affaires dédiée aux PME de croissance : capital développement - transmission, levée de fonds, LBO, MBO et opérations de cessions - acquisitions</p>
-        </div>
 
-        <div class="md:col-span-2 md:col-start-8">
-          <h4 class="font-serif text-white text-lg mb-6">Navigation</h4>
-          <ul class="space-y-4 text-sm">
-            <li class="">
-              <a href="/" class="hover:text-white transition-colors uppercase tracking-widest">
-                Chaparral
-              </a>
-            </li>
-            <li class="">
-              <a href="/transactions" class="hover:text-white transition-colors uppercase tracking-widest">
-                Transactions
-              </a>
-            </li>
-            <li class="">
-              <a href="/contacts" class="hover:text-white transition-colors uppercase tracking-widest">
-                Contact
-              </a>
-            </li>
-          </ul>
-        </div>
-
-        <div class="md:col-span-3">
-          <h4 class="font-serif text-white text-lg mb-6">Contact</h4>
-          <ul class="space-y-4 text-sm">
-            <li class="">16, avenue de Messine, 75008 Paris</li>
-            <li class="">
-              <a href="mailto:contact@chaparral-finance.fr" class="hover:text-white transition-colors">
-                contact@chaparral-finance.fr
-              </a>
-            </li>
-            <li class="pt-2">
-              <a href="https://linkedin.com/company/chaparral-finance/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 hover:text-white transition-colors group">
-                <img src="https://ik.imagekit.io/iokktghdw/icons8-linkedin.svg" alt="LinkedIn" loading="lazy" decoding="async" class="w-5 h-5 invert brightness-0 opacity-80 group-hover:opacity-100 transition-opacity">
-                <span>Suivez-nous sur LinkedIn</span>
-              </a>
-            </li>
-          </ul>
-        </div>
-      </div>
-
-      <div class="pt-8 border-t border-[#D3D3B9]/10 flex flex-col md:flex-row justify-between items-center gap-4 text-xs opacity-60">
-        <p class="">© 2026 Chaparral Finance. Tous droits réservés.</p>
-        <div class="flex gap-6">
-          <a href="/legals" class="hover:text-white transition-colors">
-            Mentions légales et politique de protection des données
-          </a>
-        </div>
-      </div>
-    </div>
-  </footer>
+<Fragment slot="scripts">
 
   <!-- Template pour les cartes de transaction -->
-  <template id="transaction-card-template">
+  <template is:raw id="transaction-card-template">
     <div class="transaction-card group [perspective:1000px] h-80 relative snap-start" data-flippable="true">
       <div class="card-inner relative w-full h-full transition-all duration-700 [transform-style:preserve-3d]">
           <!-- Face avant -->
@@ -577,7 +443,7 @@
     </div>
   </template>
 
-  <script>
+  <script is:inline define:vars={{ latestTransactions }}>
     lucide.createIcons();
 
     // Initial Load Animation - use DOMContentLoaded for faster page visibility
@@ -654,69 +520,6 @@
     });
 
     // Transactions Carousel
-    const latestTransactions = [
-      {
-        order: 1,
-        sector: "Bien commun durable",
-        seller: "Avenir Formation - PGE-PGO",
-        seller_initials: "AF/PP",
-        buyer: "Hello Prépa",
-        buyer_initials: "HP",
-        deal_type: "Cession",
-        description: "Avenir Formation, spécialiste de la préparation aux concours des grandes écoles (Commerce, ingénieur, IEP/SciencesPo) ainsi qu'au professorat des écoles, s'adosse au groupe HELLO PREPA",
-        image: "https://res.cloudinary.com/drncmlu30/image/upload/v1767413362/PGE-PGO_x_HELLO_pre%CC%81pa_mlnqgc.png",
-        alt: "Avenir Formation - PGE-PGO"
-      },
-      {
-        order: 2,
-        sector: "Bien commun durable",
-        seller: "Ulysse",
-        seller_initials: "U",
-        buyer: "Zencap AM",
-        buyer_initials: "ZA",
-        deal_type: "Dividend Recap",
-        description: "ULYSSE et ses actionnaires financiers (Sparring Opportunities / MACSF) font appel au prêteur privé ZENCAP AM pour accélerer son développement et construire un leader européen du transport pour les personnes à mobilité réduite",
-        image: "https://res.cloudinary.com/drncmlu30/image/upload/v1766634143/ULYSSE_-__ZENCAP_AM_x0xhjf.png",
-        alt: "Ulysse"
-      },
-      {
-        order: 3,
-        sector: "Industrie & systèmes productifs",
-        seller: "Renolit / Ondex",
-        seller_initials: "R/O",
-        buyer: "AIAC",
-        buyer_initials: "A",
-        deal_type: "Cession industrielle",
-        description: "Le fonds américain AIAC Partners, spécialiste de la reprise de sociétés industrielles, acquiert 100% de la filiale française du Groupe allemand RENOLIT (films et produits plastiques)",
-        image: "https://res.cloudinary.com/drncmlu30/image/upload/v1766634133/Ondex_-__AIAC_lnllhx.png",
-        alt: "Renolit / Ondex"
-      },
-      {
-        order: 4,
-        sector: "Conseil & Ingénierie",
-        seller: "Domobat",
-        seller_initials: "D",
-        buyer: "Groupe Ginger",
-        buyer_initials: "GG",
-        deal_type: "Cession",
-        description: "GINGER, leader français dans l'ingénierie de prescription se renforce dans le diagnostic des infrastructures avec l'acquisition de la société DOMOBAT - BATISCOPIE",
-        image: "https://res.cloudinary.com/drncmlu30/image/upload/v1766634130/Domobat_-__Groupe_Ginger_wh0wrz.png",
-        alt: "Domobat"
-      },
-      {
-        order: 5,
-        sector: "Tech & Digital",
-        seller: "Qyyp",
-        seller_initials: "Q",
-        buyer: "Momentum",
-        buyer_initials: "M",
-        deal_type: "Capital-Développement",
-        description: "QYYP fait entrer Momentum Invest à son capital pour accélerer sa stratégie de consolidation / build up dans le Service IT managé et l'infogérance pour les PME-ETI",
-        image: "https://res.cloudinary.com/drncmlu30/image/upload/v1766634130/QYYP_-__MOMENTUM_INVEST_ty0iae.png",
-        alt: "Qyyp"
-      }
-    ];
-
     /**
      * Helper to get font size class based on text length
      */
@@ -1287,5 +1090,6 @@
       initHeroVideo();
     });
   </script>
-</body>
-</html>
+</Fragment>
+
+</Base>

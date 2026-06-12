@@ -1,0 +1,78 @@
+---
+// Barre de navigation. Les classes varient selon la page : positionnement
+// (absolute/sticky/relative), opacité du fond et lien actif — chaînes
+// reprises à l'identique des pages d'origine.
+const { current } = Astro.props;
+
+const headerClass = {
+  home: 'z-50 absolute top-0 w-full transition-all duration-300 bg-[#0A1A2A]/20 border-white/10 border-b backdrop-blur-md',
+  transactions: 'z-50 sticky top-0 transition-all duration-300 bg-[#0A1A2A]/70 w-full border-white/10 border-b shadow-sm backdrop-blur-md',
+  contacts: 'z-50 absolute top-0 left-0 w-full transition-all duration-300 bg-[#0A1A2A]/20 border-white/10 border-b shadow-sm backdrop-blur-md',
+  legals: 'z-50 relative transition-all duration-300 bg-[#0A1A2A]/90 border-white/10 border-b shadow-sm backdrop-blur-md',
+}[current];
+
+const navLink = {
+  home: {
+    home: 'text-white hover:text-white transition-colors focus:outline-none text-sm font-medium uppercase tracking-widest',
+    transactions: 'hover:text-white transition-colors focus:outline-none text-sm font-medium text-[#BFC0AB] uppercase tracking-widest',
+    contacts: 'hidden sm:inline-block hover:text-white transition-colors focus:outline-none text-sm font-medium text-[#BFC0AB] uppercase tracking-widest',
+  },
+  transactions: {
+    home: 'nav-link hover:text-white transition-colors focus:outline-none text-sm font-medium text-[#BFC0AB] uppercase tracking-widest',
+    transactions: 'nav-link text-white transition-colors focus:outline-none text-sm font-medium uppercase tracking-widest',
+    contacts: 'nav-link hidden sm:inline-block hover:text-white transition-colors focus:outline-none text-sm font-medium text-[#BFC0AB] uppercase tracking-widest',
+  },
+  contacts: {
+    home: 'hover:text-white transition-colors focus:outline-none text-sm font-medium text-[#BFC0AB] uppercase tracking-widest',
+    transactions: 'hover:text-white transition-colors focus:outline-none text-sm font-medium text-[#BFC0AB] uppercase tracking-widest',
+    contacts: 'hidden sm:inline-block hover:text-white transition-colors focus:outline-none text-sm font-medium text-white uppercase tracking-widest',
+  },
+  legals: {
+    home: 'hover:text-white transition-colors focus:outline-none text-sm font-medium text-[#BFC0AB] uppercase tracking-widest',
+    transactions: 'hover:text-white transition-colors focus:outline-none text-sm font-medium text-[#BFC0AB] uppercase tracking-widest',
+    contacts: 'hidden sm:inline-block hover:text-white transition-colors focus:outline-none text-sm font-medium text-[#BFC0AB] uppercase tracking-widest',
+  },
+}[current];
+---
+<header class={headerClass}>
+  <div class="flex md:px-12 w-full pt-3 pr-6 pb-3 pl-6 items-center justify-between">
+    <!-- Left: Logo -->
+    <div class="flex items-center">
+      <a href="/" class="flex flex-col items-center group select-none focus:outline-none cursor-pointer">
+        <div class="inline-flex bg-center w-[200px] h-[75px] bg-[url(https://res.cloudinary.com/dddfggfp3/image/upload/v1768029554/Chaparral_header_logo_xk4rbk.png)] bg-contain bg-no-repeat items-center justify-center" onclick="window.location.href='/'" role="button"></div>
+      </a>
+    </div>
+
+    <!-- Right: Nav, Utilities & CTA -->
+    <div class="flex items-center gap-8">
+      <!-- Desktop Nav -->
+      <nav class="hidden lg:flex gap-8 items-center">
+        <a href="/" class={navLink.home}>
+          Chaparral
+        </a>
+
+        <a href="/transactions" class={navLink.transactions}>
+          Transactions
+        </a>
+      </nav>
+
+      <div class="flex items-center gap-6">
+        <a href="/contacts" class={navLink.contacts}>
+          Contact
+        </a>
+        <a href="https://linkedin.com/company/chaparral-finance/" target="_blank" rel="noopener noreferrer" class="hidden sm:inline-block text-[#BFC0AB] hover:text-white transition-colors focus:outline-none">
+          <svg fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 50" class="cursor-pointer w-[20px] h-[20px]" stroke-width="2">
+            <path d="M41,4H9C6.24,4,4,6.24,4,9v32c0,2.76,2.24,5,5,5h32c2.76,0,5-2.24,5-5V9C46,6.24,43.76,4,41,4z M17,20v19h-6V20H17z M11,14.47c0-1.4,1.2-2.47,3-2.47s2.93,1.07,3,2.47c0,1.4-1.12,2.53-3,2.53C12.2,17,11,15.87,11,14.47z M39,39h-6c0,0,0-9.26,0-10 c0-2-1-4-3.5-4.04h-0.08C27,24.96,26,27.02,26,29c0,0.91,0,10,0,10h-6V20h6v2.56c0,0,1.93-2.56,5.81-2.56 c3.97,0,7.19,2.73,7.19,8.26V39z" class=""></path>
+          </svg>
+        </a>
+        <button class="lg:hidden text-[#BFC0AB] hover:text-white transition-colors" id="mobile-menu-btn">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-menu">
+            <path d="M4 5h16"></path>
+            <path d="M4 12h16"></path>
+            <path d="M4 19h16"></path>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </div>
+</header>
