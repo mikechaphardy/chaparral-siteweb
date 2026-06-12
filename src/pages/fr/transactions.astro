@@ -1,32 +1,29 @@
 ---
-import Base from '../layouts/Base.astro';
-import transactionsFr from '../data/transactions.json';
-
-// Champs anglais des données
-const transactions = transactionsFr.map((t) => ({ ...t, sector: t.sector_en, deal_type: t.deal_type_en, description: t.description_en }));
+import Base from '../../layouts/Base.astro';
+import transactions from '../../data/transactions.json';
 ---
-<Base current="transactions" locale="en" path="/transactions" bodyClass="antialiased flex flex-col min-h-screen overflow-x-hidden text-[#D3D3B9] bg-[#0A1A2A]">
+<Base current="transactions" locale="fr" path="/transactions" bodyClass="antialiased flex flex-col min-h-screen overflow-x-hidden text-[#D3D3B9] bg-[#0A1A2A]">
 
 <Fragment slot="head">
 <title>Transactions - Chaparral Finance</title>
-  <meta name="description" content="Browse our recent transactions: sales, LBOs, fundraisings and build-ups completed with French and European companies.">
-  <link rel="canonical" href="https://www.chaparral-finance.com/transactions">
+  <meta name="description" content="Découvrez nos transactions récentes : cessions, LBO, levées de fonds et croissances externes réalisées auprès d'entreprises françaises et européennes.">
+  <link rel="canonical" href="https://www.chaparral-finance.fr/transactions">
   
 
   <!-- Open Graph / Social Media -->
   <meta property="og:title" content="Transactions - Chaparral Finance">
-  <meta property="og:description" content="Browse our recent transactions: sales, LBOs, fundraisings and build-ups completed with French and European companies.">
-  <meta property="og:url" content="https://www.chaparral-finance.com/transactions">
+  <meta property="og:description" content="Découvrez nos transactions récentes : cessions, LBO, levées de fonds et croissances externes réalisées auprès d'entreprises françaises et européennes.">
+  <meta property="og:url" content="https://www.chaparral-finance.fr/transactions">
   <meta property="og:type" content="website">
   <meta property="og:image" content="https://res.cloudinary.com/drncmlu30/image/upload/v1766653300/Airbrush-OBJECT-REMOVER-1766652971579_qx1gwx.png">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
-  <meta property="og:image:alt" content="Chaparral Finance - Recent transactions">
+  <meta property="og:image:alt" content="Chaparral Finance - Transactions récentes">
 
   <!-- Twitter Cards -->
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Transactions - Chaparral Finance">
-  <meta name="twitter:description" content="Browse our recent transactions: sales, LBOs, fundraisings and build-ups completed with French and European companies.">
+  <meta name="twitter:description" content="Découvrez nos transactions récentes : cessions, LBO, levées de fonds et croissances externes réalisées auprès d'entreprises françaises et européennes.">
   <meta name="twitter:image" content="https://res.cloudinary.com/drncmlu30/image/upload/v1766653300/Airbrush-OBJECT-REMOVER-1766652971579_qx1gwx.png">
 
   <!-- Schema.org (JSON-LD) -->
@@ -35,11 +32,11 @@ const transactions = transactionsFr.map((t) => ({ ...t, sector: t.sector_en, dea
       "@context": "https://schema.org",
       "@type": "CollectionPage",
       "name": "Transactions - Chaparral Finance",
-      "url": "https://www.chaparral-finance.com/transactions",
+      "url": "https://www.chaparral-finance.fr/transactions",
       "isPartOf": {
         "@type": "WebSite",
         "name": "Chaparral Finance",
-        "url": "https://www.chaparral-finance.com/"
+        "url": "https://www.chaparral-finance.fr/"
       }
     }
   </script>

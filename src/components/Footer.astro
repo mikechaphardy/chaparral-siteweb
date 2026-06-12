@@ -1,8 +1,33 @@
 ---
 // Pied de page commun. Sur la page des mentions légales, le lien vers
 // celles-ci est affiché en blanc (état actif).
-const { current } = Astro.props;
+const { current, locale = 'fr' } = Astro.props;
 const legalsLink = current === 'legals' ? 'text-white transition-colors' : 'hover:text-white transition-colors';
+
+const t = {
+  fr: {
+    description: 'Chaparral Finance est une banque d’affaires dédiée aux PME de croissance : capital développement - transmission, levée de fonds, LBO, MBO et opérations de cessions - acquisitions',
+    home: 'Chaparral',
+    transactions: 'Transactions',
+    contact: 'Contact',
+    navigation: 'Navigation',
+    contactTitle: 'Contact',
+    linkedin: 'Suivez-nous sur LinkedIn',
+    rights: '© 2026 Chaparral Finance. Tous droits réservés.',
+    legals: 'Mentions légales et politique de protection des données',
+  },
+  en: {
+    description: 'Chaparral Finance is an investment bank dedicated to growth SMEs: growth capital, ownership transition, fundraising, LBO, MBO and sell-side / buy-side M&A transactions',
+    home: 'Chaparral',
+    transactions: 'Transactions',
+    contact: 'Contact',
+    navigation: 'Navigation',
+    contactTitle: 'Contact',
+    linkedin: 'Follow us on LinkedIn',
+    rights: '© 2026 Chaparral Finance. All rights reserved.',
+    legals: 'Legal notice and data protection policy',
+  },
+}[locale];
 ---
 <footer class="z-10 text-[#D3D3B9] bg-[#0A1A2A] border-[#192241]/50 border-t pt-16 pb-8 relative">
   <div class="md:px-12 max-w-7xl mr-auto ml-auto pr-6 pl-6">
@@ -11,7 +36,7 @@ const legalsLink = current === 'legals' ? 'text-white transition-colors' : 'hove
         <a href="/" class="block mb-6">
           <div class="inline-flex bg-center w-[180px] h-[82px] bg-[url(https://res.cloudinary.com/dddfggfp3/image/upload/v1767430682/footer_logo_yz4ibv.png)] bg-contain bg-no-repeat"></div>
         </a>
-        <p class="leading-relaxed text-sm opacity-80 max-w-sm">Chaparral Finance est une banque d’affaires dédiée aux PME de croissance : capital développement - transmission, levée de fonds, LBO, MBO et opérations de cessions - acquisitions</p>
+        <p class="leading-relaxed text-sm opacity-80 max-w-sm">{t.description}</p>
       </div>
 
       <div class="md:col-span-2 md:col-start-8">
@@ -47,7 +72,7 @@ const legalsLink = current === 'legals' ? 'text-white transition-colors' : 'hove
           <li class="pt-2">
             <a href="https://linkedin.com/company/chaparral-finance/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 hover:text-white transition-colors group">
               <img src="https://ik.imagekit.io/iokktghdw/icons8-linkedin.svg" alt="LinkedIn" loading="lazy" decoding="async" class="w-5 h-5 invert brightness-0 opacity-80 group-hover:opacity-100 transition-opacity">
-              <span>Suivez-nous sur LinkedIn</span>
+              <span>{t.linkedin}</span>
             </a>
           </li>
         </ul>
@@ -55,10 +80,10 @@ const legalsLink = current === 'legals' ? 'text-white transition-colors' : 'hove
     </div>
 
     <div class="pt-8 border-t border-[#D3D3B9]/10 flex flex-col md:flex-row justify-between items-center gap-4 text-xs opacity-60">
-      <p class="">© 2026 Chaparral Finance. Tous droits réservés.</p>
+      <p class="">{t.rights}</p>
       <div class="flex gap-6">
         <a href="/legals" class={legalsLink}>
-          Mentions légales et politique de protection des données
+          {t.legals}
         </a>
       </div>
     </div>

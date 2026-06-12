@@ -4,30 +4,41 @@ Site vitrine de [Chaparral Finance](https://chaparral-finance.com), banque d'aff
 
 ## Stack
 
-Site statique généré avec [Astro](https://astro.build) et [Tailwind CSS](https://tailwindcss.com).
+Site statique bilingue généré avec [Astro](https://astro.build) et [Tailwind CSS](https://tailwindcss.com).
+
+| Domaine | Langue | Pages |
+|---|---|---|
+| chaparral-finance.fr | Français | `src/pages/fr/` (servies sans préfixe `/fr` via réécriture d'hôte) |
+| chaparral-finance.com | Anglais | `src/pages/` (racine) |
+
+Les visiteurs situés en France arrivant sur le `.com` sont redirigés vers le `.fr`
+(règle `redirects` de `vercel.json` basée sur `x-vercel-ip-country`). Chaque page
+porte des liens `hreflang` croisés vers son équivalent dans l'autre langue.
 
 ```
 src/
-├── layouts/Base.astro        # <head> commun + structure de page
+├── layouts/Base.astro        # <head> commun, hreflang, structure de page
 ├── components/
 │   ├── Header.astro          # Barre de navigation (variantes par page)
 │   ├── MobileMenu.astro      # Menu mobile plein écran
-│   └── Footer.astro          # Pied de page
-├── pages/                    # Une page = un fichier
-│   ├── index.astro           # Accueil
-│   ├── transactions.astro    # Transactions
-│   ├── contacts.astro        # Contact
-│   └── legals.astro          # Mentions légales
-├── data/transactions.json    # Les 130 transactions (source unique)
+│   └── Footer.astro          # Pied de page (FR/EN via prop locale)
+├── pages/                    # Pages ANGLAISES (chaparral-finance.com)
+│   ├── index.astro …         # + sitemap-en.xml.ts / sitemap-fr.xml.ts
+│   └── fr/                   # Pages FRANÇAISES (chaparral-finance.fr)
+│       └── index.astro …
+├── data/transactions.json    # Les transactions (source unique, bilingue)
 └── input.css                 # Directives Tailwind
-public/                       # Fichiers servis tels quels (robots, sitemap…)
+public/                       # Fichiers servis tels quels (robots, favicon…)
 ```
 
-- **Transactions** : pour ajouter une opération, éditer `src/data/transactions.json`
-  (la page d'accueil affiche automatiquement les 5 premières entrées).
+- **Transactions** : pour ajouter une opération, ajouter une entrée en tête de
+  `src/data/transactions.json` avec `order: 1` (et décaler les autres `order`),
+  en renseignant aussi les champs anglais `sector_en`, `deal_type_en`,
+  `description_en`. Les pages d'accueil affichent automatiquement les
+  5 premières entrées.
 - **Images / favicons** : hébergées sur Cloudinary et ImageKit (CDN externes).
 - **Formulaire de contact** : envoyé via [formsubmit.co](https://formsubmit.co) vers `contact@chaparral-finance.fr` (aucun backend requis).
-- **SEO** : `sitemap.xml` et `robots.txt` dans `public/`.
+- **SEO** : sitemaps par langue générés au build (`/sitemap-en.xml`, `/sitemap-fr.xml`), référencés dans `public/robots.txt`.
 
 ## Développement
 

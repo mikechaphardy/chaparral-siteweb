@@ -1,32 +1,32 @@
 ---
-import Base from '../layouts/Base.astro';
+import Base from '../../layouts/Base.astro';
 ---
-<Base current="contacts" locale="en" path="/contacts" bodyClass="antialiased flex flex-col min-h-screen overflow-x-hidden text-[#D3D3B9] bg-[#0A1A2A]">
+<Base current="contacts" locale="fr" path="/contacts" bodyClass="antialiased flex flex-col min-h-screen overflow-x-hidden text-[#D3D3B9] bg-[#0A1A2A]">
 
 <Fragment slot="head">
 <title>Contact - Chaparral Finance</title>
-<meta name="description" content="Contact Chaparral Finance to discuss your M&A, fundraising, LBO or sale projects. Our team is here to help.">
-<link rel="canonical" href="https://www.chaparral-finance.com/contacts">
+<meta name="description" content="Contactez Chaparral Finance pour discuter de vos projets de M&A, levée de fonds, LBO ou cession. Notre équipe vous accompagne.">
+<link rel="canonical" href="https://www.chaparral-finance.fr/contacts">
 
 <!-- Open Graph / Social Media -->
 <meta property="og:title" content="Contact - Chaparral Finance">
-<meta property="og:description" content="Contact Chaparral Finance to discuss your M&A, fundraising, LBO or sale projects. Our team of experts is here to help.">
-<meta property="og:url" content="https://www.chaparral-finance.com/contacts">
+<meta property="og:description" content="Contactez Chaparral Finance pour discuter de vos projets de M&A, levée de fonds, LBO ou cession. Notre équipe d'experts vous accompagne.">
+<meta property="og:url" content="https://www.chaparral-finance.fr/contacts">
 <meta property="og:type" content="website">
 <meta property="og:image" content="https://res.cloudinary.com/drncmlu30/image/upload/v1766653300/Airbrush-OBJECT-REMOVER-1766652971579_qx1gwx.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="Chaparral Finance - Contact us">
+<meta property="og:image:alt" content="Chaparral Finance - Nous contacter">
 
 <!-- Twitter Cards -->
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Contact - Chaparral Finance">
-<meta name="twitter:description" content="Contact Chaparral Finance to discuss your M&A, fundraising, LBO or sale projects. Our team is here to help.">
+<meta name="twitter:description" content="Contactez Chaparral Finance pour discuter de vos projets de M&A, levée de fonds, LBO ou cession. Notre équipe vous accompagne.">
 <meta name="twitter:image" content="https://res.cloudinary.com/drncmlu30/image/upload/v1766653300/Airbrush-OBJECT-REMOVER-1766652971579_qx1gwx.png">
 
 <!-- Schema.org (JSON-LD) -->
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"ContactPage","name":"Contact - Chaparral Finance","url":"https://www.chaparral-finance.com/contacts","isPartOf":{"@type":"WebSite","name":"Chaparral Finance","url":"https://www.chaparral-finance.com/"}}
+{"@context":"https://schema.org","@type":"ContactPage","name":"Contact - Chaparral Finance","url":"https://www.chaparral-finance.fr/contacts","isPartOf":{"@type":"WebSite","name":"Chaparral Finance","url":"https://www.chaparral-finance.fr/"}}
 </script>
 </Fragment>
 
@@ -93,15 +93,15 @@ pointer-events: all;
       <!-- Header Text -->
       <div class="mb-16">
         
-        <h1 class="serif md:text-5xl lg:text-6xl text-4xl font-medium text-white tracking-tight mb-6">Our offices in France</h1>
-        <p class="leading-relaxed text-lg font-light text-[#D3D3B9]/60 max-w-2xl">Nothing will ever replace a meeting. Get in touch with our team to discuss your project or your ongoing strategic thinking.</p>
+        <h1 class="serif md:text-5xl lg:text-6xl text-4xl font-medium text-white tracking-tight mb-6">Nos bureaux en France</h1>
+        <p class="leading-relaxed text-lg font-light text-[#D3D3B9]/60 max-w-2xl">Rien de remplacera jamais un rendez-vous. Contactez-nos équipes pour discuter de votre projet, ou de vos réflexions stratégiques en cours.</p>
       </div>
 
       <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-20">
         <!-- Left Column: Form -->
         <div class="lg:col-span-7">
           <div class="bg-white/5 border border-white/5 rounded-2xl p-8 md:p-10 backdrop-blur-sm">
-            <h2 class="text-2xl font-medium text-white tracking-tight mb-8">Contact us</h2>
+            <h2 class="text-2xl font-medium text-white tracking-tight mb-8">Nous contacter</h2>
 
             <form id="contact-form" class="space-y-6">
               <!-- Honeypot field for spam protection -->
@@ -109,58 +109,59 @@ pointer-events: all;
               <!-- Disable captcha -->
               <input type="hidden" name="_captcha" value="false">
               <!-- Custom subject line -->
-              <input type="hidden" name="_subject" value="New message - Chaparral Finance">
+              <input type="hidden" name="_subject" value="Nouveau message - Chaparral Finance">
               
               <div class="">
                 <label for="name" class="block text-xs font-medium text-[#D3D3B9]/80 mb-2 uppercase tracking-wide">
-                    Full name
+                    Nom complet
                   </label>
-                <input type="text" id="name" name="name" required placeholder="Your full name" class="w-full bg-[#0A1A2A]/50 border border-white/10 rounded-lg px-4 py-3 text-white placeholder-[#D3D3B9]/20 focus:outline-none focus:border-[#D3D3B9]/50 focus:ring-1 focus:ring-[#D3D3B9]/50 transition-all text-sm font-light">
+                <input type="text" id="name" name="name" required placeholder="Votre nom complet" class="w-full bg-[#0A1A2A]/50 border border-white/10 rounded-lg px-4 py-3 text-white placeholder-[#D3D3B9]/20 focus:outline-none focus:border-[#D3D3B9]/50 focus:ring-1 focus:ring-[#D3D3B9]/50 transition-all text-sm font-light">
               </div>
 
               <div class="">
                 <label for="email" class="block text-xs font-medium text-[#D3D3B9]/80 mb-2 uppercase tracking-wide">
-                    Email address
+                    Adresse email
                   </label>
-                <input type="email" id="email" name="email" required placeholder="name@company.com" class="w-full bg-[#0A1A2A]/50 border border-white/10 rounded-lg px-4 py-3 text-white placeholder-[#D3D3B9]/20 focus:outline-none focus:border-[#D3D3B9]/50 focus:ring-1 focus:ring-[#D3D3B9]/50 transition-all text-sm font-light">
+                <input type="email" id="email" name="email" required placeholder="nom@entreprise.com" class="w-full bg-[#0A1A2A]/50 border border-white/10 rounded-lg px-4 py-3 text-white placeholder-[#D3D3B9]/20 focus:outline-none focus:border-[#D3D3B9]/50 focus:ring-1 focus:ring-[#D3D3B9]/50 transition-all text-sm font-light">
               </div>
 
               <div class="">
                 <label for="company" class="block text-xs font-medium text-[#D3D3B9]/80 mb-2 uppercase tracking-wide">
-                    Company
+                    Société
                   </label>
-                <input type="text" id="company" name="company" placeholder="Your company name" class="w-full bg-[#0A1A2A]/50 border border-white/10 rounded-lg px-4 py-3 text-white placeholder-[#D3D3B9]/20 focus:outline-none focus:border-[#D3D3B9]/50 focus:ring-1 focus:ring-[#D3D3B9]/50 transition-all text-sm font-light">
+                <input type="text" id="company" name="company" placeholder="Nom de votre société" class="w-full bg-[#0A1A2A]/50 border border-white/10 rounded-lg px-4 py-3 text-white placeholder-[#D3D3B9]/20 focus:outline-none focus:border-[#D3D3B9]/50 focus:ring-1 focus:ring-[#D3D3B9]/50 transition-all text-sm font-light">
               </div>
 
               <div class="">
                 <label for="subject" class="block text-xs font-medium text-[#D3D3B9]/80 mb-2 uppercase tracking-wide">
-                    Subject
+                    Sujet
                   </label>
-                <input type="text" id="subject" name="subject" required placeholder="What is it about?" class="w-full bg-[#0A1A2A]/50 border border-white/10 rounded-lg px-4 py-3 text-white placeholder-[#D3D3B9]/20 focus:outline-none focus:border-[#D3D3B9]/50 focus:ring-1 focus:ring-[#D3D3B9]/50 transition-all text-sm font-light">
+                <input type="text" id="subject" name="subject" required placeholder="De quoi s'agit-il ?" class="w-full bg-[#0A1A2A]/50 border border-white/10 rounded-lg px-4 py-3 text-white placeholder-[#D3D3B9]/20 focus:outline-none focus:border-[#D3D3B9]/50 focus:ring-1 focus:ring-[#D3D3B9]/50 transition-all text-sm font-light">
               </div>
 
               <div class="">
                 <label for="message" class="block text-xs font-medium text-[#D3D3B9]/80 mb-2 uppercase tracking-wide">
                     Message
                   </label>
-                <textarea id="message" name="message" required rows="4" placeholder="Tell us how we can help..." class="w-full bg-[#0A1A2A]/50 border border-white/10 rounded-lg px-4 py-3 text-white placeholder-[#D3D3B9]/20 focus:outline-none focus:border-[#D3D3B9]/50 focus:ring-1 focus:ring-[#D3D3B9]/50 transition-all text-sm font-light resize-none"></textarea>
+                <textarea id="message" name="message" required rows="4" placeholder="Dites-nous comment nous pouvons vous aider..." class="w-full bg-[#0A1A2A]/50 border border-white/10 rounded-lg px-4 py-3 text-white placeholder-[#D3D3B9]/20 focus:outline-none focus:border-[#D3D3B9]/50 focus:ring-1 focus:ring-[#D3D3B9]/50 transition-all text-sm font-light resize-none"></textarea>
               </div>
 
               <button type="submit" class="w-full bg-[#D3D3B9] hover:bg-white text-[#0A1A2A] font-medium py-3.5 px-6 rounded-lg transition-colors duration-300 mt-2 text-sm tracking-wide">
-                  Send message
+                  Envoyer le message
                 </button>
             </form>
           </div>
           <div class="bg-white/5 border border-white/5 rounded-2xl p-8 md:p-10 backdrop-blur-sm mt-10">
             <h2 class="text-2xl text-white font-medium mb-6 tracking-tight">
-              Join us
+              Nous rejoindre
             </h2>
             <p class="text-[#D3D3B9]/80 font-light leading-relaxed">
-              Applications for our open positions can be sent to
+              Les candidatures pour les offres en ligne peuvent être
+              transmises à l’adresse
               <a href="mailto:recrutement@chaparral-finance.fr" class="text-white hover:text-[#D3D3B9] transition-colors">
                 recrutement@chaparral-finance.fr
               </a>
-              or submitted directly on
+              ou déposées directement sur
               <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="text-white hover:text-[#D3D3B9] transition-colors">
                 LinkedIn
               </a>
@@ -190,7 +191,7 @@ pointer-events: all;
 
             <!-- Floating Address Card -->
             <div class="absolute bottom-4 left-4 right-4 bg-[#0A1A2A]/90 backdrop-blur-md border border-white/10 p-5 rounded-xl shadow-2xl">
-              <h4 class="font-medium text-white mb-1">Our offices</h4>
+              <h4 class="font-medium text-white mb-1">Nos bureaux</h4>
               <div class="flex items-start gap-2 mt-3 mb-4">
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="map-pin" class="lucide lucide-map-pin w-4 h-4 text-[#D3D3B9] shrink-0 mt-0.5"><path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0"></path><circle cx="12" cy="10" r="3"></circle></svg>
                 <p class="leading-relaxed text-xs text-[#D3D3B9]/60">
@@ -224,13 +225,13 @@ pointer-events: all;
             </svg>
           </div>
           
-          <h3 class="font-serif text-3xl text-white mb-4">Message sent</h3>
+          <h3 class="font-serif text-3xl text-white mb-4">Message envoyé</h3>
           <p class="text-[#D3D3B9]/80 leading-relaxed mb-8 font-light">
-            Thank you for contacting us. Your message has been received and our team will get back to you shortly.
+            Merci de nous avoir contactés. Votre message a bien été reçu et notre équipe reviendra vers vous dans les plus brefs délais.
           </p>
           
           <button id="close-modal-btn" class="w-full bg-[#D3D3B9] hover:bg-white text-[#0A1A2A] font-medium py-3.5 px-6 rounded-lg transition-colors duration-300 text-sm tracking-wide">
-            Back to the site
+            Retour au site
           </button>
         </div>
       </div>
@@ -295,7 +296,7 @@ pointer-events: all;
         
         // Show loading state
         submitBtn.disabled = true;
-        submitBtn.innerText = 'Sending...';
+        submitBtn.innerText = 'Envoi en cours...';
         
         try {
           const formData = new FormData(contactForm);
@@ -320,7 +321,7 @@ pointer-events: all;
           }
         } catch (error) {
           console.error('Submission error:', error);
-          alert('An error occurred while sending your message. Please try again.');
+          alert('Une erreur est survenue lors de l\'envoi du message. Veuillez réessayer.');
         } finally {
           // Reset button
           submitBtn.disabled = false;

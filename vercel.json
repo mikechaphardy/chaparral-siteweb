@@ -3,5 +3,28 @@
   "buildCommand": "npm run build",
   "outputDirectory": "dist",
   "cleanUrls": true,
-  "trailingSlash": false
+  "trailingSlash": false,
+  "redirects": [
+    {
+      "source": "/:path(.*)",
+      "has": [
+        { "type": "host", "value": "(www\\.)?chaparral-finance\\.com" },
+        { "type": "header", "key": "x-vercel-ip-country", "value": "FR" }
+      ],
+      "destination": "https://www.chaparral-finance.fr/:path",
+      "permanent": false
+    }
+  ],
+  "rewrites": [
+    {
+      "source": "/",
+      "has": [{ "type": "host", "value": "(www\\.)?chaparral-finance\\.fr" }],
+      "destination": "/fr"
+    },
+    {
+      "source": "/:path((?!fr/|fr$|assets/|favicon\\.ico|sitemap|robots).+)",
+      "has": [{ "type": "host", "value": "(www\\.)?chaparral-finance\\.fr" }],
+      "destination": "/fr/:path"
+    }
+  ]
 }
