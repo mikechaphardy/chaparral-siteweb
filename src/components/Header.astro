@@ -3,14 +3,15 @@
 // (absolute/sticky/relative), opacité du fond et lien actif — chaînes
 // reprises à l'identique des pages d'origine.
 //
-// Sélecteur de langue (FR | EN | IT) en haut à droite : FR et EN renvoient
-// vers la même page sur leur domaine respectif (le lien EN porte ?lang=en
-// pour neutraliser la géo-redirection France → .fr, voir vercel.json et
-// Base.astro) ; IT n'est lié à aucun domaine et vit sous /it sur les deux.
+// Sélecteur de langue (FR | EN | IT) en haut à droite : liens relatifs vers
+// la même page dans l'autre langue (/, /fr, /it) — on ne change jamais de
+// domaine, le choix reste donc toujours disponible. Le lien EN porte
+// ?lang=en pour neutraliser la géo-redirection France → /fr (voir
+// vercel.json et Base.astro).
 const { current, locale = 'fr', path = '/' } = Astro.props;
 
-const frUrl = `https://www.chaparral-finance.fr${path}`;
-const enUrl = `https://www.chaparral-finance.com${path}?lang=en`;
+const frUrl = path === '/' ? '/fr' : `/fr${path}`;
+const enUrl = `${path}?lang=en`;
 const itUrl = path === '/' ? '/it' : `/it${path}`;
 const langActive = 'text-white text-xs font-semibold uppercase tracking-widest';
 const langInactive = 'text-[#BFC0AB] hover:text-white transition-colors text-xs font-semibold uppercase tracking-widest';

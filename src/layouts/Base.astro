@@ -4,17 +4,18 @@
 // (slot "styles"), son contenu (slot par défaut) et ses scripts
 // (slot "scripts", inséré après le footer comme à l'origine).
 //
-// Bilingue : locale "fr" (chaparral-finance.fr, pages sous /fr/) ou
-// "en" (chaparral-finance.com, pages à la racine). `path` est le chemin
-// canonique de la page (ex. "/transactions") pour les liens hreflang.
+// Multilingue : tout vit sur chaparral-finance.com — anglais à la racine,
+// français sous /fr, italien sous /it. Le domaine .fr est une simple
+// redirection 308 vers .com/fr/… (vercel.json). `path` est le chemin
+// canonique de la page hors préfixe de langue (ex. "/transactions").
 import Header from '../components/Header.astro';
 import MobileMenu from '../components/MobileMenu.astro';
 import Footer from '../components/Footer.astro';
 
 const { current, bodyClass, locale = 'fr', path = '/' } = Astro.props;
 
-const FR_HOST = 'https://www.chaparral-finance.fr';
 const EN_HOST = 'https://www.chaparral-finance.com';
+const prefix = (p) => (path === '/' ? `/${p}` : `/${p}${path}`);
 ---
 <html lang={locale}>
 <head>
@@ -22,9 +23,9 @@ const EN_HOST = 'https://www.chaparral-finance.com';
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta property="og:locale" content={{ fr: 'fr_FR', en: 'en_US', it: 'it_IT' }[locale]}>
   <meta property="og:site_name" content="Chaparral Finance">
-  <link rel="alternate" hreflang="fr" href={FR_HOST + path}>
+  <link rel="alternate" hreflang="fr" href={EN_HOST + prefix('fr')}>
   <link rel="alternate" hreflang="en" href={EN_HOST + path}>
-  <link rel="alternate" hreflang="it" href={EN_HOST + (path === '/' ? '/it' : '/it' + path)}>
+  <link rel="alternate" hreflang="it" href={EN_HOST + prefix('it')}>
   <link rel="alternate" hreflang="x-default" href={EN_HOST + path}>
   <slot name="head" />
 
@@ -36,7 +37,7 @@ const EN_HOST = 'https://www.chaparral-finance.com';
   <link rel="apple-touch-icon" sizes="180x180" href="https://res.cloudinary.com/drncmlu30/image/upload/w_180,h_180,c_fill,f_png/v1766651131/Favicon_ttv2uq.png">
 
   <!-- Choix de langue explicite : ?lang=en pose un cookie qui neutralise la
-       géo-redirection France → .fr (règle "missing" dans vercel.json),
+       géo-redirection France → /fr (règle "missing" dans vercel.json),
        puis nettoie l'URL. -->
   <script is:inline>
     (function () {

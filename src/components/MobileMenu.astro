@@ -7,8 +7,8 @@ const active = 'mobile-link text-3xl font-serif text-white hover:text-white tran
 const inactive = 'mobile-link text-3xl font-serif text-[#D3D3B9] hover:text-white transition-colors';
 const link = (page) => (current === page ? active : inactive);
 
-const frUrl = `https://www.chaparral-finance.fr${path}`;
-const enUrl = `https://www.chaparral-finance.com${path}?lang=en`;
+const frUrl = path === '/' ? '/fr' : `/fr${path}`;
+const enUrl = `${path}?lang=en`;
 const itUrl = path === '/' ? '/it' : `/it${path}`;
 ---
 <div id="mobile-menu" class="fixed inset-0 z-[60] bg-[#0A1A2A] transform translate-x-full transition-transform duration-500 ease-in-out lg:hidden flex flex-col">

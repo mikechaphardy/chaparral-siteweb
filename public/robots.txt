@@ -2,4 +2,4 @@ User-agent: *
 Allow: /
 
 Sitemap: https://www.chaparral-finance.com/sitemap-en.xml
-Sitemap: https://www.chaparral-finance.fr/sitemap-fr.xml
+Sitemap: https://www.chaparral-finance.com/sitemap-fr.xml
