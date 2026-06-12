@@ -49,10 +49,12 @@
     }
   </script>
 
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script src="https://unpkg.com/lucide@latest"></script>
+  <link rel="stylesheet" href="/assets/styles.css">
+  <script src="https://unpkg.com/lucide@1.17.0/dist/umd/lucide.min.js"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://res.cloudinary.com">
+  <link rel="preconnect" href="https://ik.imagekit.io">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
   <style>
     body {
@@ -283,7 +285,7 @@
         </div>
         <div class="relative w-full">
           <div class="relative aspect-[3/4] lg:aspect-[4/5] w-full rounded-2xl overflow-hidden group shadow-2xl border border-[#0A1A2A]/5">
-            <img src="https://ik.imagekit.io/iokktghdw/Gemini_Generated_Image_mown3emown3emown.png" alt="Paris" class="transition-transform duration-700 group-hover:scale-105 w-full h-full object-cover">
+            <img src="https://ik.imagekit.io/iokktghdw/Gemini_Generated_Image_mown3emown3emown.png" alt="Paris" loading="lazy" decoding="async" class="transition-transform duration-700 group-hover:scale-105 w-full h-full object-cover">
             <div class="absolute inset-0 bg-gradient-to-t from-[#0A1A2A]/10 to-transparent mix-blend-multiply pointer-events-none"></div>
           </div>
         </div>
@@ -497,7 +499,7 @@
             </li>
             <li class="pt-2">
               <a href="https://linkedin.com/company/chaparral-finance/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 hover:text-white transition-colors group">
-                <img src="https://ik.imagekit.io/iokktghdw/icons8-linkedin.svg" alt="LinkedIn" class="w-5 h-5 invert brightness-0 opacity-80 group-hover:opacity-100 transition-opacity">
+                <img src="https://ik.imagekit.io/iokktghdw/icons8-linkedin.svg" alt="LinkedIn" loading="lazy" decoding="async" class="w-5 h-5 invert brightness-0 opacity-80 group-hover:opacity-100 transition-opacity">
                 <span>Suivez-nous sur LinkedIn</span>
               </a>
             </li>
@@ -563,7 +565,7 @@
         <!-- Face arrière -->
         <div class="card-back absolute inset-0 w-full h-full bg-white rounded-xl overflow-hidden shadow-lg border border-white/20 flex flex-col">
           <div class="h-[50%] w-full bg-white relative overflow-hidden flex items-center justify-center p-4">
-            <img src="{{image}}" class="w-full h-full object-contain" alt="{{alt}}">
+            <img src="{{image}}" loading="lazy" decoding="async" class="w-full h-full object-contain" alt="{{alt}}">
           </div>
           <div class="p-5 flex flex-col justify-center items-center text-center flex-grow bg-white border-t border-gray-100">
             <p class="text-[#0A1A2A] text-xs leading-relaxed font-medium">

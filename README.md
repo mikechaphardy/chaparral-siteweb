@@ -16,6 +16,19 @@ Site 100 % statique, sans étape de build :
 - **Images / favicons** : hébergées sur Cloudinary et ImageKit (CDN externes).
 - **Formulaire de contact** : envoyé via [formsubmit.co](https://formsubmit.co) vers `contact@chaparral-finance.fr` (aucun backend requis).
 - **SEO** : `sitemap.xml` et `robots.txt` à la racine.
+- **CSS** : Tailwind compilé statiquement dans `assets/styles.css`.
+
+## CSS (Tailwind)
+
+Le CSS est précompilé : `assets/styles.css` est généré à partir des classes
+utilisées dans les fichiers HTML. **Après tout ajout ou modification de classes
+Tailwind dans le HTML, régénérer le fichier :**
+
+```bash
+npx -y tailwindcss@3.4.17 -c tailwind.config.js -i src/input.css -o assets/styles.css --minify
+```
+
+puis commiter `assets/styles.css` avec les changements HTML.
 
 ## Déploiement (Vercel)
 
