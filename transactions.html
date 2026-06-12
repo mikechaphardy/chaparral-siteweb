@@ -1,0 +1,2416 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Transactions - Chaparral Finance</title>
+  <meta name="description" content="Découvrez nos transactions récentes : cessions, LBO, levées de fonds et croissances externes réalisées auprès d'entreprises françaises et européennes.">
+  <link rel="canonical" href="https://chaparral-finance.com/transactions">
+  
+  <!-- Favicons -->
+  <link rel="icon" href="/favicon.ico" sizes="48x48">
+  <link rel="icon" type="image/svg+xml" href="https://res.cloudinary.com/drncmlu30/image/upload/v1766651131/Favicon_ttv2uq.svg">
+  <link rel="icon" type="image/png" sizes="96x96" href="https://res.cloudinary.com/drncmlu30/image/upload/w_96,h_96,c_fill,f_png/v1766651131/Favicon_ttv2uq.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="https://res.cloudinary.com/drncmlu30/image/upload/w_32,h_32,c_fill,f_png/v1766651131/Favicon_ttv2uq.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="https://res.cloudinary.com/drncmlu30/image/upload/w_180,h_180,c_fill,f_png/v1766651131/Favicon_ttv2uq.png">
+
+  <!-- Open Graph / Social Media -->
+  <meta property="og:title" content="Transactions - Chaparral Finance">
+  <meta property="og:description" content="Découvrez nos transactions récentes : cessions, LBO, levées de fonds et croissances externes réalisées auprès d'entreprises françaises et européennes.">
+  <meta property="og:url" content="https://chaparral-finance.com/transactions">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="https://res.cloudinary.com/drncmlu30/image/upload/v1766653300/Airbrush-OBJECT-REMOVER-1766652971579_qx1gwx.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Chaparral Finance - Transactions récentes">
+
+  <!-- Twitter Cards -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Transactions - Chaparral Finance">
+  <meta name="twitter:description" content="Découvrez nos transactions récentes : cessions, LBO, levées de fonds et croissances externes réalisées auprès d'entreprises françaises et européennes.">
+  <meta name="twitter:image" content="https://res.cloudinary.com/drncmlu30/image/upload/v1766653300/Airbrush-OBJECT-REMOVER-1766652971579_qx1gwx.png">
+
+  <!-- Schema.org (JSON-LD) -->
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "CollectionPage",
+      "name": "Transactions - Chaparral Finance",
+      "url": "https://chaparral-finance.com/transactions",
+      "isPartOf": {
+        "@type": "WebSite",
+        "name": "Chaparral Finance",
+        "url": "https://chaparral-finance.com/"
+      }
+    }
+  </script>
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: #0A1A2A;
+    }
+    h1, h2, h3, .serif {
+      font-family: 'Playfair Display', serif;
+    }
+    /* Smooth scrolling */
+    html { scroll-behavior: smooth; }
+    /* Card Hover Effects */
+    .transaction-card {
+      transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    .transaction-card:hover {
+      transform: translateY(-4px);
+    }
+    /* Safari fix for backface-visibility */
+    .card-face {
+      -webkit-backface-visibility: hidden;
+      backface-visibility: hidden;
+      -webkit-transform: translateZ(0);
+      transform: translateZ(0);
+    }
+    .card-back {
+      -webkit-backface-visibility: hidden;
+      backface-visibility: hidden;
+      -webkit-transform: rotateY(180deg) translateZ(1px);
+      transform: rotateY(180deg) translateZ(1px);
+    }
+    /* Flipped state for touch devices */
+    .transaction-card.is-flipped .card-inner {
+      -webkit-transform: rotateY(180deg);
+      transform: rotateY(180deg);
+    }
+    /* Mobile Menu Transition */
+    #mobile-menu {
+      transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    /* Skeleton Loading Animation */
+    @keyframes shimmer {
+      0% {
+        background-position: -200% 0;
+      }
+      100% {
+        background-position: 200% 0;
+      }
+    }
+    .skeleton-element {
+      background: linear-gradient(
+        90deg,
+        rgba(255, 255, 255, 0.03) 25%,
+        rgba(255, 255, 255, 0.08) 50%,
+        rgba(255, 255, 255, 0.03) 75%
+      );
+      background-size: 200% 100%;
+      animation: shimmer 1.5s ease-in-out infinite;
+      border-radius: 4px;
+    }
+    .skeleton-card {
+      height: 320px;
+      border-radius: 12px;
+      border: 1px solid rgba(255, 255, 255, 0.05);
+      background: linear-gradient(to bottom right, rgba(30, 58, 138, 0.15), rgba(10, 26, 42, 0.8));
+      position: relative;
+      overflow: hidden;
+      padding: 24px;
+      display: flex;
+      flex-direction: column;
+    }
+    .skeleton-card::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(
+        90deg,
+        transparent 25%,
+        rgba(255, 255, 255, 0.03) 50%,
+        transparent 75%
+      );
+      background-size: 200% 100%;
+      animation: shimmer 1.5s ease-in-out infinite;
+      pointer-events: none;
+    }
+    .skeleton-sector {
+      width: 80px;
+      height: 12px;
+      margin-left: auto;
+    }
+    .skeleton-avatars {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 56px;
+      padding: 0 8px;
+    }
+    .skeleton-avatar {
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+    }
+    .skeleton-arrow {
+      width: 24px;
+      height: 24px;
+      border-radius: 50%;
+      opacity: 0.3;
+    }
+    .skeleton-names {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 12px;
+      padding: 0 8px;
+    }
+    .skeleton-name {
+      width: 60px;
+      height: 10px;
+    }
+    .skeleton-title {
+      margin-top: auto;
+      width: 120px;
+      height: 20px;
+    }
+
+    /* Navigation transition state - disable backdrop blur during page switch */
+    body.nav-transitioning header {
+      backdrop-filter: none !important;
+      -webkit-backdrop-filter: none !important;
+      background-color: #0A1A2A !important;
+    }
+    /* Page transition overlay */
+    #page-transition-overlay {
+      position: fixed;
+      inset: 0;
+      background-color: #0A1A2A;
+      z-index: 9999;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.15s ease-out;
+    }
+    body.nav-transitioning #page-transition-overlay {
+      opacity: 1;
+      pointer-events: all;
+    }
+  </style>
+</head>
+<body class="antialiased flex flex-col min-h-screen overflow-x-hidden text-[#D3D3B9] bg-[#0A1A2A]">
+  <!-- Page Transition Overlay -->
+  <div id="page-transition-overlay"></div>
+  
+  <!-- Navigation Bar -->
+  <header class="z-50 sticky top-0 transition-all duration-300 bg-[#0A1A2A]/70 w-full border-white/10 border-b shadow-sm backdrop-blur-md">
+    <div class="flex md:px-12 w-full pt-3 pr-6 pb-3 pl-6 items-center justify-between">
+      <!-- Left: Logo -->
+      <div class="flex items-center">
+        <a href="index.html" class="flex flex-col items-center group select-none focus:outline-none cursor-pointer">
+          <div class="inline-flex bg-center w-[200px] h-[75px] bg-[url(https://res.cloudinary.com/dddfggfp3/image/upload/v1768029554/Chaparral_header_logo_xk4rbk.png)] bg-contain bg-no-repeat items-center justify-center" onclick="window.location.href='index.html'" role="button"></div>
+        </a>
+      </div>
+
+      <!-- Right: Nav, Utilities & CTA -->
+      <div class="flex items-center gap-8">
+        <!-- Desktop Nav -->
+        <nav class="hidden lg:flex gap-8 items-center">
+          <a href="index.html" class="nav-link hover:text-white transition-colors focus:outline-none text-sm font-medium text-[#BFC0AB] uppercase tracking-widest">
+            Chaparral
+          </a>
+
+          <a href="transactions.html" class="nav-link text-white transition-colors focus:outline-none text-sm font-medium uppercase tracking-widest">
+            Transactions
+          </a>
+        </nav>
+
+        <div class="flex items-center gap-6">
+          <a href="contacts.html" class="nav-link hidden sm:inline-block hover:text-white transition-colors focus:outline-none text-sm font-medium text-[#BFC0AB] uppercase tracking-widest">
+            Contact
+          </a>
+          <a href="https://linkedin.com/company/chaparral-finance/" target="_blank" rel="noopener noreferrer" class="hidden sm:inline-block text-[#BFC0AB] hover:text-white transition-colors focus:outline-none">
+            <svg fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 50" class="cursor-pointer w-[20px] h-[20px]" stroke-width="2">
+              <path d="M41,4H9C6.24,4,4,6.24,4,9v32c0,2.76,2.24,5,5,5h32c2.76,0,5-2.24,5-5V9C46,6.24,43.76,4,41,4z M17,20v19h-6V20H17z M11,14.47c0-1.4,1.2-2.47,3-2.47s2.93,1.07,3,2.47c0,1.4-1.12,2.53-3,2.53C12.2,17,11,15.87,11,14.47z M39,39h-6c0,0,0-9.26,0-10 c0-2-1-4-3.5-4.04h-0.08C27,24.96,26,27.02,26,29c0,0.91,0,10,0,10h-6V20h6v2.56c0,0,1.93-2.56,5.81-2.56 c3.97,0,7.19,2.73,7.19,8.26V39z" class=""></path>
+            </svg>
+          </a>
+          <button class="lg:hidden text-[#BFC0AB] hover:text-white transition-colors" id="mobile-menu-btn">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-menu">
+              <path d="M4 5h16"></path>
+              <path d="M4 12h16"></path>
+              <path d="M4 19h16"></path>
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Menu Overlay -->
+  <div id="mobile-menu" class="fixed inset-0 z-[60] bg-[#0A1A2A] transform translate-x-full transition-transform duration-500 ease-in-out lg:hidden flex flex-col">
+    <div class="flex items-center justify-between p-6 border-b border-[#D3D3B9]/10">
+      <div class="text-[#D3D3B9] font-serif text-xl font-medium">Menu</div>
+      <button id="mobile-menu-close" class="text-[#D3D3B9] hover:text-white transition-colors">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M18 6 6 18"></path>
+          <path d="m6 6 12 12"></path>
+        </svg>
+      </button>
+    </div>
+    <nav class="flex flex-col p-8 gap-6 items-center justify-center flex-1">
+      <a href="index.html" class="mobile-link text-3xl font-serif text-[#D3D3B9] hover:text-white transition-colors">
+        Chaparral
+      </a>
+      <a href="transactions.html" class="mobile-link text-3xl font-serif text-white hover:text-white transition-colors">
+        Transactions
+      </a>
+      <a href="contacts.html" class="mobile-link text-3xl font-serif text-[#D3D3B9] hover:text-white transition-colors">
+        Contact
+      </a>
+    </nav>
+  </div>
+
+  <!-- TRANSACTIONS SECTION - GRID LAYOUT (MAIN CONTENT) -->
+  <main class="flex-grow bg-[#0A1A2A] pt-16 pb-32 relative">
+    <!-- Background subtle glow -->
+    <div class="absolute top-0 left-1/2 -translate-x-1/2 w-full h-[500px] bg-[#D3D3B9]/5 blur-[120px] rounded-full pointer-events-none -z-0"></div>
+
+    <div class="md:px-12 z-10 max-w-7xl mr-auto ml-auto pr-6 pl-6 relative">
+      <!-- Header -->
+      <div class="flex flex-col mb-12 gap-6">
+        <div class="max-w-3xl">
+          <h1 class="serif md:text-5xl lg:text-6xl text-4xl font-medium text-white tracking-tight mb-6">Transactions</h1>
+        </div>
+      </div>
+
+      <!-- Transactions Cards Grid -->
+      <div id="transactions-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+        <!-- Initial skeleton cards (shown before JS loads, then replaced) -->
+        <div class="skeleton-card" data-skeleton="true"><div class="skeleton-element skeleton-sector"></div><div class="skeleton-avatars"><div class="skeleton-element skeleton-avatar"></div><div class="skeleton-element skeleton-arrow"></div><div class="skeleton-element skeleton-avatar"></div></div><div class="skeleton-names"><div class="skeleton-element skeleton-name"></div><div class="skeleton-element skeleton-name"></div></div><div class="skeleton-element skeleton-title"></div></div>
+        <div class="skeleton-card" data-skeleton="true"><div class="skeleton-element skeleton-sector"></div><div class="skeleton-avatars"><div class="skeleton-element skeleton-avatar"></div><div class="skeleton-element skeleton-arrow"></div><div class="skeleton-element skeleton-avatar"></div></div><div class="skeleton-names"><div class="skeleton-element skeleton-name"></div><div class="skeleton-element skeleton-name"></div></div><div class="skeleton-element skeleton-title"></div></div>
+        <div class="skeleton-card" data-skeleton="true"><div class="skeleton-element skeleton-sector"></div><div class="skeleton-avatars"><div class="skeleton-element skeleton-avatar"></div><div class="skeleton-element skeleton-arrow"></div><div class="skeleton-element skeleton-avatar"></div></div><div class="skeleton-names"><div class="skeleton-element skeleton-name"></div><div class="skeleton-element skeleton-name"></div></div><div class="skeleton-element skeleton-title"></div></div>
+        <div class="skeleton-card" data-skeleton="true"><div class="skeleton-element skeleton-sector"></div><div class="skeleton-avatars"><div class="skeleton-element skeleton-avatar"></div><div class="skeleton-element skeleton-arrow"></div><div class="skeleton-element skeleton-avatar"></div></div><div class="skeleton-names"><div class="skeleton-element skeleton-name"></div><div class="skeleton-element skeleton-name"></div></div><div class="skeleton-element skeleton-title"></div></div>
+        <div class="skeleton-card" data-skeleton="true"><div class="skeleton-element skeleton-sector"></div><div class="skeleton-avatars"><div class="skeleton-element skeleton-avatar"></div><div class="skeleton-element skeleton-arrow"></div><div class="skeleton-element skeleton-avatar"></div></div><div class="skeleton-names"><div class="skeleton-element skeleton-name"></div><div class="skeleton-element skeleton-name"></div></div><div class="skeleton-element skeleton-title"></div></div>
+        <div class="skeleton-card" data-skeleton="true"><div class="skeleton-element skeleton-sector"></div><div class="skeleton-avatars"><div class="skeleton-element skeleton-avatar"></div><div class="skeleton-element skeleton-arrow"></div><div class="skeleton-element skeleton-avatar"></div></div><div class="skeleton-names"><div class="skeleton-element skeleton-name"></div><div class="skeleton-element skeleton-name"></div></div><div class="skeleton-element skeleton-title"></div></div>
+        <div class="skeleton-card" data-skeleton="true"><div class="skeleton-element skeleton-sector"></div><div class="skeleton-avatars"><div class="skeleton-element skeleton-avatar"></div><div class="skeleton-element skeleton-arrow"></div><div class="skeleton-element skeleton-avatar"></div></div><div class="skeleton-names"><div class="skeleton-element skeleton-name"></div><div class="skeleton-element skeleton-name"></div></div><div class="skeleton-element skeleton-title"></div></div>
+        <div class="skeleton-card" data-skeleton="true"><div class="skeleton-element skeleton-sector"></div><div class="skeleton-avatars"><div class="skeleton-element skeleton-avatar"></div><div class="skeleton-element skeleton-arrow"></div><div class="skeleton-element skeleton-avatar"></div></div><div class="skeleton-names"><div class="skeleton-element skeleton-name"></div><div class="skeleton-element skeleton-name"></div></div><div class="skeleton-element skeleton-title"></div></div>
+        <div class="skeleton-card" data-skeleton="true"><div class="skeleton-element skeleton-sector"></div><div class="skeleton-avatars"><div class="skeleton-element skeleton-avatar"></div><div class="skeleton-element skeleton-arrow"></div><div class="skeleton-element skeleton-avatar"></div></div><div class="skeleton-names"><div class="skeleton-element skeleton-name"></div><div class="skeleton-element skeleton-name"></div></div><div class="skeleton-element skeleton-title"></div></div>
+        <div class="skeleton-card" data-skeleton="true"><div class="skeleton-element skeleton-sector"></div><div class="skeleton-avatars"><div class="skeleton-element skeleton-avatar"></div><div class="skeleton-element skeleton-arrow"></div><div class="skeleton-element skeleton-avatar"></div></div><div class="skeleton-names"><div class="skeleton-element skeleton-name"></div><div class="skeleton-element skeleton-name"></div></div><div class="skeleton-element skeleton-title"></div></div>
+        <div class="skeleton-card" data-skeleton="true"><div class="skeleton-element skeleton-sector"></div><div class="skeleton-avatars"><div class="skeleton-element skeleton-avatar"></div><div class="skeleton-element skeleton-arrow"></div><div class="skeleton-element skeleton-avatar"></div></div><div class="skeleton-names"><div class="skeleton-element skeleton-name"></div><div class="skeleton-element skeleton-name"></div></div><div class="skeleton-element skeleton-title"></div></div>
+        <div class="skeleton-card" data-skeleton="true"><div class="skeleton-element skeleton-sector"></div><div class="skeleton-avatars"><div class="skeleton-element skeleton-avatar"></div><div class="skeleton-element skeleton-arrow"></div><div class="skeleton-element skeleton-avatar"></div></div><div class="skeleton-names"><div class="skeleton-element skeleton-name"></div><div class="skeleton-element skeleton-name"></div></div><div class="skeleton-element skeleton-title"></div></div>
+      </div>
+    </div>
+  </main>
+
+  <footer class="z-10 text-[#D3D3B9] bg-[#0A1A2A] border-[#192241]/50 border-t pt-16 pb-8 relative">
+    <div class="md:px-12 max-w-7xl mr-auto ml-auto pr-6 pl-6">
+      <div class="grid grid-cols-1 md:grid-cols-12 gap-12 mb-16">
+        <div class="md:col-span-5">
+          <a href="index.html" class="block mb-6">
+            <div class="inline-flex bg-center w-[180px] h-[82px] bg-[url(https://res.cloudinary.com/dddfggfp3/image/upload/v1767430682/footer_logo_yz4ibv.png)] bg-contain bg-no-repeat">
+            </div>
+          </a>
+          <p class="leading-relaxed text-sm opacity-80 max-w-sm">Chaparral Finance est une banque d'affaires dédiée aux
+            PME de croissance : capital développement - transmission, levée de fonds, LBO, MBO et opérations de cessions -
+            acquisitions</p>
+        </div>
+
+        <div class="md:col-span-2 md:col-start-8">
+          <h4 class="font-serif text-white text-lg mb-6">Navigation</h4>
+          <ul class="space-y-4 text-sm">
+            <li class="">
+              <a href="index.html" class="hover:text-white transition-colors uppercase tracking-widest">
+                Chaparral
+              </a>
+            </li>
+            <li class="">
+              <a href="transactions.html" class="hover:text-white transition-colors uppercase tracking-widest">
+                Transactions
+              </a>
+            </li>
+            <li class="">
+              <a href="contacts.html" class="hover:text-white transition-colors uppercase tracking-widest">
+                Contact
+              </a>
+            </li>
+          </ul>
+        </div>
+
+        <div class="md:col-span-3">
+          <h4 class="font-serif text-white text-lg mb-6">Contact</h4>
+          <ul class="space-y-4 text-sm">
+            <li class="">16, avenue de Messine, 75008 Paris</li>
+            <li class="">
+              <a href="mailto:contact@chaparral-finance.fr" class="hover:text-white transition-colors">
+                contact@chaparral-finance.fr
+              </a>
+            </li>
+            <li class="pt-2">
+              <a href="https://linkedin.com/company/chaparral-finance/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 hover:text-white transition-colors group">
+                <img src="https://ik.imagekit.io/iokktghdw/icons8-linkedin.svg" alt="LinkedIn" class="w-5 h-5 invert brightness-0 opacity-80 group-hover:opacity-100 transition-opacity">
+                <span>Suivez-nous sur LinkedIn</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="pt-8 border-t border-[#D3D3B9]/10 flex flex-col md:flex-row justify-between items-center gap-4 text-xs opacity-60">
+        <p class="">© 2026 Chaparral Finance. Tous droits réservés.</p>
+        <div class="flex gap-6">
+          <a href="legals.html" class="hover:text-white transition-colors">
+            Mentions légales et politique de protection des données
+          </a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Template pour les cartes de transaction -->
+  <template id="transaction-card-template">
+    <div class="transaction-card group [perspective:1000px] h-80 relative cursor-pointer">
+      <div class="card-inner relative w-full h-full transition-all duration-700 [transform-style:preserve-3d] group-hover:[transform:rotateY(180deg)]">
+        <!-- Face avant -->
+        <div class="card-face overflow-hidden flex flex-col bg-gradient-to-br from-[#1e3a8a]/20 to-[#0A1A2A] w-full h-full border-white/5 border rounded-xl absolute top-0 right-0 bottom-0 left-0 shadow-lg">
+          <div class="flex flex-col z-10 h-full p-6 relative">
+            <div class="absolute top-6 right-6 text-right">
+              <div class="text-xs font-medium uppercase tracking-widest text-[#D3D3B9]/50">
+                {{sector}}
+              </div>
+            </div>
+            <div class="flex gap-2 mt-20 items-start justify-between">
+              <div class="flex flex-col gap-2 items-center flex-1">
+                <div class="w-12 h-12 rounded-full bg-blue-500/10 border border-blue-500/30 flex items-center justify-center text-blue-200 shadow-[0_0_15px_rgba(59,130,246,0.2)]">
+                  <span class="font-serif font-bold text-lg">{{seller_initials}}</span>
+                </div>
+                <span class="text-xs uppercase tracking-wider font-semibold text-[#D3D3B9] text-center leading-tight line-clamp-3 overflow-hidden text-ellipsis">
+                  {{seller}}
+                </span>
+              </div>
+              <div class="flex items-center justify-center w-10 h-12 shrink-0 opacity-40">
+                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-right text-[#D3D3B9]">
+                  <path d="M5 12h14"></path>
+                  <path d="m12 5 7 7-7 7"></path>
+                </svg>
+              </div>
+              <div class="flex flex-col gap-2 flex-1 items-center">
+                <div class="flex text-white/90 bg-white/5 w-12 h-12 border-white/10 border rounded-full items-center justify-center">
+                  <span class="font-serif font-bold text-lg">{{buyer_initials}}</span>
+                </div>
+                <span class="uppercase leading-tight text-xs font-semibold text-[#D3D3B9] tracking-wider text-center line-clamp-3 overflow-hidden text-ellipsis">
+                  {{buyer}}
+                </span>
+              </div>
+            </div>
+            <div class="mt-auto">
+              <h3 class="serif text-xl font-medium text-white tracking-tight">
+                {{deal_type}}
+              </h3>
+            </div>
+          </div>
+          <div class="absolute top-0 right-0 w-48 h-48 bg-blue-600/10 rounded-full blur-[60px] -translate-y-1/2 translate-x-1/2 pointer-events-none transition-all duration-500"></div>
+        </div>
+        <!-- Face arrière -->
+        <div class="card-back absolute inset-0 w-full h-full bg-white rounded-xl overflow-hidden shadow-lg border border-white/20 flex flex-col">
+          <div class="h-[50%] w-full bg-white relative overflow-hidden flex items-center justify-center p-4">
+            <img src="{{image}}" class="w-full h-full object-contain" alt="{{alt}}">
+          </div>
+          <div class="p-5 flex flex-col justify-center items-center text-center flex-grow bg-white border-t border-gray-100">
+            <p class="text-[#0A1A2A] text-xs leading-relaxed font-medium">
+              {{description}}
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </template>
+
+  <script>
+    // Données des transactions
+const transactions = [
+      {
+        order: 1,
+        sector: "Bien commun durable",
+        seller: "Avenir Formation - PGE-PGO",
+        seller_initials: "AF/PP",
+        buyer: "Hello Prépa",
+        buyer_initials: "HP",
+        deal_type: "Cession",
+        description: "Avenir Formation, spécialiste de la préparation aux concours des grandes écoles (Commerce, ingénieur, IEP/SciencesPo) ainsi qu'au professorat des écoles, s'adosse au groupe HELLO PREPA",
+        image: "https://res.cloudinary.com/drncmlu30/image/upload/v1767413362/PGE-PGO_x_HELLO_pre%CC%81pa_mlnqgc.png",
+        alt: "Avenir Formation - PGE-PGO"
+      },
+      {
+        order: 2,
+        sector: "Bien commun durable",
+        seller: "Ulysse",
+        seller_initials: "U",
+        buyer: "Zencap AM",
+        buyer_initials: "ZA",
+        deal_type: "Dividend Recap",
+        description: "ULYSSE et ses actionnaires financiers (Sparring Opportunities / MACSF) font appel au prêteur privé ZENCAP AM pour accélerer son développement et construire un leader européen du transport pour les personnes à mobilité réduite",
+        image: "https://res.cloudinary.com/drncmlu30/image/upload/v1766634143/ULYSSE_-__ZENCAP_AM_x0xhjf.png",
+        alt: "Ulysse"
+      },
+      {
+        order: 3,
+        sector: "Industrie & systèmes productifs",
+        seller: "Renolit / Ondex",
+        seller_initials: "R/O",
+        buyer: "AIAC",
+        buyer_initials: "A",
+        deal_type: "Cession industrielle",
+        description: "Le fonds américain AIAC Partners, spécialiste de la reprise de sociétés industrielles, acquiert 100% de la filiale française du Groupe allemand RENOLIT (films et produits plastiques)",
+        image: "https://res.cloudinary.com/drncmlu30/image/upload/v1766634133/Ondex_-__AIAC_lnllhx.png",
+        alt: "Renolit / Ondex"
+      },
+      {
+        order: 4,
+        sector: "Conseil & Ingénierie",
+        seller: "Domobat",
+        seller_initials: "D",
+        buyer: "Groupe Ginger",
+        buyer_initials: "GG",
+        deal_type: "Cession",
+        description: "GINGER, leader français dans l'ingénierie de prescription se renforce dans le diagnostic des infrastructures avec l'acquisition de la société DOMOBAT - BATISCOPIE",
+        image: "https://res.cloudinary.com/drncmlu30/image/upload/v1766634130/Domobat_-__Groupe_Ginger_wh0wrz.png",
+        alt: "Domobat"
+      },
+      {
+        order: 5,
+        sector: "Tech & Digital",
+        seller: "Qyyp",
+        seller_initials: "Q",
+        buyer: "Momentum",
+        buyer_initials: "M",
+        deal_type: "Capital-Développement",
+        description: "QYYP fait entrer Momentum Invest à son capital pour accélerer sa stratégie de consolidation / build up dans le Service IT managé et l'infogérance pour les PME-ETI",
+        image: "https://res.cloudinary.com/drncmlu30/image/upload/v1766634130/QYYP_-__MOMENTUM_INVEST_ty0iae.png",
+        alt: "Qyyp"
+      },
+      {
+        order: 6,
+        sector: "Industrie & systèmes productifs",
+        seller: "Cartonnerie Moderne",
+        seller_initials: "CM",
+        buyer: "Groupe Guillin",
+        buyer_initials: "GG",
+        deal_type: "Cession industrielle",
+        description: "Le Groupe GUILLIN, numéro 1 européen du packaging alimentaire, acquiert les actifs du groupe CARTONNERIE MODERNE, spécialiste du packaging carton pour les boulangeries patisseries",
+        image: "https://res.cloudinary.com/drncmlu30/image/upload/v1766634271/Cartonnerie_Moderne_-__Groupe_Guillin_ezhqv8.png",
+        alt: "Cartonnerie Moderne"
+      },
+      {
+        order: 7,
+        sector: "Bien commun durable",
+        seller: "Parc du Petit Prince",
+        seller_initials: "PPP",
+        buyer: "Groupe PTAK - Mandoria",
+        buyer_initials: "GP/M",
+        deal_type: "Cession",
+        description: "Aérophile, le leader mondial du ballon captif, cède son parc d'attraction alsacien - Le Parc du Petit Prince - au spécialiste polonais des amusement parks Mandoria",
+        image: "https://res.cloudinary.com/drncmlu30/image/upload/v1766634276/Parc_du_Petit_Prince_-__Groupe_PTAK_-_Mandoria_rgy1jc.png",
+        alt: "Parc du Petit Prince"
+      },
+      {
+        order: 8,
+        sector: "Bien commun durable",
+        seller: "Excellens Formation",
+        seller_initials: "EF",
+        buyer: "Takoma",
+        buyer_initials: "T",
+        deal_type: "Cession",
+        description: "TAKOMA, leader français de la formation en ligne et soutenu par UI INVESTISSEMENT, acquiert EXCELLENS FORMATION, spécialiste de la formation pour le secteur public.",
+        image: "https://res.cloudinary.com/drncmlu30/image/upload/v1766634130/Excellens_Formation_-__Takoma_lf4ysj.png",
+        alt: "Excellens Formation"
+      },
+      {
+        order: 9,
+        sector: "Services techniques et professionnels",
+        seller: "Bichard Equipement",
+        seller_initials: "BE",
+        buyer: "Nextstage AM",
+        buyer_initials: "NA",
+        deal_type: "LBO",
+        description: "Bichard Equipement, un leader régional de l'installation et de la maintenance de cuisines professionnelles, fait entrer Nextstage AM à son capital pour accélerer son développement et son maillage géographique",
+        image: "https://res.cloudinary.com/drncmlu30/image/upload/v1766634140/Bichard_Equipement_-__Nextstage_AM_uvahum.png",
+        alt: "Bichard Equipement"
+      },
+      {
+        order: 10,
+        sector: "Services techniques et professionnels",
+        seller: "Groupe CAN",
+        seller_initials: "GC",
+        buyer: "Sparring Capital, CELDA",
+        buyer_initials: "SC/C",
+        deal_type: "LBO",
+        description: "Groupe CAN, leader français des travaux d'accès difficile, réorganise son capital autour de l'équipe de management avec l'appui de Sparring Opportunities et CELDA",
+        image: "https://res.cloudinary.com/drncmlu30/image/upload/v1766634129/Groupe_CAN_-__Sparring_Capital_CELDA_pyqvbl.png",
+        alt: "Groupe CAN"
+      },
+      {
+        order: 11,
+        sector: "Conseil & Ingénierie",
+        seller: "Turenne Capital",
+        seller_initials: "TC",
+        buyer: "Finance Consult",
+        buyer_initials: "FC",
+        deal_type: "M&A Buy Side",
+        description: "Turenne Capital entre au capital de Finance Consult, société de conseil spécialisée dans l'ingénierie financière, budgétaire et fiscale des projets publics",
+        image: "https://res.cloudinary.com/drncmlu30/image/upload/v1766634251/Turenne_Capital_-__Finance_Consult_ghm1hq.png",
+        alt: "Turenne Capital"
+      },
+      {
+        order: 12,
+        sector: "Bien commun durable",
+        seller: "ESC BUSINESS SCHOOL",
+        seller_initials: "EBS",
+        buyer: "IFPASS",
+        buyer_initials: "I",
+        deal_type: "Cession",
+        description: "Leader national de la formation aux métiers de l’assurance, l’IFPASS accélère son maillage territorial dans le Grand Est en réalisant l'acquisition BPC-ESC, école de commerce solidement implantée localement",
+        image: "https://res.cloudinary.com/drncmlu30/image/upload/v1766634132/BPC-ESC_-__IFPASS_ttz0im.png",
+        alt: "ESC BUSINESS SCHOOL"
+      },
+      {
+        order: 13,
+        sector: "Tech & Digital",
+        seller: "Netopie",
+        seller_initials: "N",
+        buyer: "Metaline",
+        buyer_initials: "M",
+        deal_type: "Cession",
+        description: "METALINE, soutenu par LFPI réalise l'acquisition de NETOPIE, une ESN spécialiste des technologies Apple en environnement Microsoft",
+        image: "https://res.cloudinary.com/drncmlu30/image/upload/v1766634271/Netopie_-__Metaline_wbhpyj.png",
+        alt: "Netopie"
+      },
+      {
+        order: 14,
+        sector: "Conseil & Ingénierie",
+        seller: "Itaque",
+        seller_initials: "I",
+        buyer: "Management",
+        buyer_initials: "M",
+        deal_type: "Cession",
+        description: "The Blockchain Group cède sa filiale de conseil RH ITAQUE à l'équipe de Management",
+        image: "https://res.cloudinary.com/drncmlu30/image/upload/v1766634250/Itaque_-__Management_df06jr.png",
+        alt: "Itaque"
+      },
+      {
+        order: 15,
+        sector: "Industrie & systèmes productifs",
+        seller: "Propyplast",
+        seller_initials: "P",
+        buyer: "Leygatech",
+        buyer_initials: "L",
+        deal_type: "Cession industrielle",
+        description: "PROPYPLAST, spécialiste extrusion de films plastiques CAST est cédé à LEYGATECH, leader français du film à destination des marchés de l'agroalimentaire, l'industrie et la cosmétique",
+        image: "https://res.cloudinary.com/drncmlu30/image/upload/v1766634251/Propyplast_-__Leygatech_dfbsdu.png",
+        alt: "Propyplast"
+      },
+      {
+        order: 16,
+        sector: "Services techniques et professionnels",
+        seller: "ATEC",
+        seller_initials: "A",
+        buyer: "RAVOYARD",
+        buyer_initials: "R",
+        deal_type: "Cession",
+        description: "Le consortium de sociétés RAVOYARD reprend ATEC, leader rhône-alpin des travaux de couverture et bardage pour les bâtiments tertiaires et commerciaux",
+        image: "https://res.cloudinary.com/drncmlu30/image/upload/v1766634128/ATEC_-__RAVOYARD_rh3kpn.png",
+        alt: "ATEC"
+      },
+      {
+        order: 17,
+        sector: "Bien commun durable",
+        seller: "Green Office",
+        seller_initials: "GO",
+        buyer: "Nextstage AM, Entrepreneur Invest, Isatis Capital",
+        buyer_initials: "N/EI/I",
+        deal_type: "LBO",
+        description: "Green Office, leader de l'équipement de solutions de tri sélectif en entreprise, réorganise son capital autour de Nextstage AM, Entrepreneur Invest & Isatis Capital",
+        image: "https://res.cloudinary.com/drncmlu30/image/upload/v1766634140/Green_Office_-__Nextstage_AM_Entrepreneur_Invest_zhj8sx.png",
+        alt: "Green Office"
+      },
+      {
+        order: 18,
+        sector: "Conseil & Ingénierie",
+        seller: "Spark SRT",
+        seller_initials: "SS",
+        buyer: "non disclosed",
+        buyer_initials: "N/A",
+        deal_type: "LBO",
+        description: "Spark RT est un ingénieriste électrique / hydrogène, notamment actif dans le sport automobile écologique (Formula E, Extrem H...)",
+        image: "https://res.cloudinary.com/drncmlu30/image/upload/v1766634138/SPARK-__MBI_urv7s8.png",
+        alt: "Spark SRT"
+      },
+      {
+        order: 19,
+        sector: "Services techniques et professionnels",
+        seller: "Groupe HBF",
+        seller_initials: "GH",
+        buyer: "Mcapital, pool bancaire",
+        buyer_initials: "Mc",
+        deal_type: "Dividend Recap",
+        description: "Groupe HBF, un spécialiste de la distribution de produits électriques pour la GSB (compteurs, prises, domotique, etc.) se réorganise capitalistiquement avec l'aide d'un pool bancaire structuré pour accélérer le retrait progressif de son président et faciliter la montée au capital de l'équipe opérationnelle",
+        image: "https://res.cloudinary.com/drncmlu30/image/upload/v1766634252/HBF_-__Ixo_Multicroissance_BNP_PE_mbhscn.png",
+        alt: "Groupe HBF"
+      },
+      {
+        order: 20,
+        sector: "Tech & Digital",
+        seller: "Isochronix",
+        seller_initials: "I",
+        buyer: "TVH Consulting",
+        buyer_initials: "TVH",
+        deal_type: "Cession",
+        description: "TVH Consulting, soutenu par 21 Partners, réalise l'acquisition du spécialiste de l'intégration Salesforce Isochronix",
+        image: "https://res.cloudinary.com/drncmlu30/image/upload/v1766634270/Isochronix_-__TVH_Consulting_f0hlyw.png",
+        alt: "Isochronix"
+      },
+      {
+        order: 21,
+        sector: "Tech & Digital",
+        seller: "Emotic",
+        seller_initials: "E",
+        buyer: "JEMS",
+        buyer_initials: "J",
+        deal_type: "Cession",
+        description: "JEMS Group, soutenu par MEANINGS CAPITAL, se positionne dans l'ouest de la France avec la reprise d'EMOTIC, cabinet de conseil en innovation digitale",
+        image: "https://res.cloudinary.com/drncmlu30/image/upload/v1766634143/Emotic_-__JEMS_tvpe8k.png",
+        alt: "Emotic"
+      },
+      {
+        order: 22,
+        sector: "Industrie & systèmes productifs",
+        seller: "Sodopac",
+        seller_initials: "S",
+        buyer: "MBI + fonds",
+        buyer_initials: "MBI",
+        deal_type: "Cession",
+        description: "Un trio d'entrepreneurs de la mode, accompagné des fonds Crédit Agricole, MCapital & NACO acquiert SODOPAC, le plus gros fabricant de chaussons Made In France",
+        image: "https://res.cloudinary.com/drncmlu30/image/upload/v1766634271/Netopie_-__Metaline-1_h63svb.png",
+        alt: "Sodopac"
+      },
+      {
+        order: 23,
+        sector: "Industrie & systèmes productifs",
+        seller: "Cartonnerie Moderne",
+        seller_initials: "CM",
+        buyer: "Nextstage AM",
+        buyer_initials: "NAM",
+        deal_type: "Augmentation de capital",
+        description: "Cartonnerie Moderne fait entrer Nextstage AM à son capital pour consolider le secteur du packaging alimentaire pour boulangeries patisseries",
+        image: "https://res.cloudinary.com/drncmlu30/image/upload/v1766634253/Cartonnerie_Moderne_-__Nextstage_AM_k33n4b.png",
+        alt: "Cartonnerie Moderne"
+      },
+      {
+        order: 24,
+        sector: "Services techniques et professionnels",
+        seller: "Doumer",
+        seller_initials: "D",
+        buyer: "Entrepreneur Invest",
+        buyer_initials: "EI",
+        deal_type: "Augmentation de capital",
+        description: "Le Groupe Doumer ouvre son capital à Entrepreneur Invest pour étoffer son offre de métiers du second oeuvre du bâtiment: métallerie, peinture, électricité, etc.",
+        image: "https://res.cloudinary.com/drncmlu30/image/upload/v1766634267/Doumer_-__Entrepreneur_Invest_aohs03.png",
+        alt: "Doumer"
+      },
+      {
+        order: 25,
+        sector: "Tech & Digital",
+        seller: "Powertrafic",
+        seller_initials: "P",
+        buyer: "Pump Up",
+        buyer_initials: "PUP",
+        deal_type: "Cession",
+        description: "Le réseau d'agences de communication PUMP UP fait l'acquisition du spécialiste du digital, SEO & SEA, POWERTRAFIC",
+        image: "https://res.cloudinary.com/drncmlu30/image/upload/v1766634142/Powertrafic_-__Pumpup_ikwv4d.png",
+        alt: "Powertrafic"
+      },
+      {
+        order: 26,
+        sector: "Bien commun durable",
+        seller: "Aerophile",
+        seller_initials: "A",
+        buyer: "Nextstage AM, Bpifrance, Entrepreneur Invest",
+        buyer_initials: "N",
+        deal_type: "LBO",
+        description: "Aerophile - leader mondial du ballon captif - réorganise son capital avec l'entrée de Nextstage AM et la sortie d'Amundi PEF",
+        image: "https://res.cloudinary.com/drncmlu30/image/upload/v1766634269/Aerophile_-__Nextstage_AM_Bpifrance_fmezeo.png",
+        alt: "Aerophile"
+      },
+      {
+        order: 27,
+        sector: "Conseil & Ingénierie",
+        seller: "CET Ingénierie",
+        seller_initials: "CI",
+        buyer: "Isatis Capital",
+        buyer_initials: "IC",
+        deal_type: "LBO",
+        description: "CET Ingénierie, l'un des principaux ingénieristes du bâtiment en IDF, rréorganise son capital autour de l'équipe dirigeante et d'Isatis Capital, et permet d'acter la sortie de son fondateur",
+        image: "https://res.cloudinary.com/drncmlu30/image/upload/v1766634273/CET_Ing%C3%A9nierie_-__Isatis_Capital_amcflg.png",
+        alt: "CET Ingénierie"
+      },
+      {
+        order: 28,
+        sector: "Conseil & Ingénierie",
+        seller: "Enza Conseil",
+        seller_initials: "EC",
+        buyer: "Entrepreneur Invest",
+        buyer_initials: "EI",
+        deal_type: "LBO",
+        description: "ENZA, société de conseil en PMO et conduite du changement, ouvre son capital à Entrepreneur Invest et enclenche sa transition managériale en permettant à une vingtaine de salariés de devenir associés",
+        image: "https://res.cloudinary.com/drncmlu30/image/upload/v1766634268/Enza_conseil_-__Entrepreneur_Invest_boojwj.png",
+        alt: "Enza Conseil"
+      },
+      {
+        order: 29,
+        sector: "Bien commun durable",
+        seller: "Ulysse",
+        seller_initials: "U",
+        buyer: "Sparring Capital, MACSF",
+        buyer_initials: "SC/C",
+        deal_type: "LBO",
+        description: "ULYSSE, le n°1 français du Transport de Personnes à Mobilité Réduite réorganise son capital autour l'équipe familiale fondatrice et des fonds Sparring Opportunities & MACSF, qui prennent les relais de CM-CIC et Bpifrance",
+        image: "https://res.cloudinary.com/drncmlu30/image/upload/v1766634127/Ulysse_-__Sparring_Capital_MACSF_oigonl.png",
+        alt: "Ulysse"
+      },
+      {
+        order: 30,
+        sector: "Services techniques et professionnels",
+        seller: "Groupe Eddifis",
+        seller_initials: "GE",
+        buyer: "Momentum",
+        buyer_initials: "M",
+        deal_type: "LBO",
+        description: "EDDIFIS, spécialiste du 2nd oeuvre du bâtiment (ravalement, pierre de taille, peinture, couverture, etc.), ouvre son capital à Momentum Invest et Bpifrance pour continuer la consolidation des métiers de l'entretien et de la maintenance du bâti parisien",
+        image: "https://res.cloudinary.com/drncmlu30/image/upload/v1766634255/Groupe_Eddifis_-__Momentum_cwqlgm.png",
+        alt: "Groupe Eddifis"
+      },
+      {
+        order: 31,
+        sector: "Tech & Digital",
+        seller: "Trimane",
+        seller_initials: "T",
+        buyer: "The Blockchain Group",
+        buyer_initials: "TBG",
+        deal_type: "Cession",
+        description: "The Blockchain Group - cotée sur Euronext Growth, acquiert TRIMANE, une ESN spécialisée dans la Business Intelligence, le décisionnel et la big data",
+        image: "https://res.cloudinary.com/drncmlu30/image/upload/v1766634271/Trimane_-__The_Blockchain_Group_aigytd.png",
+        alt: "Trimane"
+      },
+      {
+        order: 32,
+        sector: "Services techniques et professionnels",
+        seller: "HBF",
+        seller_initials: "H",
+        buyer: "Filiale GSB de Rexel",
+        buyer_initials: "GSB",
+        deal_type: "M&A Buy Side",
+        description: "HBF, acteur majeur du bricolage en France, acquiert 100% de Dismo, un distributeur de matériel électrique, de chauffage et d'éclairage, filiale du Groupe REXEL",
+        image: "https://res.cloudinary.com/drncmlu30/image/upload/v1766634141/HBF_-__REXEL_qnfac2.png",
+        alt: "HBF"
+      },
+      {
+        order: 33,
+        sector: "Conseil & Ingénierie",
+        seller: "POP",
+        seller_initials: "P",
+        buyer: "Sparring Capital",
+        buyer_initials: "SC",
+        deal_type: "Cession",
+        description: "L'Ecole POP, un leader dans le conseil et la formation au Lean Management, confie la majorité de son capital à SPARRING CAPITAL dans une stratégie de consolidation de sociétés de conseil en performance opérationnelle",
+        image: "https://res.cloudinary.com/drncmlu30/image/upload/v1766634252/POP-__Sparring_Capital_exypeu.png",
+        alt: "POP"
+      },
+      {
+        order: 34,
+        sector: "Conseil & Ingénierie",
+        seller: "Pop",
+        seller_initials: "P",
+        buyer: "Cubik",
+        buyer_initials: "C",
+        deal_type: "M&A Buy Side",
+        description: "l'Ecole POP, détenue par Sparring Capital, se rapproche de son concurrent CUBIK PARTNERS, avec la perspective de construire un n1 du Lean Management / performance opérationnelle. L'opération permet au management de Cubik de prendre la direction opérationnelle du groupe",
+        image: "https://res.cloudinary.com/drncmlu30/image/upload/v1766634130/POP_-__CUBIK_qrxoce.png",
+        alt: "Pop"
+      },
+      {
+        order: 35,
+        sector: "Services techniques et professionnels",
+        seller: "Dp Archi",
+        seller_initials: "DA",
+        buyer: "MBI",
+        buyer_initials: "M",
+        deal_type: "Cession",
+        description: "Un duo expérimenté du monde des salons BtoB et de l'évènementiel rachète à ses fondateurs DP ARCHITECTURE, spécaliste de l'organisation installation de congrès en France",
+        image: "https://res.cloudinary.com/drncmlu30/image/upload/v1766634140/DP_ARCHI-__MBI_vmvmuy.png",
+        alt: "Dp Archi"
+      },
+      {
+        order: 36,
+        sector: "Tech & Digital",
+        seller: "Openminded",
+        seller_initials: "O",
+        buyer: "Accenture",
+        buyer_initials: "A",
+        deal_type: "Cession",
+        description: "Accenture réalise l'acquisition de 100% du capital du spécialiste cybersécurité OpenMinded",
+        image: "https://res.cloudinary.com/drncmlu30/image/upload/v1766634134/Openminded_-__Accenture_ysffof.png",
+        alt: "Openminded"
+      },
+      {
+        order: 37,
+        sector: "Services techniques et professionnels",
+        seller: "Pure Trade",
+        seller_initials: "PT",
+        buyer: "Sparring Capital",
+        buyer_initials: "SC",
+        deal_type: "Cession",
+        description: "PURE TRADE, un leader du packaging pour l'industrie cosmétique et parfums réalise un troisième LBO, marquant l'entrée de SPARRING CAPITAL, la sortie d'Initiative & Finance et Isatis Capital",
+        image: "https://res.cloudinary.com/drncmlu30/image/upload/v1766634272/Pure_Trade_-__Sparring_Capital_otuogp.png",
+        alt: "Pure Trade"
+      },
+      {
+        order: 38,
+        sector: "Tech & Digital",
+        seller: "Iorga",
+        seller_initials: "I",
+        buyer: "TBG",
+        buyer_initials: "T",
+        deal_type: "Cession",
+        description: "Iorga, une ESN généraliste disposant d'un centre de services est acquise par The Blockchain Group, permettant la sortie capitalistique du fondateur et BNP Paribas Développement",
+        image: "https://res.cloudinary.com/drncmlu30/image/upload/v1766634257/IORGA-__TBG_xwo2gz.png",
+        alt: "Iorga"
+      },
+      {
+        order: 39,
+        sector: "Tech & Digital",
+        seller: "Quantic",
+        seller_initials: "Q",
+        buyer: "Aubay",
+        buyer_initials: "A",
+        deal_type: "Cession",
+        description: "AUBAY, une ESN côtée sur Euronext, réalise l'acquisition du spécialiste du DevOps QUANTIC",
+        image: "https://res.cloudinary.com/drncmlu30/image/upload/v1766634132/QUANTIC_-__AUBAY_c0ksct.png",
+        alt: "Quantic"
+      },
+      {
+        order: 40,
+        sector: "Tech & Digital",
+        seller: "Groupe Alsatis",
+        seller_initials: "GA",
+        buyer: "Ardian",
+        buyer_initials: "A",
+        deal_type: "Augmentation de capital",
+        description: "ARDIAN entre au capital du toulousain ALSATIS , spécialiste télécom des zones blanches et rurales dans une logique de consolidation sectorielle",
+        image: "https://res.cloudinary.com/drncmlu30/image/upload/v1766634270/Groupe_ALSATIS_-__ARDIAN_turpnr.png",
+        alt: "Groupe Alsatis"
+      },
+      {
+        order: 41,
+        sector: "Industrie & systèmes productifs",
+        seller: "SECAL",
+        seller_initials: "S",
+        buyer: "Isatis Capital",
+        buyer_initials: "IC",
+        deal_type: "LBO",
+        description: "SECAL réorganise son capital autour de son équipe dirigeante opérationnelle et d'Isatis Capital, pour continuer son développement européen dans la construction de ponts roulants industriels spécifiques",
+        image: "https://res.cloudinary.com/drncmlu30/image/upload/v1766634252/SECAL_-__ISATIS_CAPITAL_at6rej.png",
+        alt: "SECAL"
+      },
+      {
+        order: 42,
+        sector: "Services techniques et professionnels",
+        seller: "HBF Groupe",
+        seller_initials: "HG",
+        buyer: "Mbo",
+        buyer_initials: "Mbo",
+        deal_type: "Management Buy Out",
+        description: "HBF, acteur majeur du bricolage en France, réorganise son capital autour du management et de son actionnaires chinois Vinon, actant la sortie des fonds Ixo Private Equity, Isatis Capital et Multicroissance",
+        image: "https://res.cloudinary.com/drncmlu30/image/upload/v1766634268/HBF_GROUPE_-__MBO_v9vqdd.png",
+        alt: "HBF Groupe"
+      },
+      {
+        order: 43,
+        sector: "Bien commun durable",
+        seller: "Green Office",
+        seller_initials: "GO",
+        buyer: "Isatis Capital, Amundi",
+        buyer_initials: "IC/A",
+        deal_type: "LBO",
+        description: "GREEN OFFICE, un spécialiste des solutions de tri sélectif en entreprise, organise un deuxième LBO qui voit l'entrée d'ISATIS CAPITAL au tour de table, pour permettre le développement d'outils de digitalisation de la solution",
+        image: "https://res.cloudinary.com/drncmlu30/image/upload/v1766634272/GREEN_OFFICE-__ISATIS_Capital_amundiMomentum_dfanbx.png",
+        alt: "Green Office"
+      },
+      {
+        order: 44,
+        sector: "Services techniques et professionnels",
+        seller: "Spark SRT",
+        seller_initials: "SS",
+        buyer: "MBI",
+        buyer_initials: "M",
+        deal_type: "Management Buy In",
+        description: "Spark RT est un ingénieriste électrique / hydrogène, notamment actif dans le sport automobile écologique (Formula E, Extrem H...)",
+        image: "https://res.cloudinary.com/drncmlu30/image/upload/v1766634138/SPARK-__MBI_urv7s8.png",
+        alt: "Spark SRT"
+      },
+      {
+        order: 45,
+        sector: "Services techniques et professionnels",
+        seller: "Energineo",
+        seller_initials: "E",
+        buyer: "Initiative & Finance",
+        buyer_initials: "I&F",
+        deal_type: "OBO",
+        description: "Energineo, spécialiste de l'éclairage basse consommation, ouvre son capital à Initiative & Finance dans une opération d'OBO",
+        image: "https://res.cloudinary.com/drncmlu30/image/upload/v1766634137/ENERGINEO_-__Initiative_Finance_doejxb.png",
+        alt: "Energineo"
+      },
+      {
+        order: 46,
+        sector: "Conseil & Ingénierie",
+        seller: "DGM Architectes",
+        seller_initials: "DA",
+        buyer: "Entrepreneur Invest",
+        buyer_initials: "EI",
+        deal_type: "OBO",
+        description: "L'une des principales agences d'architecture en Idf DGM & Associés réalise une opération de MBO, et ouvre une part de son capital à ses collaborateurs avec l'appui d'Entrepreneur Invest",
+        image: "https://res.cloudinary.com/drncmlu30/image/upload/v1766634125/DGM_Archi_-__Entrepreneur_Invest_kxlxyt.png",
+        alt: "DGM Architectes"
+      },
+      {
+        order: 47,
+        sector: "Industrie & systèmes productifs",
+        seller: "Altix",
+        seller_initials: "A",
+        buyer: "Amundi",
+        buyer_initials: "A",
+        deal_type: "Augmentation de capital",
+        description: "ALTIX, concepteur et fabricant de machines pour l’industrie électronique réorganise son capital autour de ses Dirigeants et AMUNDI Private Equity Funds, actant la sortie d'INNOVAFONDS",
+        image: "https://res.cloudinary.com/drncmlu30/image/upload/v1766634142/ALTIX-__Amundi_z2hmar.png",
+        alt: "Altix"
+      },
+      {
+        order: 48,
+        sector: "Tech & Digital",
+        seller: "Everwin",
+        seller_initials: "E",
+        buyer: "Isatis Capital, Entrepreneur Invest",
+        buyer_initials: "IC/EI",
+        deal_type: "LBO",
+        description: "Everwin, éditeur logiciel d'un ERP et CRM pour la gestion d'affaires (agences, esn, btp) ouvre son capital à Isatis Capital et Entrepreneur Invest lors d'une opération de recomposition du capital",
+        image: "https://res.cloudinary.com/drncmlu30/image/upload/v1766634268/Everwin_-__Isatis_Capital_Entrepreneur_Invest_tdyngs.png",
+        alt: "Everwin"
+      },
+      {
+        order: 49,
+        sector: "Services techniques et professionnels",
+        seller: "Groupe CAN",
+        seller_initials: "GC",
+        buyer: "Innovafonds, Garibaldi",
+        buyer_initials: "I/G",
+        deal_type: "Management Buy Out",
+        description: "Groupe CAN, un leader des travaux d'accès difficile en milieu naturel, ouvre son capital à INNOVAFONDS et GARIBALDI PARTICIPATIONS au cours d'un opération de Management Buy Out",
+        image: "https://res.cloudinary.com/drncmlu30/image/upload/v1766634255/Groupe_Can_-__Innovafonds_GAribaldi_x8iair.png",
+        alt: "Groupe CAN"
+      },
+      {
+        order: 50,
+        sector: "Services techniques et professionnels",
+        seller: "Ami Bois",
+        seller_initials: "AB",
+        buyer: "Isatis Capital",
+        buyer_initials: "IC",
+        deal_type: "Augmentation de capital",
+        description: "Isatis Capital rejoint MCapital dans le tour de table d'Ami Bois, pure player de la construction de maisons individuelles en bois basse consommation",
+        image: "https://res.cloudinary.com/drncmlu30/image/upload/v1766634258/Ami_Bois_-__Isatis_Capital_kh4cpo.png",
+        alt: "Ami Bois"
+      },
+      {
+        order: 51,
+        sector: "Services techniques et professionnels",
+        seller: "Groupe Eddifis",
+        seller_initials: "GE",
+        buyer: "Entrepreneur Invest, Carvest",
+        buyer_initials: "EI/C",
+        deal_type: "LBO",
+        description: "EDDIFIS rachète à son fondateur le groupe PHB, spécialiste parisien du ravalement, de la couverture et de la reprise après sinistre, et fait concomitamment entrer Entrepreneur Invest et Carvest à son capital",
+        image: "https://res.cloudinary.com/drncmlu30/image/upload/v1766634144/Groupe_Eddifis_-__Entrepreneur_Invest_Carvest_shqxtl.png",
+        alt: "Groupe Eddifis"
+      },
+      {
+        order: 52,
+        sector: "Services techniques et professionnels",
+        seller: "PM2S",
+        seller_initials: "P",
+        buyer: "Initiative & Finance",
+        buyer_initials: "I&F",
+        deal_type: "Carve Out",
+        description: "Initiative & Finance et l'équipe dirigeante ont fait l'acquisition de 100% du capital de PM2S, spécialiste de la maintenance de machines de production graphique et photo auprès d'une joint venture japonaise FUJIFILM / NORITSU",
+        image: "https://res.cloudinary.com/drncmlu30/image/upload/v1766634269/PM2S_-__Initiative_Finance_x8xaie.png",
+        alt: "PM2S"
+      },
+      {
+        order: 53,
+        sector: "Tech & Digital",
+        seller: "ABVENT",
+        seller_initials: "A",
+        buyer: "Ardian",
+        buyer_initials: "A",
+        deal_type: "LBO",
+        description: "ARDIAN prend un part minoritaire d'ABVENT, l'éditeur de logiciel leader pour les cabinets d'architecture en France et en Suisse",
+        image: "https://res.cloudinary.com/drncmlu30/image/upload/v1766634270/ABVENT-__ARDIAN_ctfarl.png",
+        alt: "ABVENT"
+      },
+      {
+        order: 54,
+        sector: "Services techniques et professionnels",
+        seller: "Ligne Vauzelle",
+        seller_initials: "LV",
+        buyer: "Mcapital",
+        buyer_initials: "M",
+        deal_type: "Augmentation de capital",
+        description: "LIGNE VAUZELLE ouvre son capital à MCapital Partners pour accélérer son développpement dans le mobilier CHR",
+        image: "https://res.cloudinary.com/drncmlu30/image/upload/v1766634268/Ligne_VAUZELLE_-__MCapital_zl3zup.png",
+        alt: "Ligne Vauzelle"
+      },
+      {
+        order: 55,
+        sector: "Tech & Digital",
+        seller: "2CRSI",
+        seller_initials: "2",
+        buyer: "Audacia",
+        buyer_initials: "A",
+        deal_type: "Augmentation de capital",
+        description: "2CRSI, le fabricant français de serveurs informatiques haute performance réalise une première augmentation de capital pour financer sa très forte croissance organique",
+        image: "https://res.cloudinary.com/drncmlu30/image/upload/v1766634272/2CRSI_-__Audacia_im0kur.png",
+        alt: "2CRSI"
+      },
+      {
+        order: 56,
+        sector: "Industrie & systèmes productifs",
+        seller: "LIBNER",
+        seller_initials: "L",
+        buyer: "Audacia",
+        buyer_initials: "A",
+        deal_type: "Augmentation de capital",
+        description: "LIBNER, une entreprise familiale de carosserie industrielle sur mesure, ouvre pour la première fois son capital pour financer son développement et réorganiser son actionnariat autour des membres opérationnels de la famille",
+        image: "https://res.cloudinary.com/drncmlu30/image/upload/v1766634131/LIBNER_-__Audacia_s0bhdp.png",
+        alt: "LIBNER"
+      },
+      {
+        order: 57,
+        sector: "Bien commun durable",
+        seller: "Germline",
+        seller_initials: "G",
+        buyer: "Isatis Capital",
+        buyer_initials: "IC",
+        deal_type: "LBO",
+        description: "GERMLINE ouvre pour la première fois son capital à un investisseur instututionnel pour financer son expansion commerciale et l'augmentation de ses capacités de production de graines germées",
+        image: "https://res.cloudinary.com/drncmlu30/image/upload/v1766634268/GERMLINE_-__ISATIS_CAPITAL_r3o7px.png",
+        alt: "Germline"
+      },
+      {
+        order: 58,
+        sector: "Services techniques et professionnels",
+        seller: "Reflectiv",
+        seller_initials: "R",
+        buyer: "Nextstage AM",
+        buyer_initials: "NA",
+        deal_type: "Management Buy Out",
+        description: "REFLECTIV- spécialiste des films techniques pour les produits verriers - réorganise son capital dans une opération de MBO menée par le fils du fondateur, accompagné par NEXTSTAGE AM, et actant la sortie de UI INVESTISSEMENT",
+        image: "https://res.cloudinary.com/drncmlu30/image/upload/v1766634139/REFLECTIV_-__NExtstage_AM_yaekyx.png",
+        alt: "Reflectiv"
+      },
+      {
+        order: 59,
+        sector: "Bien commun durable",
+        seller: "Green Office",
+        seller_initials: "GO",
+        buyer: "Amundi, EI",
+        buyer_initials: "A/EI",
+        deal_type: "LBO",
+        description: "Green Office, un spécialiste des solutions de tri sélectif en entreprise, réorganise son capital avec l'entrée des fonds gérés par Entrepreneur Invest et Amundi Private Equity",
+        image: "https://res.cloudinary.com/drncmlu30/image/upload/v1766634126/GREEN_OFFICE-__Amundi_EI_gdhopj.png",
+        alt: "Green Office"
+      },
+      {
+        order: 60,
+        sector: "Industrie & systèmes productifs",
+        seller: "BOS",
+        seller_initials: "B",
+        buyer: "EI",
+        buyer_initials: "EI",
+        deal_type: "Augmentation de capital",
+        description: "BOS, un des spécialistes mondiaux des suspensions pour les sports mécaniques (WRC, Dakar, Mtb...) ouvre son capital pour financer son usine 4.0",
+        image: "https://res.cloudinary.com/drncmlu30/image/upload/v1766634132/BOS_-__EI_tiye4c.png",
+        alt: "BOS"
+      },
+      {
+        order: 61,
+        sector: "Services techniques et professionnels",
+        seller: "Pure Trade",
+        seller_initials: "PT",
+        buyer: "Initiative & Finance, Isatis Capital",
+        buyer_initials: "I&F",
+        deal_type: "LBO",
+        description: "PURE TRADE, un spécialiste du packaging pour les grands marques mondiales de cosmétiques et de parfum, réalise un LBO 2 dans lequel Isatis Capital rejoint Initiative & Finance",
+        image: "https://res.cloudinary.com/drncmlu30/image/upload/v1766634271/PURE_TRADE_-__Initiative_Finance_Isatis_abkrqb.png",
+        alt: "Pure Trade"
+      },
+      {
+        order: 62,
+        sector: "Conseil & Ingénierie",
+        seller: "TBN",
+        seller_initials: "TBN",
+        buyer: "CM-CIC",
+        buyer_initials: "CM",
+        deal_type: "Augmentation de capital",
+        description: "The Brand Nation, agence de communication spécialisée dans le retail / food, réorganise son actionnariat et fait entrer CM-CIC Capital Privé",
+        image: "https://res.cloudinary.com/drncmlu30/image/upload/v1766634141/TBN_-__CM_CIC_vzuubw.png",
+        alt: "TBN"
+      },
+      {
+        order: 63,
+        sector: "Industrie & systèmes productifs",
+        seller: "3MA",
+        seller_initials: "3MA",
+        buyer: "ISATIS CAPITAL",
+        buyer_initials: "IC",
+        deal_type: "LBO",
+        description: "3MA, une agence de marketing relationnel digital et physique, réorganise son capital dans une opération de LBO",
+        image: "https://res.cloudinary.com/drncmlu30/image/upload/v1766634273/3MA_-__ISATIS_CAPITAL_kttexx.png",
+        alt: "3MA"
+      },
+      {
+        order: 64,
+        sector: "Bien commun durable",
+        seller: "H4D",
+        seller_initials: "H4D",
+        buyer: "CNP, Innovation Capital (LBO France), Bpifrance",
+        buyer_initials: "C/C/B",
+        deal_type: "Augmentation de capital",
+        description: "H4D, concepteur de cabines de télémédecine ouvre son capital à CNP Assurances, Innovation Capital (LBO France), Bpifrance",
+        image: "https://res.cloudinary.com/drncmlu30/image/upload/v1766634127/H4D_-__CNP_Innovation_capital_bpi_gveqdd.png",
+        alt: "H4D"
+      },
+      {
+        order: 65,
+        sector: "Bien commun durable",
+        seller: "Aerophile",
+        seller_initials: "A",
+        buyer: "Amundi, Bpifrance",
+        buyer_initials: "A/B",
+        deal_type: "LBO",
+        description: "AEROPHILE, leader mondial du ballon captif, accueille Amundi Private Equity et le fonds Tourisme de BPIFrance à son capital pour continuer son expansion$",
+        image: "https://res.cloudinary.com/drncmlu30/image/upload/v1766634269/Aerophile_-__Nextstage_AM_Bpifrance_fmezeo.png",
+        alt: "Aerophile"
+      },
+      {
+        order: 66,
+        sector: "Industrie & systèmes productifs",
+        seller: "Glass Partners Solutions",
+        seller_initials: "GPS",
+        buyer: "Nextstage",
+        buyer_initials: "N",
+        deal_type: "LBO",
+        description: "Glass Partners Solutions, un spécialiste de la distribution & transformation de produits verriers techniques accueille Nextstage AM à son capital dans une opération de réorganisation de son capital",
+          image: "https://res.cloudinary.com/drncmlu30/image/upload/v1766634141/Glass_Partners-__Nextstage_AM_tykwhs.png",
+        alt: "Glass Partners Solutions"
+      },
+      {
+        order: 67,
+        sector: "Tech & Digital",
+        seller: "IS Telecom",
+        seller_initials: "IT",
+        buyer: "CM-CIC",
+        buyer_initials: "CM",
+        deal_type: "Augmentation de capital",
+        description: "IS Telecom / Ipneos, intégrateur telecom et spécialiste des services IT managés ouvre son capital à CM-CIC Capital Privé pour accélérer sa stratégie de build up",
+        image: "https://res.cloudinary.com/drncmlu30/image/upload/v1766634126/IS_TELECOM_-__CM-CIC_uaeeou.png",
+        alt: "IS Telecom"
+      },
+      {
+        order: 68,
+        sector: "Tech & Digital",
+        seller: "ATDI",
+        seller_initials: "A",
+        buyer: "Audacia",
+        buyer_initials: "A",
+        deal_type: "Augmentation de capital",
+        description: "ATDI, un éditeur de logiciel référent dans le monde la gestion du spectre hertzien et de la HTZ warfare, ouvre son capital à un investisseur minoritaire pour financer son développement international",
+        image: "https://res.cloudinary.com/drncmlu30/image/upload/v1766634129/ATDI_-__Audacia_kzbbxt.png",
+        alt: "ATDI"
+      },
+      {
+        order: 69,
+        sector: "Services techniques et professionnels",
+        seller: "HBF",
+        seller_initials: "H",
+        buyer: "Ixo PE, Multicroissance, Isatis",
+        buyer_initials: "I/M/I",
+        deal_type: "Management Buy Out",
+        description: "HBF, spécialiste du bricolage en GSB, réalise une augmentation de capital auprès de ses actionnaires financiers Multicroissance, Isatis Capital et iXo Private Equity pour financer ses croissances externes",
+        image: "https://res.cloudinary.com/drncmlu30/image/upload/v1766634252/HBF_-__Ixo_Multicroissance_BNP_PE_mbhscn.png",
+        alt: "HBF"
+      },
+      {
+        order: 70,
+        sector: "Tech & Digital",
+        seller: "avant-garde Outre Mer",
+        seller_initials: "AOM",
+        buyer: "Mcapital",
+        buyer_initials: "M",
+        deal_type: "Augmentation de capital",
+        description: "Avant-Garde Outre Mer ouvre son capital pour accélérer son développement dans les services IT managés dans le DROM (Guadeloupe, Martinique, Réunion, Guyane, etc)",
+        image: "https://res.cloudinary.com/drncmlu30/image/upload/v1766634255/Avant_Garde_Outre_Mer-__MCapital_j9ax2w.png",
+        alt: "avant-garde Outre Mer"
+      },
+      {
+        order: 71,
+        sector: "Tech & Digital",
+        seller: "Scan & Target",
+        seller_initials: "S&T",
+        buyer: "Truffle Capital",
+        buyer_initials: "TC",
+        deal_type: "Augmentation de capital",
+        description: "Scan&Target, logiciel d'analyse temps réel Web et Mobile, permettant notamment la régulation/modération automatique des échanges, accueille Truffle Capital à son tour de table",
+        image: "https://res.cloudinary.com/drncmlu30/image/upload/v1766634134/Scan_TArget_-__Truffle_Capital_bbpivs.png",
+        alt: "Scan & Target"
+      },
+      {
+        order: 72,
+        sector: "Conseil & Ingénierie",
+        seller: "Dietswell",
+        seller_initials: "D",
+        buyer: "Bourse",
+        buyer_initials: "B",
+        deal_type: "Placement Privé",
+        description: "Dietswell - ingénieriste Oil&Gas coté sur Euronext - réalise une opération de renforcement de ses fonds propres par Placement Privé auprès de fonds institutionnels",
+        image: "https://res.cloudinary.com/drncmlu30/image/upload/v1766634250/Dietswell_-__Bourse_jybl5o.png",
+        alt: "Dietswell"
+      },
+      {
+        order: 73,
+        sector: "Bien commun durable",
+        seller: "Ulysse",
+        seller_initials: "U",
+        buyer: "CM-CIC, Bpifrance",
+        buyer_initials: "CM",
+        deal_type: "Augmentation de capital",
+        description: "Ulysse Transport, opérateur de Transport de Personnes à Mobilité Réduite (PMR), ouvre son capital à Bpifrance et CM-CIC Capital Privé",
+        image: "https://res.cloudinary.com/drncmlu30/image/upload/v1766634126/Ulysse_-__CIC_Bpifrance_gs77su.png",
+        alt: "Ulysse"
+      },
+      {
+        order: 74,
+        sector: "Tech & Digital",
+        seller: "Numerix",
+        seller_initials: "N",
+        buyer: "Global Imaging",
+        buyer_initials: "GI",
+        deal_type: "M&A Buy Side",
+        description: "Numerix Radiologie acquiert 100% du capital de GLOBAL IMAGING, l'un des logiciels référents les systèmes d’archivage et de communication de l’imagerie médicale, et de traitement 3D des images médicales et système de télé-radiologie",
+        image: "https://res.cloudinary.com/drncmlu30/image/upload/v1766634253/NUMERIX_-__GLOBAL_IMAGING_meqmew.png",
+        alt: "Numerix"
+      },
+      {
+        order: 75,
+        sector: "Tech & Digital",
+        seller: "Gekko",
+        seller_initials: "G",
+        buyer: "EI, Bpifrance",
+        buyer_initials: "EI",
+        deal_type: "Augmentation de capital",
+        description: "Gekko, un plateforme de réservation hôtelière BtoB pour les agences de voyages et les corporate réalise une augmentation de capital auprès d'Entrepreneur Invest et BPIfrance pour financer sa très forte croissance",
+        image: "https://res.cloudinary.com/drncmlu30/image/upload/v1766634257/Gekko_-__Bpi_EI_vmaxbv.png",
+        alt: "Gekko"
+      },
+      {
+        order: 76,
+        sector: "Tech & Digital",
+        seller: "123imprim",
+        seller_initials: "123",
+        buyer: "Initiative & Finance",
+        buyer_initials: "I&F",
+        deal_type: "LBO",
+        description: "Initiative & Finance a pris une participation minoritaire au capital du groupe FAK, holding industriel spécialisé dans l'impression numérique de supports de PLV et de signalétique, pour financer son développement par croissance externe",
+        image: "https://res.cloudinary.com/drncmlu30/image/upload/v1766634255/123imprim_-__Initiative_Finance_hhnh6b.png",
+        alt: "123imprim"
+      },
+      {
+        order: 77,
+        sector: "Bien commun durable",
+        seller: "Numerix",
+        seller_initials: "N",
+        buyer: "Amundi, CIC, Isatis Capital",
+        buyer_initials: "A",
+        deal_type: "LBO",
+        description: "Numerix Radiologie, un groupe diversifié dans les logiciels et matériel d'imagerie médicale réorganise son capital avec l'entrée d'Amundi Private Equity, CM-CIC & Isatis Capital actant la sortie de Vauban Partenaires et Naxicap Partners",
+        image: "https://res.cloudinary.com/drncmlu30/image/upload/v1766634137/NUMERIX_-__AMUNDI_CIC_x0limf.png",
+        alt: "Numerix"
+      },
+      {
+        order: 78,
+        sector: "Services techniques et professionnels",
+        seller: "Pure Trade",
+        seller_initials: "PT",
+        buyer: "Initiative & Finance",
+        buyer_initials: "I&F",
+        deal_type: "LBO",
+        description: "Initiative & Finance, accompagné par l'équipe de management opérationnelle, acquiert PURE TRADE - spécialiste de packaging cosmétique et parfum - auprès de son équipe fondatrice",
+        image: "https://res.cloudinary.com/drncmlu30/image/upload/v1766634136/Pure_Trade_-__Initiative_Finance_j0wrlu.png",
+        alt: "Pure Trade"
+      },
+      {
+        order: 79,
+        sector: "Tech & Digital",
+        seller: "Aqoba",
+        seller_initials: "A",
+        buyer: "Quilvest, Arkea",
+        buyer_initials: "Q/A",
+        deal_type: "Augmentation de capital",
+        description: "Aqoba, établissement de paiement affinitaire fait entrer Quilvest Private Equity et Arkea à son capital pour financer son développement organique",
+        image: "https://res.cloudinary.com/drncmlu30/image/upload/v1766634138/AQOBA_-__QUILVEST_ARKEA_eexupv.png",
+        alt: "Aqoba"
+      },
+      {
+        order: 80,
+        sector: "Bien commun durable",
+        seller: "Accueil Hôtel",
+        seller_initials: "AH",
+        buyer: "Bdr Invest, OTC agregator",
+        buyer_initials: "B",
+        deal_type: "Augmentation de capital",
+        description: "Accueil Hôtel, groupe d'hôtels indépendants et sous enseige de l'Est de la France, ouvre son capital à 2 investisseurs minoritaires institutionnels pour accélerer ses ouvertures",
+        image: "https://res.cloudinary.com/drncmlu30/image/upload/v1766634135/Accueil_Hotel-__bdr_invest_otc_btk8jt.png",
+        alt: "Accueil Hôtel"
+      },
+      {
+        order: 81,
+        sector: "Bien commun durable",
+        seller: "Aerophile",
+        seller_initials: "A",
+        buyer: "PPP",
+        buyer_initials: "PPP",
+        deal_type: "M&A Buy Side",
+        description: "Aerophile, leader mondial du ballon captif, acquiert le parc  d'attraction alsacien du Bioscope qu'elle renomme Parc du Petit Prince",
+        image: "https://res.cloudinary.com/drncmlu30/image/upload/v1766634136/Aerophile_-__PPP_bnqbtg.png",
+        alt: "Aerophile"
+      },
+      {
+        order: 82,
+        sector: "Services techniques et professionnels",
+        seller: "Alpa",
+        seller_initials: "A",
+        buyer: "Capital Export",
+        buyer_initials: "CE",
+        deal_type: "LBO",
+        description: "ALPA, spécialiste des produits scolaires sous licence réalise une opération de LBO avec Capital Export",
+        image: "https://res.cloudinary.com/drncmlu30/image/upload/v1766634256/Alpa_-__Capital_Export_mm2h2s.png",
+        alt: "Alpa"
+      },
+      {
+        order: 83,
+        sector: "Services techniques et professionnels",
+        seller: "Aventi",
+        seller_initials: "A",
+        buyer: "EDRIP",
+        buyer_initials: "E",
+        deal_type: "Augmentation de capital",
+        description: "Aventi ouvre son capital à Ed. de Rothschild Investment Partners pour étoffer son catalogue de distribution de films & séries",
+        image: "https://res.cloudinary.com/drncmlu30/image/upload/v1766634272/Aventi_-__EDRIP_yjfcep.png",
+        alt: "Aventi"
+      },
+      {
+        order: 84,
+        sector: "Industrie & systèmes productifs",
+        seller: "B+Equipment",
+        seller_initials: "B+",
+        buyer: "EI",
+        buyer_initials: "E",
+        deal_type: "LBO",
+        description: "B+Equipment, fabricant de machines d'emballages pour le e-commerce, lève des fonds pour accélerer son développement organique",
+        image: "https://res.cloudinary.com/drncmlu30/image/upload/v1766634253/B_Equipment_-__EI_oy7zbp.png",
+        alt: "B+Equipment"
+      },
+      {
+        order: 85,
+        sector: "x",
+        seller: "Bagelstein",
+        seller_initials: "B+",
+        buyer: "Mcapital",
+        buyer_initials: "M",
+        deal_type: "Augmentation de capital",
+        description: "La chaîne de restauration rapide en propre et sous franchise BAGELSTEIN réalise une première augmentation de capital auprès de MCapital Partners pour accélerer ses ouvertures",
+        image: "https://res.cloudinary.com/drncmlu30/image/upload/v1766634267/BAGELSTEIN_-__MCapital_z9cmw1.png",
+        alt: "Bagelstein"
+      },
+      {
+        order: 86,
+        sector: "Bien commun durable",
+        seller: "Steam",
+        seller_initials: "S",
+        buyer: "Bourse",
+        buyer_initials: "B",
+        deal_type: "Placement Privé",
+        description: "STEAM France, coté sur Euronext et leader dans l'entretien et la maintenance de stérilisateurs médicaux - réalise une opération de renforcement de ses fonds propres par placement privé auprès de fonds institutionnels",
+        image: "https://res.cloudinary.com/drncmlu30/image/upload/v1766634269/STEAM_-__Bourse_n61xis.png",
+        alt: "Steam"
+      },
+      {
+        order: 87,
+        sector: "Bien commun durable",
+        seller: "Costes - Hôtel Amour",
+        seller_initials: "C",
+        buyer: "OTC / Apicap",
+        buyer_initials: "OTC",
+        deal_type: "Emission obligataire",
+        description: "Hôtel Amour / Maison Thierry Costes finance l'acquisition et l'ouverture du GRand Hôtel Amour (Paris X) via une tranche obligataire syndiquée",
+        image: "https://res.cloudinary.com/drncmlu30/image/upload/v1766634132/COSTES_HOTEL_AMOUR_lcefvu.png",
+        alt: "Costes - Hôtel Amour"
+      },
+      {
+        order: 88,
+        sector: "Bien commun durable",
+        seller: "Aerophile",
+        seller_initials: "A",
+        buyer: "Isatis Capital, EI",
+        buyer_initials: "IC",
+        deal_type: "LBO",
+        description: "Aerophile réorganise son capital autour de l'équipe de fondateurs, Isatis Capital et Entrepreneur Invest, actant la sortie de 123 Investment",
+        image: "https://res.cloudinary.com/drncmlu30/image/upload/v1766634255/AEROPHILE_-__Isatis_EI_c6zg5b.png",
+        alt: "Aerophile"
+      },
+      {
+        order: 89,
+        sector: "Services techniques et professionnels",
+        seller: "Debflex",
+        seller_initials: "D",
+        buyer: "Targa Capital, Ei",
+        buyer_initials: "TC",
+        deal_type: "Augmentation de capital",
+        description: "Debflex, spécialiste du rayon électrique en GSB, fait entrer TARGA Capital et Entrepreneur Invest pour financer son développement",
+        image: "https://res.cloudinary.com/drncmlu30/image/upload/v1766634259/DEBFLEX_-__TARGA_CAPITAL_eupfhq.png",
+        alt: "Debflex"
+      },
+      {
+        order: 90,
+        sector: "Bien commun durable",
+        seller: "Dial Invest",
+        seller_initials: "DI",
+        buyer: "Pechel",
+        buyer_initials: "P",
+        deal_type: "Réorganisation capitalistique",
+        description: "Dial Invest, le leader des centres de dialyse en région Paca, également propriétaire de la Clinique de l'Alma (Paris VII), ouvre son capital à PECHEL pour réorganiser son capital et financer son développement par croissance externe",
+        image: "https://res.cloudinary.com/drncmlu30/image/upload/v1766634126/DIAL_INVEST_-__PECHEL_pi2ip5.png",
+        alt: "Dial Invest"
+      },
+      {
+        order: 91,
+        sector: "Bien commun durable",
+        seller: "Gedeon",
+        seller_initials: "G",
+        buyer: "Bpifrance, EI",
+        buyer_initials: "BPI",
+        deal_type: "Augmentation de capital",
+        description: "Gedeon Programmes, l'un des producteurs français les plus primés dans les documentaires historiques, aventure et animaliers, ouvre son capital au fonds Média de Bpifrance ainsi qu'à Entrepreneur Invest",
+        image: "https://res.cloudinary.com/drncmlu30/image/upload/v1766634138/GEDEON_-__BPI_FRANCE_EI_tk5ifr.png",
+        alt: "Gedeon"
+      },
+      {
+        order: 92,
+        sector: "Bien commun durable",
+        seller: "Happycash",
+        seller_initials: "H",
+        buyer: "Audacia",
+        buyer_initials: "A",
+        deal_type: "Augmentation de capital",
+        description: "Happy Cash, l'un des chaînes leader françaises de l'économie circulaire et de la vente de produits d'occasion renforce ses fonds propres lors d'une augmentation de capital",
+        image: "https://res.cloudinary.com/drncmlu30/image/upload/v1766634142/HAPPY_CASH_-__Audacia_bluzdf.png",
+        alt: "Happycash"
+      },
+      {
+        order: 93,
+        sector: "Services techniques et professionnels",
+        seller: "HBF",
+        seller_initials: "HBF",
+        buyer: "Mbo BNP PE, IXO PE, Multicroissance",
+        buyer_initials: "BNP",
+        deal_type: "Management Buy Out",
+        description: "Le Management accompagné des fonds iXo Private Equity, BNP Private Equity et Multicroissance rachète HBF - un spécialiste de la distribution et conception de produits électriques pour la GSB - à ses actionnaires espagnols",
+        image: "https://res.cloudinary.com/drncmlu30/image/upload/v1766634252/HBF_-__Ixo_Multicroissance_BNP_PE_mbhscn.png",
+        alt: "HBF"
+      },
+      {
+        order: 94,
+        sector: "Industrie & systèmes productifs",
+        seller: "Icape",
+        seller_initials: "I",
+        buyer: "Innovafonds",
+        buyer_initials: "I",
+        deal_type: "Augmentation de capital",
+        description: "ICAPE, concepteur et fabricant de circuits imprimés pour l'industrie, ouvre son capital à Innovafonds pour financer sa très forte croissance organique",
+        image: "https://res.cloudinary.com/drncmlu30/image/upload/v1766634135/ICAPE_-__INNOVAFONDS_fv1cck.png",
+        alt: "Icape"
+      },
+      {
+        order: 95,
+        sector: "Services techniques et professionnels",
+        seller: "Groupe Dorise",
+        seller_initials: "GD",
+        buyer: "Audacia",
+        buyer_initials: "A",
+        deal_type: "Augmentation de capital",
+        description: "Le groupe DORISE, spécialisée dans la distribution de pièces techniques pour la découpe et l'usinage industriel ouvre son capital à un investisseur minoritaire pour financer son développement organique",
+        image: "https://res.cloudinary.com/drncmlu30/image/upload/v1766634157/GRoupe_Dorise-__Audacia_bjqlgq.png",
+        alt: "Groupe Dorise"
+      },
+      {
+        order: 96,
+        sector: "Services techniques et professionnels",
+        seller: "Lotronic",
+        seller_initials: "L",
+        buyer: "Innovafonds",
+        buyer_initials: "I",
+        deal_type: "Management Buy In",
+        description: "Innovafonds prend une participation majoritaire au capital de Lotronic, un concepteur/distributeur de matériel Son et Lumière grand public et professionnel",
+        image: "https://res.cloudinary.com/drncmlu30/image/upload/v1766634254/LOTRONIC_-__INNOVAFONDS_jlfuge.png",
+        alt: "Lotronic"
+      },
+      {
+        order: 97,
+        sector: "x",
+        seller: "Incidence",
+        seller_initials: "I",
+        buyer: "Bnp Paribas Développement",
+        buyer_initials: "Bnp",
+        deal_type: "OBO",
+        description: "Incidence Paris un concepteur et distributeur d'objets déco du quotidien, réalise une opération d'OBO et accueille BNP Paribas Développement à son capital",
+        image: "https://res.cloudinary.com/drncmlu30/image/upload/v1766634126/INCIDENCE_-__BNP_DEV_eflvbr.png",
+        alt: "Incidence"
+      },
+      {
+        order: 98,
+        sector: "Bien commun durable",
+        seller: "Inter Ortho / Ormihl Danet",
+        seller_initials: "I/O",
+        buyer: "Evolem, CDC Entreprises",
+        buyer_initials: "E",
+        deal_type: "Management Buy Out",
+        description: "Ormihl Danem, fabricant d'orthèses, ouvre son capital à EVOLEM dans une logique de consolidation sectorielle",
+        image: "https://res.cloudinary.com/drncmlu30/image/upload/v1766634267/ormihl_danet_-_Evolem_sbc0bu.png",
+        alt: "Inter Ortho / Ormihl Danet"
+      },
+      {
+        order: 99,
+        sector: "Industrie & systèmes productifs",
+        seller: "IPI",
+        seller_initials: "I",
+        buyer: "DMH",
+        buyer_initials: "DMH",
+        deal_type: "M&A Buy Side",
+        description: "Le groupe IPI (pompes hydrauliques industrielles) acquiert DMH un spécialiste des flexibles et connectiques pour le monde industriel",
+        image: "https://res.cloudinary.com/drncmlu30/image/upload/v1766634128/IPI_-__DMH_euu26q.png",
+        alt: "IPI"
+      },
+      {
+        order: 100,
+        sector: "Bien commun durable",
+        seller: "Kartland",
+        seller_initials: "K",
+        buyer: "Audacia",
+        buyer_initials: "A",
+        deal_type: "Augmentation de capital",
+        description: "Kartland, l'un des principaux complexes de Karting outdoor français fait appel à Audacia comme investisseur minoritaire pour renforcer ses fonds propres et financer la création de nouvelles pistes",
+        image: "https://res.cloudinary.com/drncmlu30/image/upload/v1766634128/IPI_-__DMH_euu26q.png",
+        alt: "Kartland"
+      },
+      {
+        order: 101,
+        sector: "Services techniques et professionnels",
+        seller: "Lasry",
+        seller_initials: "L",
+        buyer: "CDC Entreprises",
+        buyer_initials: "CDC",
+        deal_type: "Emission obligataire",
+        description: "LASRY Glass, l'un des principaux distributeurs verriers français émet une tranche obligataire souscrite par CDC Entreprises pour financer son usine de transformation",
+        image: "https://res.cloudinary.com/drncmlu30/image/upload/v1766634270/LASRY_-__CDC_ENTREPRISES_tdk4ft.png",
+        alt: "Lasry"
+      },
+      {
+        order: 102,
+        sector: "Tech & Digital",
+        seller: "Numerix",
+        seller_initials: "N",
+        buyer: "Pige Medical",
+        buyer_initials: "PM",
+        deal_type: "M&A Buy Side",
+        description: "Numerix Radiologie, un groupe diversifié de l'imagerie médicale acquiert l'éditeur de logiciel lyonnais PIGE MEDICAL",
+        image: "https://res.cloudinary.com/drncmlu30/image/upload/v1766634272/NUMERIX_-__PIGE_MEDICAL_xl8tt1.png",
+        alt: "Numerix"
+      },
+      {
+        order: 103,
+        sector: "Bien commun durable",
+        seller: "Neolife",
+        seller_initials: "N",
+        buyer: "Placement privé (Nextstage, Calao, Phitrust)",
+        buyer_initials: "PP",
+        deal_type: "Placement Privé",
+        description: "Neolife, spécialiste du bardage techniques et lames de terrasse innovantes - cotée sur Euronext Growth, réalise un placement privé pour financer son développement",
+        image: "https://res.cloudinary.com/drncmlu30/image/upload/v1766634267/NEOLIFE_-__PLACEMENT_PRIVE_aen8aw.png",
+        alt: "Neolife"
+      },
+      {
+        order: 104,
+        sector: "Tech & Digital",
+        seller: "Intent Technologies",
+        seller_initials: "IT",
+        buyer: "Xange",
+        buyer_initials: "X",
+        deal_type: "Augmentation de capital",
+        description: "Intent Technologie lève des fonds auprès d'Xange pour accélerer le déploiement commercial de ses capteurs et solutions logicielles pour améliorer la performance énergétique des bâtiments collectifs",
+        image: "https://res.cloudinary.com/drncmlu30/image/upload/v1766634134/INTENT_Technologies_-__Xange_i3rhea.png",
+        alt: "Intent Technologies"
+      },
+      {
+        order: 105,
+        sector: "Bien commun durable",
+        seller: "Numerix",
+        seller_initials: "N",
+        buyer: "Vauban",
+        buyer_initials: "V",
+        deal_type: "Augmentation de capital",
+        description: "Numerix Radiologie, un groupe diversifié de l'imagerie médical accueille Vauban Partenaires à son capital aux côtés de Naxicap Partners",
+        image: "https://res.cloudinary.com/drncmlu30/image/upload/v1766634136/NUMERIX_-__VAUBAN_lxh8uq.png",
+        alt: "Numerix"
+      },
+      {
+        order: 106,
+        sector: "Tech & Digital",
+        seller: "ConcoursMania (ActiPlay)",
+        seller_initials: "CM",
+        buyer: "Oddo",
+        buyer_initials: "OTC",
+        deal_type: "Augmentation de capital",
+        description: "Le bordelais ConcoursMania (Actiplay) ouvre son capital à Oddo Private Equity pour développer son offre de marketing digital autour des jeux concours",
+        image: "https://res.cloudinary.com/drncmlu30/image/upload/v1766634140/ConcoursMania_-__Oddo_zheokf.png",
+        alt: "ConcoursMania (ActiPlay)"
+      },
+      {
+        order: 107,
+        sector: "Industrie & systèmes productifs",
+        seller: "Oxxa",
+        seller_initials: "O",
+        buyer: "Entrepreneur Invest",
+        buyer_initials: "EI",
+        deal_type: "Augmentation de capital",
+        description: "Oxxa ouvre son capital à des fonds d'investissement pour financer le développement de ses usines de recylage plastique",
+        image: "https://res.cloudinary.com/drncmlu30/image/upload/v1766634254/OXXA_-__ENTREPRENEUR_INVEST_uphze2.png",
+        alt: "Oxxa"
+      },
+      {
+        order: 108,
+        sector: "Industrie & systèmes productifs",
+        seller: "RASEC",
+        seller_initials: "R",
+        buyer: "CDC Entreprises",
+        buyer_initials: "CDC",
+        deal_type: "Emission obligataire",
+        description: "CDC Entreprises rejoint CIC Investissement et Pechel au capital de RASEC leader de la fabrication du mobilier de sortie de caisse pour la GSA, GSB et GSS européenne",
+        image: "https://res.cloudinary.com/drncmlu30/image/upload/v1766634136/RASEC_-__CDC_ENTREPRISES_kjph5o.png",
+        alt: "RASEC"
+      },
+      {
+        order: 109,
+        sector: "Services techniques et professionnels",
+        seller: "Réalités",
+        seller_initials: "R",
+        buyer: "123Investment",
+        buyer_initials: "123",
+        deal_type: "Emission obligataire",
+        description: "Groupe Réalités - l'un des principaux promoteurs immobiliers du Grand Ouest - réalise un placement obligataire auprès des fonds gérés par 123Investment",
+        image: "https://res.cloudinary.com/drncmlu30/image/upload/v1766634125/REALITES_-__123_INVESTMENT_p5rg2w.png",
+        alt: "Réalités"
+      },
+      {
+        order: 110,
+        sector: "Tech & Digital",
+        seller: "Phoebe Ingenica",
+        seller_initials: "PI",
+        buyer: "CDC Entreprises",
+        buyer_initials: "CDC",
+        deal_type: "Augmentation de capital",
+        description: "Phoebe-Ingenica ouvre son capital à CDC Entreprises pour continuer sa phase de consolidation dans l'ingénierie industrielle",
+        image: "https://res.cloudinary.com/drncmlu30/image/upload/v1766634257/Phoebe_Ingenica_-__CDC_y5c5d0.png",
+        alt: "Phoebe Ingenica"
+      },
+      {
+        order: 111,
+        sector: "Industrie & systèmes productifs",
+        seller: "Savoy International",
+        seller_initials: "S",
+        buyer: "FMEA",
+        buyer_initials: "F",
+        deal_type: "Augmentation de capital",
+        description: "Savoy International, un des leader de la mécanique de précision et du décolletage pour l'industrie automobile ouvre son capital au FMEA (Fonds de Modernisation des Equipementiers Automobiles)",
+        image: "https://res.cloudinary.com/drncmlu30/image/upload/v1766634271/SAVOY_International_-__FMEA_njedmv.png",
+        alt: "Savoy International"
+      },
+      {
+        order: 112,
+        sector: "Industrie & systèmes productifs",
+        seller: "Sendin",
+        seller_initials: "S",
+        buyer: "CDC Entreprises",
+        buyer_initials: "CDC",
+        deal_type: "Emission obligataire",
+        description: "Sendin, un leader français de l'armature metallique et du treillis soudé, accueille CDC Entreprises dans sa structure de financement via un placement obligataire",
+        image: "https://res.cloudinary.com/drncmlu30/image/upload/v1766634177/SENDIN_-__CDC_ENTREPRISES_ikdy1o.png",
+        alt: "Sendin"
+      },
+      {
+        order: 113,
+        sector: "Tech & Digital",
+        seller: "Mac Guff",
+        seller_initials: "MG",
+        buyer: "Avenir Entreprises",
+        buyer_initials: "AE",
+        deal_type: "Augmentation de capital",
+        description: "MAC GUFF, l'un des studios d'effets spéciaux les plus reconnus au monde ouvre son capital pour financer ses projets de développement dans les longs métrages d'animation (Moi, Moche Méchant, etc.)",
+        image: "https://res.cloudinary.com/drncmlu30/image/upload/v1766634139/MAC_GUFF_-__AVENIR_ENTREPRISES_ab5jsr.png",
+        alt: "Mac Guff"
+      },
+      {
+        order: 114,
+        sector: "Conseil & Ingénierie",
+        seller: "The Brand Nation",
+        seller_initials: "TBN",
+        buyer: "CDC Entreprises",
+        buyer_initials: "CDC",
+        deal_type: "Emission obligataire",
+        description: "The Brand Nation, un groupement d'agences de communication média et hors médial spécialisé retail / food & beverage accueille CDC Entreprises via un placement obligataire",
+        image: "https://res.cloudinary.com/drncmlu30/image/upload/v1766634256/THE_BRAND_NATION_-__CDC_ENTREPRISES_v1twfc.png",
+        alt: "The Brand Nation"
+      },
+      {
+        order: 115,
+        sector: "Industrie & systèmes productifs",
+        seller: "IPI",
+        seller_initials: "IPI",
+        buyer: "BNP PE, EI",
+        buyer_initials: "BNP",
+        deal_type: "LBO",
+        description: "IPI, un groupe de conception de pompes hydrauliques industrielles fait entrer Entrepreneur Invest & BNP PE à son capital",
+        image: "https://res.cloudinary.com/drncmlu30/image/upload/v1766634257/IPI_-__BNP_PE_EI_qm3jdc.png",
+        alt: "IPI"
+      },
+      {
+        order: 116,
+        sector: "Tech & Digital",
+        seller: "Zengularity",
+        seller_initials: "Z",
+        buyer: "Isatis Capital, Entrepreneur Invest",
+        buyer_initials: "IC/EI",
+        deal_type: "Augmentation de capital",
+        description: "Zengularity, un acteur reconnu de la tech internationale dans la construction de framework pour développeur, ouvre son capital à des fonds de private equity pour financer sa croissance",
+        image: "https://res.cloudinary.com/drncmlu30/image/upload/v1766634259/ZENGULARITY_-__ISatis_-_EI_i9zsr0.png",
+        alt: "Zengularity"
+      },
+      {
+        order: 117,
+        sector: "Services techniques et professionnels",
+        seller: "Inovaxion",
+        seller_initials: "I",
+        buyer: "CDC Entreprises",
+        buyer_initials: "CDC",
+        deal_type: "Emission obligataire",
+        description: "Inovaxion, développeur et distributeur de produits électroniques grands publics innovants, fait appel à CDC Entreprises pour renforcer ses capacités financières et accélerer son développement",
+        image: "https://res.cloudinary.com/drncmlu30/image/upload/v1766634259/INOVAXION_-__CDC_ENTREPRISES_wcw7r7.png",
+        alt: "Inovaxion"
+      },
+      {
+        order: 118,
+        sector: "Services techniques et professionnels",
+        seller: "Regnault Autocars",
+        seller_initials: "RA",
+        buyer: "Entrepreneur Invest",
+        buyer_initials: "EI",
+        deal_type: "Augmentation de capital",
+        description: "Regnault Autocars, opérateur de lignes régulières et de grand tourisme dans le nord est de la France, réalise une première opération de LBO",
+        image: "https://res.cloudinary.com/drncmlu30/image/upload/v1766634130/REgnault_Autocars_-__Entrepreneur_invest_zry2f3.png",
+        alt: "Regnault Autocars"
+      },
+      {
+        order: 119,
+        sector: "Services techniques et professionnels",
+        seller: "Helios Strategia",
+        seller_initials: "HS",
+        buyer: "Idinvest",
+        buyer_initials: "IC/EI",
+        deal_type: "Augmentation de capital",
+        description: "Helio Strategia, distributeur et installateur photovoltaïque ouvre son capital à Idinvest lors d'une augmentation de capital",
+        image: "https://res.cloudinary.com/drncmlu30/image/upload/v1766634128/HElios_Strategia_-__Idinvest_xyicyf.png",
+        alt: "Helios Strategia"
+      },
+      {
+        order: 120,
+        sector: "Services techniques et professionnels",
+        seller: "Builder",
+        seller_initials: "B+",
+        buyer: "Mcapital",
+        buyer_initials: "M",
+        deal_type: "Augmentation de capital",
+        description: "Builder, spécialisé dans la distribution de matériel de bricolage et de jardinage fait appel à MCapital Partners pour soutenir son fort développement organique",
+        image: "https://res.cloudinary.com/drncmlu30/image/upload/v1766634126/BUILDER_-__MCAPITAL_wsvqvx.png",
+        alt: "Builder"
+      },
+      {
+        order: 121,
+        sector: "Tech & Digital",
+        seller: "Watteco",
+        seller_initials: "W",
+        buyer: "Truffle Capital, MCapital",
+        buyer_initials: "TC",
+        deal_type: "Augmentation de capital",
+        description: "Watteco, une start up toulonaise spécialiste du signal électrique et du smart grid, lève des fonds auprès de Truffle Capital",
+        image: "https://res.cloudinary.com/drncmlu30/image/upload/v1766634139/Watteco-__Truffle_Mcapital_ry1k4b.png",
+        alt: "Watteco"
+      },
+      {
+        order: 122,
+        sector: "Industrie & systèmes productifs",
+        seller: "Prime Technology",
+        seller_initials: "PT",
+        buyer: "Amundi",
+        buyer_initials: "A",
+        deal_type: "Augmentation de capital",
+        description: "Prime Technology, un fabricant de chaudières basse consommation ouvre son capital à Amundi Private Equity",
+        image: "https://res.cloudinary.com/drncmlu30/image/upload/v1766634269/Prime_Technologu_-__Amundi_ydpbcp.png",
+        alt: "Prime Technology"
+      },
+      {
+        order: 123,
+        sector: "Bien commun durable",
+        seller: "Inter Ortho / Ormihl Danet",
+        seller_initials: "I/O",
+        buyer: "Sober Medical",
+        buyer_initials: "SM",
+        deal_type: "M&A Buy Side",
+        description: "Ormihl Danet, un fabricant historique d'orthèses et de semelles orthopédiques, acquiert 100% de Sober Médical, un fabricant d'orthèses spécialiste des accidents du sport.",
+        image: "https://res.cloudinary.com/drncmlu30/image/upload/v1766634260/Inter_Ortho_-__Sober_yto3io.png",
+        alt: "Inter Ortho / Ormihl Danet"
+      },
+      {
+        order: 124,
+        sector: "Bien commun durable",
+        seller: "Darkworks",
+        seller_initials: "D",
+        buyer: "D&P",
+        buyer_initials: "D&P",
+        deal_type: "Augmentation de capital",
+        description: "Développement&Partenariat rejoint N.I Partners et SGCP au capital de Darkworks, studio parisien de développement de jeux vidéo (Alone in the Dark)",
+        image: "https://res.cloudinary.com/drncmlu30/image/upload/v1766634129/DARKWORKS_-__D_P_cmygge.png",
+        alt: "Darkworks"
+      },
+      {
+        order: 125,
+        sector: "Tech & Digital",
+        seller: "Danem",
+        seller_initials: "D",
+        buyer: "Promelys Participations",
+        buyer_initials: "PP",
+        deal_type: "Augmentation de capital",
+        description: "Danem, éditeur de logiciels pour les forces commerciales, ouvre son capital à Promelys Participations",
+        image: "https://res.cloudinary.com/drncmlu30/image/upload/v1766634131/DANEM-__Promelys_bho8jw.png",
+        alt: "Danem"
+      },
+      {
+        order: 126,
+        sector: "Services techniques et professionnels",
+        seller: "RMBH",
+        seller_initials: "R",
+        buyer: "CDC Entreprises",
+        buyer_initials: "CDC",
+        deal_type: "Emission obligataire",
+        description: "RMBH, un leader francilien de la charpente, accueille CDC Entreprises dans sa structure de financement via un placement obligataire",
+        image: "https://res.cloudinary.com/drncmlu30/image/upload/v1766634272/RBMH_--__CDC_ENTREPRISES_zhylaa.png",
+        alt: "RMBH"
+      },
+      {
+        order: 127,
+        sector: "Tech & Digital",
+        seller: "Central Test",
+        seller_initials: "CT",
+        buyer: "Naxicap Partners",
+        buyer_initials: "NP",
+        deal_type: "Augmentation de capital",
+        description: "Central Test, éditeur de logiciel de test RH et psychologiques, accueille NAXICAP Partners à son capital",
+        image: "https://res.cloudinary.com/drncmlu30/image/upload/v1766634269/Central_Test_-__Naxicap_partners_dxhi8s.png",
+        alt: "Central Test"
+      },
+      {
+        order: 128,
+        sector: "Tech & Digital",
+        seller: "ConcoursMania",
+        seller_initials: "CM",
+        buyer: "Toilokdo",
+        buyer_initials: "TC",
+        deal_type: "M&A Buy Side",
+        description: "ConcoursMania (Actiplay) spécialiste du marketing digital, acquiert la plateforme de jeux concours Toilokdo",
+        image: "https://res.cloudinary.com/drncmlu30/image/upload/v1766634269/Concours_Mania_-_Toilokado_n11u5z.png",
+        alt: "ConcoursMania"
+      },
+      {
+        order: 129,
+        sector: "Bien commun durable",
+        seller: "2 minutes",
+        seller_initials: "2m",
+        buyer: "Alliance Entreprendre",
+        buyer_initials: "AE",
+        deal_type: "Augmentation de capital",
+        description: "2Minutes, studio de production et de réalisation de dessins animés ouvre son capital à Alliance Entreprendre",
+        image: "https://res.cloudinary.com/drncmlu30/image/upload/v1766634251/2minutes-__Alliance_Entreprendre_n2vxrr.png",
+        alt: "2 minutes"
+      },
+      {
+        order: 130,
+        sector: "Bien commun durable",
+        seller: "Cap Sensoria",
+        seller_initials: "CS",
+        buyer: "CIC, Vatel",
+        buyer_initials: "CIC",
+        deal_type: "Augmentation de capital",
+        description: "Cap Sensoria ouvre son capital à Vatel Capital et CM-CIC Capital Privé pour étendre son offre de centres de seminaires BtoB",
+        image: "https://res.cloudinary.com/drncmlu30/image/upload/v1766634257/CAP_SENSORIA_-__VATEL_CM_CIC_lzmapd.png",
+        alt: "Cap Sensoria"
+      }
+    ];
+
+
+    /**
+     * Helper to get font size class based on text length
+     */
+    function getFontSizeClass(text) {
+      if (!text) return 'text-lg';
+      if (text.length > 3) return 'text-[10px] leading-tight';
+      if (text.length > 2) return 'text-sm';
+      return 'text-lg';
+    }
+
+    /**
+     * Fonction pour remplacer les placeholders dans le template
+     */
+    function replacePlaceholders(template, data) {
+      let html = template.innerHTML;
+      
+      // Calculate font sizes for initials
+      const sellerSizeClass = getFontSizeClass(data.seller_initials);
+      const buyerSizeClass = getFontSizeClass(data.buyer_initials);
+      
+      // Replace content placeholders
+      html = html.replace(/\{\{sector\}\}/g, escapeHtml(data.sector));
+      html = html.replace(/\{\{seller\}\}/g, escapeHtml(data.seller));
+      
+      // Handle seller initials with dynamic font size
+      // We need to find the span containing seller_initials and replace its class or content
+      // Since we're doing simple string replacement, we can replace the class in the template if we modify it first,
+      // or we can just replace the variable and assume the template has a standard class we can target?
+      // Actually, regex replacement on the HTML string is risky if we try to change classes.
+      // Better approach: The template has <span class="... text-lg">{{seller_initials}}</span>
+      // We can replace "text-lg" locally within the replacement logic, but that's hard with just string replace.
+      
+      // Alternative: Inject the class into the data object and use a new placeholder {{seller_size_class}} in template?
+      // That requires changing the template.
+      
+      // Let's modify the template to use a placeholder for the class, OR 
+      // do a regex replace on the specific span context.
+      
+      // Context from file: 
+      // <span class="font-serif font-bold text-lg">{{seller_initials}}</span>
+      
+      // Let's replace the placeholder AND the surrounding class in one go if possible, 
+      // or better: let's modify the template to accept a class placeholder? 
+      // No, user didn't ask to change template structure.
+      
+      // Let's use regex to find the specific span with text-lg and the placeholder
+      
+      // First, let's simple replace the content
+      html = html.replace(/\{\{sector\}\}/g, escapeHtml(data.sector));
+      html = html.replace(/\{\{seller\}\}/g, escapeHtml(data.seller));
+      html = html.replace(/\{\{buyer\}\}/g, escapeHtml(data.buyer));
+      html = html.replace(/\{\{deal_type\}\}/g, escapeHtml(data.deal_type));
+      html = html.replace(/\{\{description\}\}/g, escapeHtml(data.description));
+      html = html.replace(/\{\{image\}\}/g, escapeHtml(data.image));
+      html = html.replace(/\{\{alt\}\}/g, escapeHtml(data.alt));
+      
+      // Now handle initials and their font sizes
+      // We'll replace the text-lg class specifically for the spans containing the initials
+      // This relies on the exact string structure in the template
+      
+      // Replace seller initials and adjust font size
+      html = html.replace(
+        /class="font-serif font-bold text-lg">{{seller_initials}}<\/span>/g, 
+        `class="font-serif font-bold ${sellerSizeClass}">${escapeHtml(data.seller_initials)}</span>`
+      );
+      
+      // Replace buyer initials and adjust font size
+      html = html.replace(
+        /class="font-serif font-bold text-lg">{{buyer_initials}}<\/span>/g, 
+        `class="font-serif font-bold ${buyerSizeClass}">${escapeHtml(data.buyer_initials)}</span>`
+      );
+
+      // Fallback for standard replacement if regex didn't match (safety)
+      html = html.replace(/\{\{seller_initials\}\}/g, escapeHtml(data.seller_initials));
+      html = html.replace(/\{\{buyer_initials\}\}/g, escapeHtml(data.buyer_initials));
+      
+      return html;
+    }
+
+    /**
+     * Fonction pour échapper les caractères HTML
+     */
+    function escapeHtml(text) {
+      const div = document.createElement('div');
+      div.textContent = text;
+      return div.innerHTML;
+    }
+
+    /**
+     * Infinite Scroll Implementation
+     * Loads 12 cards initially, then 12 more as user scrolls
+     */
+    const CARDS_PER_BATCH = 12;
+    let currentIndex = 0;
+    let sortedTransactions = [];
+    let isLoading = false;
+    let allLoaded = false;
+
+    /**
+     * Create skeleton loading cards
+     */
+    function createSkeletons(count = CARDS_PER_BATCH) {
+      const grid = document.getElementById('transactions-grid');
+      if (!grid) return;
+      
+      const skeletons = [];
+      for (let i = 0; i < count; i++) {
+        const skeleton = document.createElement('div');
+        skeleton.className = 'skeleton-card';
+        skeleton.setAttribute('data-skeleton', 'true');
+        skeleton.innerHTML = `
+          <div class="skeleton-element skeleton-sector"></div>
+          <div class="skeleton-avatars">
+            <div class="skeleton-element skeleton-avatar"></div>
+            <div class="skeleton-element skeleton-arrow"></div>
+            <div class="skeleton-element skeleton-avatar"></div>
+          </div>
+          <div class="skeleton-names">
+            <div class="skeleton-element skeleton-name"></div>
+            <div class="skeleton-element skeleton-name"></div>
+          </div>
+          <div class="skeleton-element skeleton-title"></div>
+        `;
+        grid.appendChild(skeleton);
+        skeletons.push(skeleton);
+      }
+      return skeletons;
+    }
+
+    /**
+     * Remove skeleton loading cards
+     */
+    function removeSkeletons() {
+      const grid = document.getElementById('transactions-grid');
+      if (!grid) return;
+      
+      const skeletons = grid.querySelectorAll('[data-skeleton="true"]');
+      skeletons.forEach(skeleton => skeleton.remove());
+    }
+
+    /**
+     * Load a batch of transaction cards
+     */
+    function loadMoreCards() {
+      if (isLoading || allLoaded) return;
+      
+      const grid = document.getElementById('transactions-grid');
+      const template = document.getElementById('transaction-card-template');
+      
+      if (!grid || !template) return;
+      
+      isLoading = true;
+      
+      // Calculate how many cards to load
+      const remainingCards = sortedTransactions.length - currentIndex;
+      const cardsToLoad = Math.min(CARDS_PER_BATCH, remainingCards);
+      
+      // Show skeletons for upcoming cards (only for infinite scroll, not initial load)
+      if (currentIndex > 0) {
+        createSkeletons(cardsToLoad);
+      }
+      
+      // Simulate minimal delay to show loading state (for smoother UX)
+      const loadDelay = currentIndex > 0 ? 100 : 0;
+      
+      setTimeout(() => {
+        // Remove skeletons before adding real cards
+        removeSkeletons();
+        
+        // Get next batch
+        const endIndex = Math.min(currentIndex + CARDS_PER_BATCH, sortedTransactions.length);
+        const batch = sortedTransactions.slice(currentIndex, endIndex);
+        
+        // Append cards to grid
+        batch.forEach(transaction => {
+          const cardHtml = replacePlaceholders(template, transaction);
+          const tempDiv = document.createElement('div');
+          tempDiv.innerHTML = cardHtml;
+          const card = tempDiv.firstElementChild;
+          grid.appendChild(card);
+        });
+        
+        currentIndex = endIndex;
+        isLoading = false;
+        
+        // Check if all cards are loaded
+        if (currentIndex >= sortedTransactions.length) {
+          allLoaded = true;
+          // Remove the sentinel if all loaded
+          const sentinel = document.getElementById('scroll-sentinel');
+          if (sentinel) sentinel.remove();
+        }
+      }, loadDelay);
+    }
+
+    /**
+     * Initialize infinite scroll with Intersection Observer
+     */
+    function initInfiniteScroll() {
+      const grid = document.getElementById('transactions-grid');
+      if (!grid) return;
+      
+      // Create sentinel element (invisible element at the bottom)
+      const sentinel = document.createElement('div');
+      sentinel.id = 'scroll-sentinel';
+      sentinel.className = 'h-10 w-full';
+      sentinel.setAttribute('aria-hidden', 'true');
+      grid.parentElement.appendChild(sentinel);
+      
+      // Create intersection observer
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting && !allLoaded) {
+            loadMoreCards();
+          }
+        });
+      }, {
+        rootMargin: '200px', // Start loading before user reaches the bottom
+        threshold: 0
+      });
+      
+      observer.observe(sentinel);
+    }
+
+    /**
+     * Fonction principale pour rendre les transactions
+     */
+    function renderTransactions() {
+      const grid = document.getElementById('transactions-grid');
+      const template = document.getElementById('transaction-card-template');
+      
+      if (!grid || !template) {
+        console.error('Éléments requis non trouvés');
+        return;
+      }
+
+      // Reset state
+      currentIndex = 0;
+      allLoaded = false;
+
+      // Sort transactions by order (ascending)
+      sortedTransactions = [...transactions].sort((a, b) => a.order - b.order);
+
+      // Remove existing skeleton cards (they were in HTML for initial load)
+      removeSkeletons();
+      
+      // Get initial batch
+      const endIndex = Math.min(CARDS_PER_BATCH, sortedTransactions.length);
+      const batch = sortedTransactions.slice(0, endIndex);
+      
+      // Append cards to grid
+      batch.forEach(transaction => {
+        const cardHtml = replacePlaceholders(template, transaction);
+        const tempDiv = document.createElement('div');
+        tempDiv.innerHTML = cardHtml;
+        const card = tempDiv.firstElementChild;
+        grid.appendChild(card);
+      });
+      
+      currentIndex = endIndex;
+      
+      // Check if all cards are loaded
+      if (currentIndex >= sortedTransactions.length) {
+        allLoaded = true;
+      } else {
+        // Initialize infinite scroll only if there are more cards
+        initInfiniteScroll();
+      }
+    }
+
+    /**
+     * Initialize card flip on tap/click for touch devices
+     */
+    function initCardFlip() {
+      const grid = document.getElementById('transactions-grid');
+      if (!grid) return;
+
+      // Use event delegation for dynamically loaded cards
+      grid.addEventListener('click', (e) => {
+        const card = e.target.closest('.transaction-card');
+        if (!card) return;
+
+        // Toggle the flipped state
+        card.classList.toggle('is-flipped');
+      });
+
+      // Close flipped card when clicking outside
+      document.addEventListener('click', (e) => {
+        if (!e.target.closest('.transaction-card')) {
+          // Unflip all cards when clicking outside
+          document.querySelectorAll('.transaction-card.is-flipped').forEach(card => {
+            card.classList.remove('is-flipped');
+          });
+        }
+      });
+    }
+
+    /**
+     * Gestion du menu mobile
+     */
+    function initMobileMenu() {
+      const menuBtn = document.getElementById('mobile-menu-btn');
+      const menuClose = document.getElementById('mobile-menu-close');
+      const menu = document.getElementById('mobile-menu');
+
+      if (!menuBtn || !menuClose || !menu) return;
+
+      function openMenu() {
+        menu.classList.remove('translate-x-full');
+      }
+
+      function closeMenu() {
+        menu.classList.add('translate-x-full');
+      }
+
+      menuBtn.addEventListener('click', openMenu);
+      menuClose.addEventListener('click', closeMenu);
+
+      // Fermer le menu lors du clic sur un lien
+      const mobileLinks = menu.querySelectorAll('.mobile-link');
+      mobileLinks.forEach(link => {
+        link.addEventListener('click', closeMenu);
+      });
+    }
+
+    /**
+     * Mise à jour des liens de navigation actifs
+     */
+    function updateActiveNavLinks() {
+      const pathname = window.location.pathname.toLowerCase();
+      
+      // Helper to extract page name from path (works for both /page and /page.html)
+      function getPageName(path) {
+        // Remove trailing slash
+        const cleanPath = path.replace(/\/$/, '');
+        // Get last segment
+        const lastSegment = cleanPath.split('/').pop() || '';
+        // Remove .html extension
+        return lastSegment.replace('.html', '').toLowerCase();
+      }
+      
+      const currentPage = getPageName(pathname);
+      
+      // Helper to check if current page matches a link
+      function isActivePage(href) {
+        const linkPage = getPageName(href);
+        
+        // Handle home/index page
+        if (linkPage === 'index' || linkPage === '') {
+          return currentPage === 'index' || currentPage === '' || pathname === '/';
+        }
+        
+        // Direct page name comparison
+        return currentPage === linkPage;
+      }
+      
+      // Update desktop nav links
+      const navLinks = document.querySelectorAll('.nav-link');
+      navLinks.forEach(link => {
+        const linkPath = link.getAttribute('href');
+        if (isActivePage(linkPath)) {
+          link.classList.remove('text-[#BFC0AB]');
+          link.classList.add('text-white');
+        } else {
+          link.classList.remove('text-white');
+          link.classList.add('text-[#BFC0AB]');
+        }
+      });
+      
+      // Update mobile nav links
+      const mobileLinks = document.querySelectorAll('.mobile-link');
+      mobileLinks.forEach(link => {
+        const linkPath = link.getAttribute('href');
+        if (isActivePage(linkPath)) {
+          link.classList.remove('text-[#D3D3B9]');
+          link.classList.add('text-white');
+        } else {
+          link.classList.remove('text-white');
+          link.classList.add('text-[#D3D3B9]');
+        }
+      });
+    }
+
+    /**
+     * Page transition - prevent video freeze glitch during navigation
+     */
+    function initPageTransition() {
+      document.querySelectorAll('a[href]').forEach(link => {
+        const href = link.getAttribute('href') || '';
+        
+        // Skip external links, mailto, tel, hash anchors, and links with target
+        if (link.hostname !== window.location.hostname) return;
+        if (link.hasAttribute('target')) return;
+        if (href.startsWith('#') || href.startsWith('mailto:') || href.startsWith('tel:')) return;
+        
+        link.addEventListener('click', (e) => {
+          e.preventDefault();
+          
+          // Disable backdrop blur and show overlay
+          document.body.classList.add('nav-transitioning');
+          
+          // Navigate after brief fade (150ms)
+          setTimeout(() => {
+            window.location.href = href;
+          }, 150);
+        });
+      });
+      
+      // Also handle beforeunload to catch browser back/forward
+      window.addEventListener('beforeunload', () => {
+        document.body.classList.add('nav-transitioning');
+      });
+    }
+
+    // Initialisation au chargement de la page
+    document.addEventListener('DOMContentLoaded', () => {
+      initPageTransition();
+      renderTransactions();
+      initCardFlip();
+      initMobileMenu();
+      updateActiveNavLinks();
+    });
+  </script>
+</body>
+</html>
