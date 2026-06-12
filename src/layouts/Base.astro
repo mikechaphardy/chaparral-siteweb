@@ -34,6 +34,21 @@ const EN_HOST = 'https://www.chaparral-finance.com';
   <link rel="icon" type="image/png" sizes="32x32" href="https://res.cloudinary.com/drncmlu30/image/upload/w_32,h_32,c_fill,f_png/v1766651131/Favicon_ttv2uq.png">
   <link rel="apple-touch-icon" sizes="180x180" href="https://res.cloudinary.com/drncmlu30/image/upload/w_180,h_180,c_fill,f_png/v1766651131/Favicon_ttv2uq.png">
 
+  <!-- Choix de langue explicite : ?lang=en pose un cookie qui neutralise la
+       géo-redirection France → .fr (règle "missing" dans vercel.json),
+       puis nettoie l'URL. -->
+  <script is:inline>
+    (function () {
+      var m = location.search.match(/[?&]lang=en\b/);
+      if (m) {
+        document.cookie = 'lang_pref=en;path=/;max-age=31536000;samesite=lax';
+        var u = new URL(location.href);
+        u.searchParams.delete('lang');
+        history.replaceState(null, '', u);
+      }
+    })();
+  </script>
+
   <link rel="stylesheet" href="/assets/styles.css">
   <script is:inline src="https://unpkg.com/lucide@1.17.0/dist/umd/lucide.min.js"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -48,10 +63,10 @@ const EN_HOST = 'https://www.chaparral-finance.com';
   <div id="page-transition-overlay"></div>
 
   <!-- Navigation Bar -->
-  <Header current={current} />
+  <Header current={current} locale={locale} path={path} />
 
   <!-- Mobile Menu Overlay -->
-  <MobileMenu current={current} />
+  <MobileMenu current={current} locale={locale} path={path} />
 
   <slot />
 

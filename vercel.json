@@ -11,6 +11,10 @@
         { "type": "host", "value": "(www\\.)?chaparral-finance\\.com" },
         { "type": "header", "key": "x-vercel-ip-country", "value": "FR" }
       ],
+      "missing": [
+        { "type": "cookie", "key": "lang_pref" },
+        { "type": "query", "key": "lang" }
+      ],
       "destination": "https://www.chaparral-finance.fr/:path",
       "permanent": false
     }

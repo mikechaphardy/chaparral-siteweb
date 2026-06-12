@@ -1,10 +1,14 @@
 ---
 // Menu mobile plein écran. Le lien de la page courante est en blanc.
-const { current } = Astro.props;
+// Sélecteur de langue identique à celui du header (liens croisés domaines).
+const { current, locale = 'fr', path = '/' } = Astro.props;
 
 const active = 'mobile-link text-3xl font-serif text-white hover:text-white transition-colors';
 const inactive = 'mobile-link text-3xl font-serif text-[#D3D3B9] hover:text-white transition-colors';
 const link = (page) => (current === page ? active : inactive);
+
+const frUrl = `https://www.chaparral-finance.fr${path}`;
+const enUrl = `https://www.chaparral-finance.com${path}?lang=en`;
 ---
 <div id="mobile-menu" class="fixed inset-0 z-[60] bg-[#0A1A2A] transform translate-x-full transition-transform duration-500 ease-in-out lg:hidden flex flex-col">
   <div class="flex items-center justify-between p-6 border-b border-[#D3D3B9]/10">
@@ -26,5 +30,14 @@ const link = (page) => (current === page ? active : inactive);
     <a href="/contacts" class={link('contacts')}>
       Contact
     </a>
+    <div class="flex items-center gap-3 mt-8" aria-label="Langue / Language">
+      {locale === 'fr'
+        ? <span class="text-white text-sm font-semibold uppercase tracking-widest">FR</span>
+        : <a href={frUrl} class="text-[#D3D3B9] hover:text-white transition-colors text-sm font-semibold uppercase tracking-widest" hreflang="fr" lang="fr">FR</a>}
+      <span class="text-[#D3D3B9]/40 text-sm">/</span>
+      {locale === 'en'
+        ? <span class="text-white text-sm font-semibold uppercase tracking-widest">EN</span>
+        : <a href={enUrl} class="text-[#D3D3B9] hover:text-white transition-colors text-sm font-semibold uppercase tracking-widest" hreflang="en" lang="en">EN</a>}
+    </div>
   </nav>
 </div>
