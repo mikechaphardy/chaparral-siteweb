@@ -1,6 +1,24 @@
 [
   {
     "order": 1,
+    "sector": "Conseil & Ingénierie",
+    "seller": "Enza Conseil",
+    "seller_initials": "EC",
+    "buyer": "Entrepreneur Invest / BNP Paribas Développement",
+    "buyer_initials": "EI/BNP",
+    "deal_type": "Réorganisation capitalistique",
+    "description": "ENZA, cabinet de conseil en transformation des organisations, réorganise son capital autour de son Management avec le réinvestissement d'Entrepreneur Invest, aux côtés de BNP Paribas Développement et du Crédit Agricole",
+    "image": "/assets/transactions/enza-entrepreneur-invest-bnp-paribas-developpement.png",
+    "alt": "Enza Conseil x Entrepreneur Invest / BNP Paribas Développement",
+    "sector_en": "Consulting & Engineering",
+    "deal_type_en": "Capital reorganisation",
+    "description_en": "ENZA, a consulting firm specialising in organisational transformation, reorganises its capital around its management team with the reinvestment of Entrepreneur Invest, alongside BNP Paribas Développement and Crédit Agricole",
+    "sector_it": "Consulenza & Ingegneria",
+    "deal_type_it": "Riorganizzazione del capitale",
+    "description_it": "ENZA, società di consulenza specializzata nella trasformazione organizzativa, riorganizza il capitale attorno al suo management con il reinvestimento di Entrepreneur Invest, al fianco di BNP Paribas Développement e Crédit Agricole"
+  },
+  {
+    "order": 2,
     "sector": "Bien commun durable",
     "seller": "OPUS Formation",
     "seller_initials": "OF",
@@ -18,7 +36,7 @@
     "description_it": "Gli azionisti di OPUS Formation, ente di formazione professionale e centro di apprendistato, accolgono Initiative & Finance e Altur (EdTrain) nel capitale nell'ambito di un'operazione di LBO"
   },
   {
-    "order": 2,
+    "order": 3,
     "sector": "Bien commun durable",
     "seller": "Avenir Formation - PGE-PGO",
     "seller_initials": "AF/PP",
@@ -36,7 +54,7 @@
     "description_it": "Avenir Formation, specialista nella preparazione ai concorsi delle grandi scuole francesi (commercio, ingegneria, scienze politiche) e all'insegnamento, entra a far parte del gruppo HELLO PREPA"
   },
   {
-    "order": 3,
+    "order": 4,
     "sector": "Bien commun durable",
     "seller": "Ulysse",
     "seller_initials": "U",
@@ -54,7 +72,7 @@
     "description_it": "ULYSSE e i suoi azionisti finanziari (Sparring Opportunities / MACSF) si rivolgono al prestatore privato ZENCAP AM per accelerare la crescita e costruire un leader europeo del trasporto per persone a mobilità ridotta"
   },
   {
-    "order": 4,
+    "order": 5,
     "sector": "Industrie & systèmes productifs",
     "seller": "Renolit / Ondex",
     "seller_initials": "R/O",
@@ -72,7 +90,7 @@
     "description_it": "Il fondo americano AIAC Partners, specialista nell'acquisizione di società industriali, acquisisce il 100% della filiale francese del gruppo tedesco RENOLIT (film e prodotti plastici)"
   },
   {
-    "order": 5,
+    "order": 6,
     "sector": "Conseil & Ingénierie",
     "seller": "Domobat",
     "seller_initials": "D",
@@ -90,7 +108,7 @@
     "description_it": "GINGER, leader francese nell'ingegneria di prescrizione, si rafforza nella diagnostica delle infrastrutture con l'acquisizione di DOMOBAT - BATISCOPIE"
   },
   {
-    "order": 6,
+    "order": 7,
     "sector": "Tech & Digital",
     "seller": "Qyyp",
     "seller_initials": "Q",
@@ -108,7 +126,7 @@
     "description_it": "QYYP fa entrare Momentum Invest nel capitale per accelerare la strategia di consolidamento / build-up nei servizi IT gestiti e nell'outsourcing per PMI e mid-cap"
   },
   {
-    "order": 7,
+    "order": 8,
     "sector": "Industrie & systèmes productifs",
     "seller": "Cartonnerie Moderne",
     "seller_initials": "CM",
@@ -126,7 +144,7 @@
     "description_it": "Il Gruppo GUILLIN, numero uno europeo del packaging alimentare, acquisisce gli attivi del gruppo CARTONNERIE MODERNE, specialista del packaging in cartone per panetterie e pasticcerie"
   },
   {
-    "order": 8,
+    "order": 9,
     "sector": "Bien commun durable",
     "seller": "Parc du Petit Prince",
     "seller_initials": "PPP",
@@ -144,7 +162,7 @@
     "description_it": "Aérophile, leader mondiale del pallone frenato, cede il suo parco divertimenti alsaziano - Le Parc du Petit Prince - allo specialista polacco dei parchi a tema Mandoria"
   },
   {
-    "order": 9,
+    "order": 10,
     "sector": "Bien commun durable",
     "seller": "Excellens Formation",
     "seller_initials": "EF",
@@ -162,7 +180,7 @@
     "description_it": "TAKOMA, leader francese della formazione online sostenuto da UI INVESTISSEMENT, acquisisce EXCELLENS FORMATION, specialista della formazione per il settore pubblico."
   },
   {
-    "order": 10,
+    "order": 11,
     "sector": "Services techniques et professionnels",
     "seller": "Bichard Equipement",
     "seller_initials": "BE",
@@ -180,7 +198,7 @@
     "description_it": "Bichard Equipement, leader regionale nell'installazione e manutenzione di cucine professionali, fa entrare Nextstage AM nel capitale per accelerare la crescita e la copertura territoriale"
   },
   {
-    "order": 11,
+    "order": 12,
     "sector": "Services techniques et professionnels",
     "seller": "Groupe CAN",
     "seller_initials": "GC",
@@ -198,7 +216,7 @@
     "description_it": "Groupe CAN, leader francese dei lavori in accesso difficile, riorganizza il capitale attorno al team di management con il sostegno di Sparring Opportunities e CELDA"
   },
   {
-    "order": 12,
+    "order": 13,
     "sector": "Conseil & Ingénierie",
     "seller": "Turenne Capital",
     "seller_initials": "TC",
@@ -216,7 +234,7 @@
     "description_it": "Turenne Capital entra nel capitale di Finance Consult, società di consulenza specializzata nell'ingegneria finanziaria, di bilancio e fiscale dei progetti pubblici"
   },
   {
-    "order": 13,
+    "order": 14,
     "sector": "Bien commun durable",
     "seller": "ESC BUSINESS SCHOOL",
     "seller_initials": "EBS",
@@ -234,7 +252,7 @@
     "description_it": "IFPASS, leader nazionale della formazione assicurativa, accelera la copertura territoriale nell'Est della Francia con l'acquisizione di BPC-ESC, business school solidamente radicata a livello locale"
   },
   {
-    "order": 14,
+    "order": 15,
     "sector": "Tech & Digital",
     "seller": "Netopie",
     "seller_initials": "N",
@@ -252,7 +270,7 @@
     "description_it": "METALINE, sostenuta da LFPI, acquisisce NETOPIE, società di servizi IT specializzata nelle tecnologie Apple in ambienti Microsoft"
   },
   {
-    "order": 15,
+    "order": 16,
     "sector": "Conseil & Ingénierie",
     "seller": "Itaque",
     "seller_initials": "I",
@@ -270,7 +288,7 @@
     "description_it": "The Blockchain Group cede la sua filiale di consulenza HR ITAQUE al team di management"
   },
   {
-    "order": 16,
+    "order": 17,
     "sector": "Industrie & systèmes productifs",
     "seller": "Propyplast",
     "seller_initials": "P",
@@ -288,7 +306,7 @@
     "description_it": "PROPYPLAST, specialista nell'estrusione di film plastici CAST, viene ceduta a LEYGATECH, leader francese dei film per i mercati agroalimentare, industriale e cosmetico"
   },
   {
-    "order": 17,
+    "order": 18,
     "sector": "Services techniques et professionnels",
     "seller": "ATEC",
     "seller_initials": "A",
@@ -306,7 +324,7 @@
     "description_it": "Il consorzio di società RAVOYARD rileva ATEC, leader della regione Rodano-Alpi nei lavori di copertura e rivestimento per edifici terziari e commerciali"
   },
   {
-    "order": 18,
+    "order": 19,
     "sector": "Bien commun durable",
     "seller": "Green Office",
     "seller_initials": "GO",
@@ -324,7 +342,7 @@
     "description_it": "Green Office, leader nelle soluzioni di raccolta differenziata in azienda, riorganizza il capitale attorno a Nextstage AM, Entrepreneur Invest & Isatis Capital"
   },
   {
-    "order": 19,
+    "order": 20,
     "sector": "Conseil & Ingénierie",
     "seller": "Spark SRT",
     "seller_initials": "SS",
@@ -342,7 +360,7 @@
     "description_it": "Spark RT è una società di ingegneria elettrica / idrogeno, attiva in particolare nel motorsport sostenibile (Formula E, Extreme H...)"
   },
   {
-    "order": 20,
+    "order": 21,
     "sector": "Services techniques et professionnels",
     "seller": "Groupe HBF",
     "seller_initials": "GH",
@@ -360,7 +378,7 @@
     "description_it": "Il Gruppo HBF, specialista nella distribuzione di prodotti elettrici per la grande distribuzione del bricolage (contatori, prese, domotica, ecc.), riorganizza il capitale con il sostegno di un pool bancario strutturato per accompagnare il ritiro progressivo del presidente e l'aumento della partecipazione del team operativo"
   },
   {
-    "order": 21,
+    "order": 22,
     "sector": "Tech & Digital",
     "seller": "Isochronix",
     "seller_initials": "I",
@@ -378,7 +396,7 @@
     "description_it": "TVH Consulting, sostenuta da 21 Partners, acquisisce Isochronix, specialista dell'integrazione Salesforce"
   },
   {
-    "order": 22,
+    "order": 23,
     "sector": "Tech & Digital",
     "seller": "Emotic",
     "seller_initials": "E",
@@ -396,7 +414,7 @@
     "description_it": "JEMS Group, sostenuto da MEANINGS CAPITAL, si posiziona nell'Ovest della Francia con l'acquisizione di EMOTIC, società di consulenza in innovazione digitale"
   },
   {
-    "order": 23,
+    "order": 24,
     "sector": "Industrie & systèmes productifs",
     "seller": "Sodopac",
     "seller_initials": "S",
@@ -414,7 +432,7 @@
     "description_it": "Un trio di imprenditori della moda, affiancato dai fondi Crédit Agricole, MCapital & NACO, acquisisce SODOPAC, il più grande produttore di pantofole Made in France"
   },
   {
-    "order": 24,
+    "order": 25,
     "sector": "Industrie & systèmes productifs",
     "seller": "Cartonnerie Moderne",
     "seller_initials": "CM",
@@ -432,7 +450,7 @@
     "description_it": "Cartonnerie Moderne fa entrare Nextstage AM nel capitale per consolidare il settore del packaging alimentare per panetterie e pasticcerie"
   },
   {
-    "order": 25,
+    "order": 26,
     "sector": "Services techniques et professionnels",
     "seller": "Doumer",
     "seller_initials": "D",
@@ -450,7 +468,7 @@
     "description_it": "Il Gruppo Doumer apre il capitale a Entrepreneur Invest per ampliare la propria offerta nei mestieri delle finiture edili: carpenteria metallica, pittura, impianti elettrici, ecc."
   },
   {
-    "order": 26,
+    "order": 27,
     "sector": "Tech & Digital",
     "seller": "Powertrafic",
     "seller_initials": "P",
@@ -468,7 +486,7 @@
     "description_it": "La rete di agenzie di comunicazione PUMP UP acquisisce POWERTRAFIC, specialista del digitale, SEO & SEA"
   },
   {
-    "order": 27,
+    "order": 28,
     "sector": "Bien commun durable",
     "seller": "Aerophile",
     "seller_initials": "A",
@@ -486,7 +504,7 @@
     "description_it": "Aérophile - leader mondiale del pallone frenato - riorganizza il capitale con l'ingresso di Nextstage AM e l'uscita di Amundi PEF"
   },
   {
-    "order": 28,
+    "order": 29,
     "sector": "Conseil & Ingénierie",
     "seller": "CET Ingénierie",
     "seller_initials": "CI",
@@ -504,7 +522,7 @@
     "description_it": "CET Ingénierie, una delle principali società di ingegneria edile dell'Île-de-France, riorganizza il capitale attorno al team dirigente e a Isatis Capital, sancendo l'uscita del fondatore"
   },
   {
-    "order": 29,
+    "order": 30,
     "sector": "Conseil & Ingénierie",
     "seller": "Enza Conseil",
     "seller_initials": "EC",
@@ -522,7 +540,7 @@
     "description_it": "ENZA, società di consulenza in PMO e change management, apre il capitale a Entrepreneur Invest e avvia la transizione manageriale permettendo a una ventina di dipendenti di diventare soci"
   },
   {
-    "order": 30,
+    "order": 31,
     "sector": "Bien commun durable",
     "seller": "Ulysse",
     "seller_initials": "U",
@@ -540,7 +558,7 @@
     "description_it": "ULYSSE, numero uno francese del trasporto di persone a mobilità ridotta, riorganizza il capitale attorno al team familiare fondatore e ai fondi Sparring Opportunities & MACSF, che subentrano a CM-CIC e Bpifrance"
   },
   {
-    "order": 31,
+    "order": 32,
     "sector": "Services techniques et professionnels",
     "seller": "Groupe Eddifis",
     "seller_initials": "GE",
@@ -558,7 +576,7 @@
     "description_it": "EDDIFIS, specialista delle finiture edili (restauro di facciate, pietra da taglio, pittura, coperture, ecc.), apre il capitale a Momentum Invest e Bpifrance per proseguire il consolidamento dei mestieri della manutenzione del patrimonio edilizio parigino"
   },
   {
-    "order": 32,
+    "order": 33,
     "sector": "Tech & Digital",
     "seller": "Trimane",
     "seller_initials": "T",
@@ -576,7 +594,7 @@
     "description_it": "The Blockchain Group - quotata su Euronext Growth - acquisisce TRIMANE, società di servizi IT specializzata in business intelligence, analytics e big data"
   },
   {
-    "order": 33,
+    "order": 34,
     "sector": "Services techniques et professionnels",
     "seller": "HBF",
     "seller_initials": "H",
@@ -594,7 +612,7 @@
     "description_it": "HBF, attore di primo piano del bricolage in Francia, acquisisce il 100% di Dismo, distributore di materiale elettrico, riscaldamento e illuminazione, filiale del Gruppo REXEL"
   },
   {
-    "order": 34,
+    "order": 35,
     "sector": "Conseil & Ingénierie",
     "seller": "POP",
     "seller_initials": "P",
@@ -612,7 +630,7 @@
     "description_it": "L'Ecole POP, leader nella consulenza e formazione al Lean Management, affida la maggioranza del capitale a SPARRING CAPITAL in una strategia di consolidamento delle società di consulenza in performance operativa"
   },
   {
-    "order": 35,
+    "order": 36,
     "sector": "Conseil & Ingénierie",
     "seller": "Pop",
     "seller_initials": "P",
@@ -630,7 +648,7 @@
     "description_it": "L'Ecole POP, controllata da Sparring Capital, si unisce al concorrente CUBIK PARTNERS nella prospettiva di costruire un numero uno del Lean Management / performance operativa. L'operazione consente al management di Cubik di assumere la direzione operativa del gruppo"
   },
   {
-    "order": 36,
+    "order": 37,
     "sector": "Services techniques et professionnels",
     "seller": "Dp Archi",
     "seller_initials": "DA",
@@ -648,7 +666,7 @@
     "description_it": "Un duo esperto del mondo delle fiere B2B e degli eventi rileva dai fondatori DP ARCHITECTURE, specialista nell'organizzazione e allestimento di congressi in Francia"
   },
   {
-    "order": 37,
+    "order": 38,
     "sector": "Tech & Digital",
     "seller": "Openminded",
     "seller_initials": "O",
@@ -666,7 +684,7 @@
     "description_it": "Accenture acquisisce il 100% del capitale di OpenMinded, specialista della cybersecurity"
   },
   {
-    "order": 38,
+    "order": 39,
     "sector": "Services techniques et professionnels",
     "seller": "Pure Trade",
     "seller_initials": "PT",
@@ -684,7 +702,7 @@
     "description_it": "PURE TRADE, leader del packaging per l'industria cosmetica e dei profumi, realizza un terzo LBO, che segna l'ingresso di SPARRING CAPITAL e l'uscita di Initiative & Finance e Isatis Capital"
   },
   {
-    "order": 39,
+    "order": 40,
     "sector": "Tech & Digital",
     "seller": "Iorga",
     "seller_initials": "I",
@@ -702,7 +720,7 @@
     "description_it": "Iorga, società di servizi IT generalista dotata di un centro servizi, viene acquisita da The Blockchain Group, consentendo l'uscita dal capitale del fondatore e di BNP Paribas Développement"
   },
   {
-    "order": 40,
+    "order": 41,
     "sector": "Tech & Digital",
     "seller": "Quantic",
     "seller_initials": "Q",
@@ -720,7 +738,7 @@
     "description_it": "AUBAY, società di servizi IT quotata su Euronext, acquisisce QUANTIC, specialista del DevOps"
   },
   {
-    "order": 41,
+    "order": 42,
     "sector": "Tech & Digital",
     "seller": "Groupe Alsatis",
     "seller_initials": "GA",
@@ -738,7 +756,7 @@
     "description_it": "ARDIAN entra nel capitale della tolosana ALSATIS, specialista telecom delle zone rurali e poco servite, in una logica di consolidamento settoriale"
   },
   {
-    "order": 42,
+    "order": 43,
     "sector": "Industrie & systèmes productifs",
     "seller": "SECAL",
     "seller_initials": "S",
@@ -756,7 +774,7 @@
     "description_it": "SECAL riorganizza il capitale attorno al team dirigente operativo e a Isatis Capital, per proseguire lo sviluppo europeo nella costruzione di carriponte industriali su misura"
   },
   {
-    "order": 43,
+    "order": 44,
     "sector": "Services techniques et professionnels",
     "seller": "HBF Groupe",
     "seller_initials": "HG",
@@ -774,7 +792,7 @@
     "description_it": "HBF, attore di primo piano del bricolage in Francia, riorganizza il capitale attorno al management e all'azionista cinese Vinon, sancendo l'uscita dei fondi Ixo Private Equity, Isatis Capital e Multicroissance"
   },
   {
-    "order": 44,
+    "order": 45,
     "sector": "Bien commun durable",
     "seller": "Green Office",
     "seller_initials": "GO",
@@ -792,7 +810,7 @@
     "description_it": "GREEN OFFICE, specialista delle soluzioni di raccolta differenziata in azienda, realizza un secondo LBO con l'ingresso di ISATIS CAPITAL nel capitale, per finanziare lo sviluppo di strumenti di digitalizzazione della soluzione"
   },
   {
-    "order": 45,
+    "order": 46,
     "sector": "Services techniques et professionnels",
     "seller": "Spark SRT",
     "seller_initials": "SS",
@@ -810,7 +828,7 @@
     "description_it": "Spark RT è una società di ingegneria elettrica / idrogeno, attiva in particolare nel motorsport sostenibile (Formula E, Extreme H...)"
   },
   {
-    "order": 46,
+    "order": 47,
     "sector": "Services techniques et professionnels",
     "seller": "Energineo",
     "seller_initials": "E",
@@ -828,7 +846,7 @@
     "description_it": "Energineo, specialista dell'illuminazione a basso consumo, apre il capitale a Initiative & Finance in un'operazione di OBO"
   },
   {
-    "order": 47,
+    "order": 48,
     "sector": "Conseil & Ingénierie",
     "seller": "DGM Architectes",
     "seller_initials": "DA",
@@ -846,7 +864,7 @@
     "description_it": "DGM & Associés, uno dei principali studi di architettura dell'Île-de-France, realizza un MBO e apre parte del capitale ai propri collaboratori con il sostegno di Entrepreneur Invest"
   },
   {
-    "order": 48,
+    "order": 49,
     "sector": "Industrie & systèmes productifs",
     "seller": "Altix",
     "seller_initials": "A",
@@ -864,7 +882,7 @@
     "description_it": "ALTIX, progettista e produttore di macchine per l'industria elettronica, riorganizza il capitale attorno ai propri dirigenti e ad AMUNDI Private Equity Funds, sancendo l'uscita di INNOVAFONDS"
   },
   {
-    "order": 49,
+    "order": 50,
     "sector": "Tech & Digital",
     "seller": "Everwin",
     "seller_initials": "E",
@@ -882,7 +900,7 @@
     "description_it": "Everwin, editore di software ERP e CRM per la gestione di commesse (agenzie, servizi IT, edilizia), apre il capitale a Isatis Capital ed Entrepreneur Invest in un'operazione di ricomposizione del capitale"
   },
   {
-    "order": 50,
+    "order": 51,
     "sector": "Services techniques et professionnels",
     "seller": "Groupe CAN",
     "seller_initials": "GC",
@@ -900,7 +918,7 @@
     "description_it": "Groupe CAN, leader dei lavori in accesso difficile in ambiente naturale, apre il capitale a INNOVAFONDS e GARIBALDI PARTICIPATIONS nell'ambito di un management buy-out"
   },
   {
-    "order": 51,
+    "order": 52,
     "sector": "Services techniques et professionnels",
     "seller": "Ami Bois",
     "seller_initials": "AB",
@@ -918,7 +936,7 @@
     "description_it": "Isatis Capital raggiunge MCapital nel capitale di Ami Bois, pure player della costruzione di case unifamiliari in legno a basso consumo"
   },
   {
-    "order": 52,
+    "order": 53,
     "sector": "Services techniques et professionnels",
     "seller": "Groupe Eddifis",
     "seller_initials": "GE",
@@ -936,7 +954,7 @@
     "description_it": "EDDIFIS rileva dal fondatore il gruppo PHB, specialista parigino del restauro di facciate, delle coperture e del ripristino post-sinistro, facendo contestualmente entrare nel capitale Entrepreneur Invest e Carvest"
   },
   {
-    "order": 53,
+    "order": 54,
     "sector": "Services techniques et professionnels",
     "seller": "PM2S",
     "seller_initials": "P",
@@ -954,7 +972,7 @@
     "description_it": "Initiative & Finance e il team di management hanno acquisito il 100% del capitale di PM2S, specialista della manutenzione di macchine per la produzione grafica e fotografica, da una joint venture giapponese FUJIFILM / NORITSU"
   },
   {
-    "order": 54,
+    "order": 55,
     "sector": "Tech & Digital",
     "seller": "ABVENT",
     "seller_initials": "A",
@@ -972,7 +990,7 @@
     "description_it": "ARDIAN acquisisce una partecipazione di minoranza in ABVENT, editore di software leader per gli studi di architettura in Francia e Svizzera"
   },
   {
-    "order": 55,
+    "order": 56,
     "sector": "Services techniques et professionnels",
     "seller": "Ligne Vauzelle",
     "seller_initials": "LV",
@@ -990,7 +1008,7 @@
     "description_it": "LIGNE VAUZELLE apre il capitale a MCapital Partners per accelerare lo sviluppo nell'arredamento per hotel, ristoranti e caffè"
   },
   {
-    "order": 56,
+    "order": 57,
     "sector": "Tech & Digital",
     "seller": "2CRSI",
     "seller_initials": "2",
@@ -1008,7 +1026,7 @@
     "description_it": "2CRSI, il produttore francese di server informatici ad alte prestazioni, realizza un primo aumento di capitale per finanziare la fortissima crescita organica"
   },
   {
-    "order": 57,
+    "order": 58,
     "sector": "Industrie & systèmes productifs",
     "seller": "LIBNER",
     "seller_initials": "L",
@@ -1026,7 +1044,7 @@
     "description_it": "LIBNER, impresa familiare di carrozzeria industriale su misura, apre per la prima volta il capitale per finanziare lo sviluppo e riorganizzare l'azionariato attorno ai membri operativi della famiglia"
   },
   {
-    "order": 58,
+    "order": 59,
     "sector": "Bien commun durable",
     "seller": "Germline",
     "seller_initials": "G",
@@ -1044,7 +1062,7 @@
     "description_it": "GERMLINE apre per la prima volta il capitale a un investitore istituzionale per finanziare l'espansione commerciale e l'aumento delle capacità di produzione di semi germogliati"
   },
   {
-    "order": 59,
+    "order": 60,
     "sector": "Services techniques et professionnels",
     "seller": "Reflectiv",
     "seller_initials": "R",
@@ -1062,7 +1080,7 @@
     "description_it": "REFLECTIV - specialista dei film tecnici per prodotti vetrari - riorganizza il capitale in un MBO guidato dal figlio del fondatore, affiancato da NEXTSTAGE AM, sancendo l'uscita di UI INVESTISSEMENT"
   },
   {
-    "order": 60,
+    "order": 61,
     "sector": "Bien commun durable",
     "seller": "Green Office",
     "seller_initials": "GO",
@@ -1080,7 +1098,7 @@
     "description_it": "Green Office, specialista delle soluzioni di raccolta differenziata in azienda, riorganizza il capitale con l'ingresso dei fondi gestiti da Entrepreneur Invest e Amundi Private Equity"
   },
   {
-    "order": 61,
+    "order": 62,
     "sector": "Industrie & systèmes productifs",
     "seller": "BOS",
     "seller_initials": "B",
@@ -1098,7 +1116,7 @@
     "description_it": "BOS, uno degli specialisti mondiali delle sospensioni per gli sport motoristici (WRC, Dakar, MTB...), apre il capitale per finanziare la propria fabbrica 4.0"
   },
   {
-    "order": 62,
+    "order": 63,
     "sector": "Services techniques et professionnels",
     "seller": "Pure Trade",
     "seller_initials": "PT",
@@ -1116,7 +1134,7 @@
     "description_it": "PURE TRADE, specialista del packaging per i grandi marchi mondiali della cosmetica e dei profumi, realizza un secondo LBO in cui Isatis Capital raggiunge Initiative & Finance"
   },
   {
-    "order": 63,
+    "order": 64,
     "sector": "Conseil & Ingénierie",
     "seller": "TBN",
     "seller_initials": "TBN",
@@ -1134,7 +1152,7 @@
     "description_it": "The Brand Nation, agenzia di comunicazione specializzata nel retail / food, riorganizza l'azionariato e fa entrare CM-CIC Capital Privé"
   },
   {
-    "order": 64,
+    "order": 65,
     "sector": "Industrie & systèmes productifs",
     "seller": "3MA",
     "seller_initials": "3MA",
@@ -1152,7 +1170,7 @@
     "description_it": "3MA, agenzia di marketing relazionale digitale e fisico, riorganizza il capitale in un'operazione di LBO"
   },
   {
-    "order": 65,
+    "order": 66,
     "sector": "Bien commun durable",
     "seller": "H4D",
     "seller_initials": "H4D",
@@ -1170,7 +1188,7 @@
     "description_it": "H4D, progettista di cabine di telemedicina, apre il capitale a CNP Assurances, Innovation Capital (LBO France) e Bpifrance"
   },
   {
-    "order": 66,
+    "order": 67,
     "sector": "Bien commun durable",
     "seller": "Aerophile",
     "seller_initials": "A",
@@ -1188,7 +1206,7 @@
     "description_it": "AEROPHILE, leader mondiale del pallone frenato, accoglie nel capitale Amundi Private Equity e il fondo Turismo di Bpifrance per proseguire l'espansione"
   },
   {
-    "order": 67,
+    "order": 68,
     "sector": "Industrie & systèmes productifs",
     "seller": "Glass Partners Solutions",
     "seller_initials": "GPS",
@@ -1206,7 +1224,7 @@
     "description_it": "Glass Partners Solutions, specialista della distribuzione e trasformazione di prodotti vetrari tecnici, accoglie Nextstage AM nel capitale in un'operazione di riorganizzazione del capitale"
   },
   {
-    "order": 68,
+    "order": 69,
     "sector": "Tech & Digital",
     "seller": "IS Telecom",
     "seller_initials": "IT",
@@ -1224,7 +1242,7 @@
     "description_it": "IS Telecom / Ipneos, integratore telecom e specialista dei servizi IT gestiti, apre il capitale a CM-CIC Capital Privé per accelerare la strategia di build-up"
   },
   {
-    "order": 69,
+    "order": 70,
     "sector": "Tech & Digital",
     "seller": "ATDI",
     "seller_initials": "A",
@@ -1242,7 +1260,7 @@
     "description_it": "ATDI, editore di software di riferimento nella gestione dello spettro radio e dell'HTZ warfare, apre il capitale a un investitore di minoranza per finanziare lo sviluppo internazionale"
   },
   {
-    "order": 70,
+    "order": 71,
     "sector": "Services techniques et professionnels",
     "seller": "HBF",
     "seller_initials": "H",
@@ -1260,7 +1278,7 @@
     "description_it": "HBF, specialista del bricolage nella grande distribuzione, realizza un aumento di capitale con i propri azionisti finanziari Multicroissance, Isatis Capital e iXo Private Equity per finanziare le acquisizioni"
   },
   {
-    "order": 71,
+    "order": 72,
     "sector": "Tech & Digital",
     "seller": "avant-garde Outre Mer",
     "seller_initials": "AOM",
@@ -1278,7 +1296,7 @@
     "description_it": "Avant-Garde Outre Mer apre il capitale per accelerare lo sviluppo nei servizi IT gestiti nei territori francesi d'oltremare (Guadalupa, Martinica, Riunione, Guyana, ecc.)"
   },
   {
-    "order": 72,
+    "order": 73,
     "sector": "Tech & Digital",
     "seller": "Scan & Target",
     "seller_initials": "S&T",
@@ -1296,7 +1314,7 @@
     "description_it": "Scan&Target, software di analisi in tempo reale web e mobile che consente in particolare la moderazione automatica degli scambi online, accoglie Truffle Capital nel proprio azionariato"
   },
   {
-    "order": 73,
+    "order": 74,
     "sector": "Conseil & Ingénierie",
     "seller": "Dietswell",
     "seller_initials": "D",
@@ -1314,7 +1332,7 @@
     "description_it": "Dietswell - società di ingegneria Oil&Gas quotata su Euronext - rafforza il capitale proprio tramite un collocamento privato presso fondi istituzionali"
   },
   {
-    "order": 74,
+    "order": 75,
     "sector": "Bien commun durable",
     "seller": "Ulysse",
     "seller_initials": "U",
@@ -1332,7 +1350,7 @@
     "description_it": "Ulysse Transport, operatore del trasporto di persone a mobilità ridotta, apre il capitale a Bpifrance e CM-CIC Capital Privé"
   },
   {
-    "order": 75,
+    "order": 76,
     "sector": "Tech & Digital",
     "seller": "Numerix",
     "seller_initials": "N",
@@ -1350,7 +1368,7 @@
     "description_it": "Numerix Radiologie acquisisce il 100% del capitale di GLOBAL IMAGING, uno dei software di riferimento per i sistemi di archiviazione e comunicazione dell'imaging medico, l'elaborazione 3D delle immagini mediche e la teleradiologia"
   },
   {
-    "order": 76,
+    "order": 77,
     "sector": "Tech & Digital",
     "seller": "Gekko",
     "seller_initials": "G",
@@ -1368,7 +1386,7 @@
     "description_it": "Gekko, piattaforma di prenotazione alberghiera B2B per agenzie di viaggio e aziende, realizza un aumento di capitale con Entrepreneur Invest e Bpifrance per finanziare la fortissima crescita"
   },
   {
-    "order": 77,
+    "order": 78,
     "sector": "Tech & Digital",
     "seller": "123imprim",
     "seller_initials": "123",
@@ -1386,7 +1404,7 @@
     "description_it": "Initiative & Finance ha acquisito una partecipazione di minoranza nel capitale del gruppo FAK, holding industriale specializzata nella stampa digitale di supporti espositivi e segnaletica, per finanziarne la crescita per linee esterne"
   },
   {
-    "order": 78,
+    "order": 79,
     "sector": "Bien commun durable",
     "seller": "Numerix",
     "seller_initials": "N",
@@ -1404,7 +1422,7 @@
     "description_it": "Numerix Radiologie, gruppo diversificato nei software e nelle apparecchiature di imaging medico, riorganizza il capitale con l'ingresso di Amundi Private Equity, CM-CIC & Isatis Capital, sancendo l'uscita di Vauban Partenaires e Naxicap Partners"
   },
   {
-    "order": 79,
+    "order": 80,
     "sector": "Services techniques et professionnels",
     "seller": "Pure Trade",
     "seller_initials": "PT",
@@ -1422,7 +1440,7 @@
     "description_it": "Initiative & Finance, affiancata dal team di management operativo, acquisisce PURE TRADE - specialista del packaging per cosmetica e profumi - dal team fondatore"
   },
   {
-    "order": 80,
+    "order": 81,
     "sector": "Tech & Digital",
     "seller": "Aqoba",
     "seller_initials": "A",
@@ -1440,7 +1458,7 @@
     "description_it": "Aqoba, istituto di pagamento affinitario, fa entrare nel capitale Quilvest Private Equity e Arkea per finanziare la crescita organica"
   },
   {
-    "order": 81,
+    "order": 82,
     "sector": "Bien commun durable",
     "seller": "Accueil Hôtel",
     "seller_initials": "AH",
@@ -1458,7 +1476,7 @@
     "description_it": "Accueil Hôtel, gruppo di hotel indipendenti e in franchising dell'Est della Francia, apre il capitale a due investitori istituzionali di minoranza per accelerare le aperture"
   },
   {
-    "order": 82,
+    "order": 83,
     "sector": "Bien commun durable",
     "seller": "Aerophile",
     "seller_initials": "A",
@@ -1476,7 +1494,7 @@
     "description_it": "Aérophile, leader mondiale del pallone frenato, acquisisce il parco divertimenti alsaziano del Bioscope, ribattezzato Parc du Petit Prince"
   },
   {
-    "order": 83,
+    "order": 84,
     "sector": "Services techniques et professionnels",
     "seller": "Alpa",
     "seller_initials": "A",
@@ -1494,7 +1512,7 @@
     "description_it": "ALPA, specialista dei prodotti scolastici su licenza, realizza un'operazione di LBO con Capital Export"
   },
   {
-    "order": 84,
+    "order": 85,
     "sector": "Services techniques et professionnels",
     "seller": "Aventi",
     "seller_initials": "A",
@@ -1512,7 +1530,7 @@
     "description_it": "Aventi apre il capitale a Ed. de Rothschild Investment Partners per ampliare il proprio catalogo di distribuzione di film e serie"
   },
   {
-    "order": 85,
+    "order": 86,
     "sector": "Industrie & systèmes productifs",
     "seller": "B+Equipment",
     "seller_initials": "B+",
@@ -1530,7 +1548,7 @@
     "description_it": "B+Equipment, produttore di macchine per l'imballaggio destinate all'e-commerce, raccoglie capitali per accelerare la crescita organica"
   },
   {
-    "order": 86,
+    "order": 87,
     "sector": "x",
     "seller": "Bagelstein",
     "seller_initials": "B+",
@@ -1548,7 +1566,7 @@
     "description_it": "BAGELSTEIN, catena di ristorazione veloce in gestione diretta e in franchising, realizza un primo aumento di capitale con MCapital Partners per accelerare le aperture"
   },
   {
-    "order": 87,
+    "order": 88,
     "sector": "Bien commun durable",
     "seller": "Steam",
     "seller_initials": "S",
@@ -1566,7 +1584,7 @@
     "description_it": "STEAM France, quotata su Euronext e leader nella manutenzione di sterilizzatori medicali, rafforza il capitale proprio tramite un collocamento privato presso fondi istituzionali"
   },
   {
-    "order": 88,
+    "order": 89,
     "sector": "Bien commun durable",
     "seller": "Costes - Hôtel Amour",
     "seller_initials": "C",
@@ -1584,7 +1602,7 @@
     "description_it": "Hôtel Amour / Maison Thierry Costes finanzia l'acquisizione e l'apertura del Grand Hôtel Amour (Parigi X) tramite una tranche obbligazionaria sindacata"
   },
   {
-    "order": 89,
+    "order": 90,
     "sector": "Bien commun durable",
     "seller": "Aerophile",
     "seller_initials": "A",
@@ -1602,7 +1620,7 @@
     "description_it": "Aérophile riorganizza il capitale attorno al team dei fondatori, Isatis Capital ed Entrepreneur Invest, sancendo l'uscita di 123 Investment"
   },
   {
-    "order": 90,
+    "order": 91,
     "sector": "Services techniques et professionnels",
     "seller": "Debflex",
     "seller_initials": "D",
@@ -1620,7 +1638,7 @@
     "description_it": "Debflex, specialista del reparto elettrico nella grande distribuzione del bricolage, fa entrare TARGA Capital ed Entrepreneur Invest per finanziare lo sviluppo"
   },
   {
-    "order": 91,
+    "order": 92,
     "sector": "Bien commun durable",
     "seller": "Dial Invest",
     "seller_initials": "DI",
@@ -1638,7 +1656,7 @@
     "description_it": "Dial Invest, leader dei centri di dialisi nella regione PACA e proprietario della Clinique de l'Alma (Parigi VII), apre il capitale a PECHEL per riorganizzare l'azionariato e finanziare la crescita per linee esterne"
   },
   {
-    "order": 92,
+    "order": 93,
     "sector": "Bien commun durable",
     "seller": "Gedeon",
     "seller_initials": "G",
@@ -1656,7 +1674,7 @@
     "description_it": "Gedeon Programmes, uno dei produttori francesi più premiati nei documentari storici, d'avventura e naturalistici, apre il capitale al fondo Media di Bpifrance e a Entrepreneur Invest"
   },
   {
-    "order": 93,
+    "order": 94,
     "sector": "Bien commun durable",
     "seller": "Happycash",
     "seller_initials": "H",
@@ -1674,7 +1692,7 @@
     "description_it": "Happy Cash, una delle catene francesi leader dell'economia circolare e della vendita di prodotti di seconda mano, rafforza il capitale proprio con un aumento di capitale"
   },
   {
-    "order": 94,
+    "order": 95,
     "sector": "Services techniques et professionnels",
     "seller": "HBF",
     "seller_initials": "HBF",
@@ -1692,7 +1710,7 @@
     "description_it": "Il management, affiancato dai fondi iXo Private Equity, BNP Private Equity e Multicroissance, rileva HBF - specialista della distribuzione e progettazione di prodotti elettrici per la grande distribuzione del bricolage - dagli azionisti spagnoli"
   },
   {
-    "order": 95,
+    "order": 96,
     "sector": "Industrie & systèmes productifs",
     "seller": "Icape",
     "seller_initials": "I",
@@ -1710,7 +1728,7 @@
     "description_it": "ICAPE, progettista e produttore di circuiti stampati per l'industria, apre il capitale a Innovafonds per finanziare la fortissima crescita organica"
   },
   {
-    "order": 96,
+    "order": 97,
     "sector": "Services techniques et professionnels",
     "seller": "Groupe Dorise",
     "seller_initials": "GD",
@@ -1728,7 +1746,7 @@
     "description_it": "Il gruppo DORISE, specializzato nella distribuzione di componenti tecnici per il taglio e la lavorazione industriale, apre il capitale a un investitore di minoranza per finanziare la crescita organica"
   },
   {
-    "order": 97,
+    "order": 98,
     "sector": "Services techniques et professionnels",
     "seller": "Lotronic",
     "seller_initials": "L",
@@ -1746,7 +1764,7 @@
     "description_it": "Innovafonds acquisisce una partecipazione di maggioranza nel capitale di Lotronic, progettista/distributore di materiale audio e luci consumer e professionale"
   },
   {
-    "order": 98,
+    "order": 99,
     "sector": "x",
     "seller": "Incidence",
     "seller_initials": "I",
@@ -1764,7 +1782,7 @@
     "description_it": "Incidence Paris, progettista e distributore di oggetti decorativi per la vita quotidiana, realizza un'operazione di OBO e accoglie BNP Paribas Développement nel capitale"
   },
   {
-    "order": 99,
+    "order": 100,
     "sector": "Bien commun durable",
     "seller": "Inter Ortho / Ormihl Danet",
     "seller_initials": "I/O",
@@ -1782,7 +1800,7 @@
     "description_it": "Ormihl Danem, produttore di ortesi, apre il capitale a EVOLEM in una logica di consolidamento settoriale"
   },
   {
-    "order": 100,
+    "order": 101,
     "sector": "Industrie & systèmes productifs",
     "seller": "IPI",
     "seller_initials": "I",
@@ -1800,7 +1818,7 @@
     "description_it": "Il gruppo IPI (pompe idrauliche industriali) acquisisce DMH, specialista dei tubi flessibili e della raccorderia per il mondo industriale"
   },
   {
-    "order": 101,
+    "order": 102,
     "sector": "Bien commun durable",
     "seller": "Kartland",
     "seller_initials": "K",
@@ -1818,7 +1836,7 @@
     "description_it": "Kartland, uno dei principali complessi di karting outdoor francesi, si rivolge ad Audacia come investitore di minoranza per rafforzare il capitale proprio e finanziare la creazione di nuove piste"
   },
   {
-    "order": 102,
+    "order": 103,
     "sector": "Services techniques et professionnels",
     "seller": "Lasry",
     "seller_initials": "L",
@@ -1836,7 +1854,7 @@
     "description_it": "LASRY Glass, uno dei principali distributori vetrari francesi, emette una tranche obbligazionaria sottoscritta da CDC Entreprises per finanziare il proprio stabilimento di trasformazione"
   },
   {
-    "order": 103,
+    "order": 104,
     "sector": "Tech & Digital",
     "seller": "Numerix",
     "seller_initials": "N",
@@ -1854,7 +1872,7 @@
     "description_it": "Numerix Radiologie, gruppo diversificato dell'imaging medico, acquisisce l'editore di software lionese PIGE MEDICAL"
   },
   {
-    "order": 104,
+    "order": 105,
     "sector": "Bien commun durable",
     "seller": "Neolife",
     "seller_initials": "N",
@@ -1872,7 +1890,7 @@
     "description_it": "Neolife, specialista dei rivestimenti tecnici e delle doghe per terrazze innovative - quotata su Euronext Growth, realizza un collocamento privato per finanziare lo sviluppo"
   },
   {
-    "order": 105,
+    "order": 106,
     "sector": "Tech & Digital",
     "seller": "Intent Technologies",
     "seller_initials": "IT",
@@ -1890,7 +1908,7 @@
     "description_it": "Intent Technologie raccoglie capitali da Xange per accelerare la diffusione commerciale dei propri sensori e soluzioni software per migliorare l'efficienza energetica degli edifici collettivi"
   },
   {
-    "order": 106,
+    "order": 107,
     "sector": "Bien commun durable",
     "seller": "Numerix",
     "seller_initials": "N",
@@ -1908,7 +1926,7 @@
     "description_it": "Numerix Radiologie, gruppo diversificato dell'imaging medico, accoglie Vauban Partenaires nel capitale al fianco di Naxicap Partners"
   },
   {
-    "order": 107,
+    "order": 108,
     "sector": "Tech & Digital",
     "seller": "ConcoursMania (ActiPlay)",
     "seller_initials": "CM",
@@ -1926,7 +1944,7 @@
     "description_it": "La bordolese ConcoursMania (Actiplay) apre il capitale a Oddo Private Equity per sviluppare l'offerta di marketing digitale basata sui concorsi a premi"
   },
   {
-    "order": 108,
+    "order": 109,
     "sector": "Industrie & systèmes productifs",
     "seller": "Oxxa",
     "seller_initials": "O",
@@ -1944,7 +1962,7 @@
     "description_it": "Oxxa apre il capitale a fondi di investimento per finanziare lo sviluppo dei propri impianti di riciclo della plastica"
   },
   {
-    "order": 109,
+    "order": 110,
     "sector": "Industrie & systèmes productifs",
     "seller": "RASEC",
     "seller_initials": "R",
@@ -1962,7 +1980,7 @@
     "description_it": "CDC Entreprises raggiunge CIC Investissement e Pechel nel capitale di RASEC, leader nella produzione di arredi per le zone casse della grande distribuzione europea"
   },
   {
-    "order": 110,
+    "order": 111,
     "sector": "Services techniques et professionnels",
     "seller": "Réalités",
     "seller_initials": "R",
@@ -1980,7 +1998,7 @@
     "description_it": "Groupe Réalités - uno dei principali promotori immobiliari del Grande Ovest francese - realizza un collocamento obbligazionario presso i fondi gestiti da 123Investment"
   },
   {
-    "order": 111,
+    "order": 112,
     "sector": "Tech & Digital",
     "seller": "Phoebe Ingenica",
     "seller_initials": "PI",
@@ -1998,7 +2016,7 @@
     "description_it": "Phoebe-Ingenica apre il capitale a CDC Entreprises per proseguire la fase di consolidamento nell'ingegneria industriale"
   },
   {
-    "order": 112,
+    "order": 113,
     "sector": "Industrie & systèmes productifs",
     "seller": "Savoy International",
     "seller_initials": "S",
@@ -2016,7 +2034,7 @@
     "description_it": "Savoy International, tra i leader della meccanica di precisione e della tornitura per l'industria automobilistica, apre il capitale al FMEA (fondo francese di modernizzazione dei fornitori automotive)"
   },
   {
-    "order": 113,
+    "order": 114,
     "sector": "Industrie & systèmes productifs",
     "seller": "Sendin",
     "seller_initials": "S",
@@ -2034,7 +2052,7 @@
     "description_it": "Sendin, leader francese dell'armatura metallica e della rete elettrosaldata, accoglie CDC Entreprises nella propria struttura di finanziamento tramite un collocamento obbligazionario"
   },
   {
-    "order": 114,
+    "order": 115,
     "sector": "Tech & Digital",
     "seller": "Mac Guff",
     "seller_initials": "MG",
@@ -2052,7 +2070,7 @@
     "description_it": "MAC GUFF, uno degli studi di effetti speciali più riconosciuti al mondo, apre il capitale per finanziare i propri progetti di sviluppo nei lungometraggi d'animazione (Cattivissimo Me, ecc.)"
   },
   {
-    "order": 115,
+    "order": 116,
     "sector": "Conseil & Ingénierie",
     "seller": "The Brand Nation",
     "seller_initials": "TBN",
@@ -2070,7 +2088,7 @@
     "description_it": "The Brand Nation, gruppo di agenzie di comunicazione media e non media specializzato in retail / food & beverage, accoglie CDC Entreprises tramite un collocamento obbligazionario"
   },
   {
-    "order": 116,
+    "order": 117,
     "sector": "Industrie & systèmes productifs",
     "seller": "IPI",
     "seller_initials": "IPI",
@@ -2088,7 +2106,7 @@
     "description_it": "IPI, gruppo di progettazione di pompe idrauliche industriali, fa entrare nel capitale Entrepreneur Invest & BNP PE"
   },
   {
-    "order": 117,
+    "order": 118,
     "sector": "Tech & Digital",
     "seller": "Zengularity",
     "seller_initials": "Z",
@@ -2106,7 +2124,7 @@
     "description_it": "Zengularity, attore riconosciuto della tech internazionale nella costruzione di framework per sviluppatori, apre il capitale a fondi di private equity per finanziare la crescita"
   },
   {
-    "order": 118,
+    "order": 119,
     "sector": "Services techniques et professionnels",
     "seller": "Inovaxion",
     "seller_initials": "I",
@@ -2124,7 +2142,7 @@
     "description_it": "Inovaxion, sviluppatore e distributore di prodotti elettronici di consumo innovativi, si rivolge a CDC Entreprises per rafforzare le proprie capacità finanziarie e accelerare lo sviluppo"
   },
   {
-    "order": 119,
+    "order": 120,
     "sector": "Services techniques et professionnels",
     "seller": "Regnault Autocars",
     "seller_initials": "RA",
@@ -2142,7 +2160,7 @@
     "description_it": "Regnault Autocars, operatore di linee regolari e di gran turismo nel Nord-Est della Francia, realizza una prima operazione di LBO"
   },
   {
-    "order": 120,
+    "order": 121,
     "sector": "Services techniques et professionnels",
     "seller": "Helios Strategia",
     "seller_initials": "HS",
@@ -2160,7 +2178,7 @@
     "description_it": "Helio Strategia, distributore e installatore fotovoltaico, apre il capitale a Idinvest con un aumento di capitale"
   },
   {
-    "order": 121,
+    "order": 122,
     "sector": "Services techniques et professionnels",
     "seller": "Builder",
     "seller_initials": "B+",
@@ -2178,7 +2196,7 @@
     "description_it": "Builder, specializzata nella distribuzione di materiale per il bricolage e il giardinaggio, si rivolge a MCapital Partners per sostenere la forte crescita organica"
   },
   {
-    "order": 122,
+    "order": 123,
     "sector": "Tech & Digital",
     "seller": "Watteco",
     "seller_initials": "W",
@@ -2196,7 +2214,7 @@
     "description_it": "Watteco, start-up di Tolone specializzata nel segnale elettrico e nelle smart grid, raccoglie capitali da Truffle Capital"
   },
   {
-    "order": 123,
+    "order": 124,
     "sector": "Industrie & systèmes productifs",
     "seller": "Prime Technology",
     "seller_initials": "PT",
@@ -2214,7 +2232,7 @@
     "description_it": "Prime Technology, produttore di caldaie a basso consumo, apre il capitale ad Amundi Private Equity"
   },
   {
-    "order": 124,
+    "order": 125,
     "sector": "Bien commun durable",
     "seller": "Inter Ortho / Ormihl Danet",
     "seller_initials": "I/O",
@@ -2232,7 +2250,7 @@
     "description_it": "Ormihl Danet, produttore storico di ortesi e plantari ortopedici, acquisisce il 100% di Sober Médical, produttore di ortesi specializzato negli infortuni sportivi."
   },
   {
-    "order": 125,
+    "order": 126,
     "sector": "Bien commun durable",
     "seller": "Darkworks",
     "seller_initials": "D",
@@ -2250,7 +2268,7 @@
     "description_it": "Développement&Partenariat raggiunge N.I Partners e SGCP nel capitale di Darkworks, studio parigino di sviluppo di videogiochi (Alone in the Dark)"
   },
   {
-    "order": 126,
+    "order": 127,
     "sector": "Tech & Digital",
     "seller": "Danem",
     "seller_initials": "D",
@@ -2268,7 +2286,7 @@
     "description_it": "Danem, editore di software per le forze di vendita, apre il capitale a Promelys Participations"
   },
   {
-    "order": 127,
+    "order": 128,
     "sector": "Services techniques et professionnels",
     "seller": "RMBH",
     "seller_initials": "R",
@@ -2286,7 +2304,7 @@
     "description_it": "RMBH, leader della carpenteria nell'Île-de-France, accoglie CDC Entreprises nella propria struttura di finanziamento tramite un collocamento obbligazionario"
   },
   {
-    "order": 128,
+    "order": 129,
     "sector": "Tech & Digital",
     "seller": "Central Test",
     "seller_initials": "CT",
@@ -2304,7 +2322,7 @@
     "description_it": "Central Test, editore di software di test HR e psicometrici, accoglie NAXICAP Partners nel capitale"
   },
   {
-    "order": 129,
+    "order": 130,
     "sector": "Tech & Digital",
     "seller": "ConcoursMania",
     "seller_initials": "CM",
@@ -2322,7 +2340,7 @@
     "description_it": "ConcoursMania (Actiplay), specialista del marketing digitale, acquisisce la piattaforma di concorsi a premi Toilokdo"
   },
   {
-    "order": 130,
+    "order": 131,
     "sector": "Bien commun durable",
     "seller": "2 minutes",
     "seller_initials": "2m",
@@ -2340,7 +2358,7 @@
     "description_it": "2Minutes, studio di produzione e realizzazione di cartoni animati, apre il capitale ad Alliance Entreprendre"
   },
   {
-    "order": 131,
+    "order": 132,
     "sector": "Bien commun durable",
     "seller": "Cap Sensoria",
     "seller_initials": "CS",
